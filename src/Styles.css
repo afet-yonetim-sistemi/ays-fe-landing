@@ -1,0 +1,52 @@
+.appBar {
+  background-color: #1f293d;
+  color: azure;
+}
+
+.pageTemplate {
+  background-color: rgb(244, 242, 242);
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+}
+
+.pageTemplate-dark {
+  background-color: #1f293d;
+  color: azure;
+}
+
+.leftbar {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 10%;
+  margin-right: 10%;
+}
+
+.midcontent {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  width: fit-content;
+}
+
+.mid {
+  width: 100%;
+  min-width: fit-content;
+}
+
+.box-title {
+  margin: 10%;
+}
+
+.midBox {
+  border-radius: 10px;
+  background-color: rgb(244, 242, 242);
+  color: black;
+}
+
+.midBox-dark {
+  border-radius: 10px;
+  background-color: #1f293d;
+  color: azure;
+}

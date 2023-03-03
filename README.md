@@ -1,3 +1,17 @@
+react-router-dom library ;
+
+npm install react-router-dom
+
+install these 2 libraries
+
+mui library ;
+
+npm install @mui/material @emotion/react @emotion/styled
+
+(for icons)
+
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
