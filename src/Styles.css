@@ -50,3 +50,26 @@
   background-color: #1f293d;
   color: azure;
 }
+
+.footer {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+
+  background-color: #1f293d;
+  color: azure;
+
+  min-height: 200px;
+}
+
+.footer-item {
+  background-color: inherit;
+  color: inherit;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+  
+}
