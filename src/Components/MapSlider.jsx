@@ -7,7 +7,13 @@ import GoogleMap from "google-map-react";
 import RoomIcon from "@mui/icons-material/Room";
 import { Typography } from "@mui/material";
 
+import API_KEY from "../keys";
+
+
 function SimpleMap() {
+
+  const google_key = API_KEY
+
   let defaultProps = {
     center: {
       lat: 41.0122,
@@ -20,7 +26,7 @@ function SimpleMap() {
     // Important! Always set the container height explicitly
     <div style={{ height: "100%", width: "100%" }}>
       <GoogleMap
-        bootstrapURLKeys={{ key: "AIzaSyA7xcOTCYCtI2UO6t1jgXiC4p3qdgGbXOc" }}
+        bootstrapURLKeys={{ key: google_key }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
