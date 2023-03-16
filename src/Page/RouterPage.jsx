@@ -3,7 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AYSAppBar from "../Components/AppBar";
 import Footer from "../Components/Footer";
-import MapSlider from "../Components/MapSlider";
+import GMap from "../Components/Gmap";
+import MapSlider from "../Components/Gmap";
 import PersistentLeftBar from "../Components/PersistentLeftBar";
 
 
@@ -19,7 +20,7 @@ function RouterPage() {
           <Route path="/" element={<Landing />} />
         </Routes>
         <Routes>
-          <Route path="/dev" element={<MapSlider/>} />
+          <Route path="/selam" element={<GMap/>} />
         </Routes>
         <Footer/>
 

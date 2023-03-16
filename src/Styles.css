@@ -71,5 +71,10 @@
   flex-direction: column;
 
   justify-content: space-around;
-  
+}
+
+.map {
+  height: 600px;
+  width: 800px;
+  border-radius: 10px;
 }
