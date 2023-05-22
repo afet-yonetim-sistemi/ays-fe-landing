@@ -8,6 +8,11 @@ import G_KEY from "../keys.jsx";
 
 const position = { lat: 37.0008, lng: 36.545 };
 
+
+
+
+
+
 function GMap(props) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: G_KEY,

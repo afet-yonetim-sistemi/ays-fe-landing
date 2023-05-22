@@ -6,7 +6,8 @@
 .pageTemplate {
   background-color: rgb(244, 242, 242);
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: column;
   padding: 1%;
 }
 
@@ -36,19 +37,25 @@
 }
 
 .box-title {
-  margin: 10%;
+  padding-top: 3%;
+  margin:5%;
 }
 
 .midBox {
   border-radius: 10px;
   background-color: rgb(244, 242, 242);
   color: black;
+
+  height: auto;
+  
 }
 
 .midBox-dark {
   border-radius: 10px;
   background-color: #1f293d;
   color: azure;
+
+  height: auto;
 }
 
 .footer {
@@ -61,6 +68,10 @@
   color: azure;
 
   min-height: 200px;
+
+  
+  width: 100%;
+  min-width: auto;
 }
 
 .footer-item {
@@ -74,7 +85,58 @@
 }
 
 .map {
-  height: 600px;
-  width: 800px;
+  
+  
+  min-width: 200px;
+  height: 50%;
+  width: 100%;
   border-radius: 10px;
+}
+
+
+
+.landing-img{
+  height:240px ; 
+  width :240px;
+  border-radius: 10px;
+ 
+}
+
+.landing-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:1%;
+}
+
+.landing-content{
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+  margin:1%;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.landing-bottom{
+  display: flex;
+  flex-direction:  row;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+
+.tech-stack{
+  display :flex;
+  flex-direction: column;
 }

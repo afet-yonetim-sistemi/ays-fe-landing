@@ -28,7 +28,7 @@ function Footer(props) {
             component="button"
             variant="h6"
             onClick={() => {
-              history("/");
+              history("/Hakkımızda");
             }}
           >
             Hakkımızda

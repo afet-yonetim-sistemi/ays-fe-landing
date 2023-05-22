@@ -22,6 +22,7 @@ function ContentBox(props) {
           color: "inherit",
         }}
       >
+        
         <div class="box-title">
           <Typography variant="h6">{content}</Typography>
         </div>

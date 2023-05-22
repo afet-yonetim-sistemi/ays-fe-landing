@@ -12,7 +12,7 @@ var content = [
   "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir  ",
 ];
 
-function LandingPage(props) {
+function MainPage(props) {
   const { theme } = useContext(DataContext);
 
   return (
@@ -68,4 +68,4 @@ function LandingPage(props) {
   );
 }
 
-export default LandingPage;
+export default MainPage;
