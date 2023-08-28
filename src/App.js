@@ -1,14 +1,13 @@
 import React from "react";
-
 import RouterPage from "./Page/RouterPage";
-import { DataProvider } from "./Data/DataContext";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
   return (
     <>
-      <DataProvider>
+      <BrowserRouter>
         <RouterPage />
-      </DataProvider>
+      </BrowserRouter>
     </>
   );
 }
