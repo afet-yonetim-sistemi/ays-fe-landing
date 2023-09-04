@@ -104,7 +104,60 @@ function MainPage() {
           </div>
         </div>
       </section>
+      <section className="info-section">
+        <div className="bg-svg"></div>
+        <div className="title-container ">
+          <h1 className="info-section-header ">
+            Hangi Teknolojileri <br />
+            Kullanıyoruz ?
+          </h1>
+          <div className="tech-container">
+            <ul className="info-tech">
+              <li>Back-End:</li>
+              <li>Front-End:</li>
+              <li>iOS:</li>
+              <li>Android:</li>
+              <li>DevOps:</li>
+              <li>UI/UX Design:</li>
+              <li>Product: </li>
+              <li>Test:</li>
+              <li>Moderating:</li>
+            </ul>
+            <div className="tech-line">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="7"
+                height="256"
+                viewBox="0 0 7 256"
+                fill="none"
+              >
+                <path
+                  d="M3.64441 0.333333C2.17165 0.333412 0.977742 1.52738 0.977742 3.00014C0.977742 4.4729 2.17165 5.66675 3.64441 5.66667C5.11717 5.66659 6.31108 4.47262 6.31108 2.99986C6.31108 1.5271 5.11717 0.333255 3.64441 0.333333ZM3.64441 250.333C2.17165 250.333 0.977742 251.527 0.977742 253C0.977742 254.473 2.17165 255.667 3.64441 255.667C5.11717 255.667 6.31108 254.473 6.31108 253C6.31108 251.527 5.11717 250.333 3.64441 250.333ZM3.14441 3.00003L3.14441 253L4.14441 253L4.14441 2.99997L3.14441 3.00003Z"
+                  fill="#1C2A3F"
+                />
+              </svg>
+            </div>
+            <div className="tech-content">
+              <ul className="info-content">
+                <li>Java17, Spring Boot 3, Docker, MySQL</li>
+                <li>React.js, TypeScript</li>
+                <li>Swift</li>
+                <li>Kotlin</li>
+                <li>Amazon Web Services, Terminal Skills</li>
+                <li>Figma</li>
+                <li>Github Project</li>
+                <li>API & UI Test Automation, Manuel Testing</li>
+                <li>Orientation, Organization Bots</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="tech-image">
+          <img src="techimage.png" alt="cute" />
+        </div>
+      </section>
     </>
   );
 }
+
 export default MainPage;
