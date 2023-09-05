@@ -72,7 +72,7 @@ ul li {
 .select-buttons li {
   text-align: center;
 }
-
+/* intro section */
 .intro-section {
   padding: 54px 67px;
   background-color: white;
@@ -109,7 +109,7 @@ ul li {
   line-height: normal;
   text-decoration-line: underline;
 }
-
+/* info section */
 .info-section {
   min-height: 685px;
   margin-top: 100px;
@@ -117,7 +117,7 @@ ul li {
   grid-template-columns: repeat(2, minmax(0, auto));
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 500px;
+  margin-bottom: 290px;
   position: relative;
 }
 
@@ -192,4 +192,39 @@ ul li {
 .tech-image img {
   width: 100%;
   height: auto;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-line svg {
+  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 0 15px 0 15px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-title-paragraph {
+  color: #fff;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer-title {
+  margin-right: 0;
+  margin-left: 40px;
+}
+.footer-icon ul {
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
