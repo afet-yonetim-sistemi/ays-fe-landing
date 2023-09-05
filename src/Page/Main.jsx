@@ -156,6 +156,40 @@ function MainPage() {
           <img src="techimage.png" alt="cute" />
         </div>
       </section>
+
+      <footer className="footer-container">
+        <div className="footer-line">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1300"
+            height="12"
+            viewBox="0 0 1300 12"
+            fill="none"
+          >
+            <path
+              d="M10 5L0 0.226497L0 11.7735L10 7V5ZM1290 7L1300 11.7735V0.226497L1290 5V7ZM9 7H1291V5H9V7Z"
+              fill="white"
+            />
+          </svg>
+          <div className="footer-content">
+            <div className="footer-title">
+              <p className="footer-title-paragraph">
+                Afet Yönetim Sistemi | Copyright © 2023
+              </p>
+            </div>
+            <div className="footer-icon">
+              <ul>
+                <li className="footer-github ">
+                  <FaGithub size="32px" color="white" />
+                </li>
+                <li className="footer-discord ">
+                  <FaDiscord size="32px" color="white" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
