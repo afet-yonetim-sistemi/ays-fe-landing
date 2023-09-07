@@ -102,7 +102,7 @@ function MainPage() {
                 <FaLanguage size="32px" color="rgb(153 185 57)" />
               </li>
               <select
-                className="select-buttonss"
+                className="select-buttons"
                 onChange={(e) => {
                   setLanguage(e.target.value);
                   localStorage.setItem("language", e.target.value);
