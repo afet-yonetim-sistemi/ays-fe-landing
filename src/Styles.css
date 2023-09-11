@@ -23,7 +23,6 @@
 .header-container-contact-info ul {
   display: flex;
   gap: 22px;
-  padding-bottom: 5px;
 }
 ul {
   list-style: none;
@@ -39,7 +38,14 @@ ul li {
   display: flex;
   align-items: center;
 }
-
+.contact-lang-text {
+  color: #fff;
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
 .list-item {
   margin: 0 25px 0px 25px;
   width: 2px;
@@ -48,11 +54,50 @@ ul li {
 }
 
 .select-buttons {
-  background-color: transparent;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.select-wrapper {
+  position: relative;
+  color: #fff;
+  font-family: Inter;
   font-size: 28px;
-  border: none;
-  color: white;
+  font-style: normal;
   font-weight: 800;
+  line-height: normal;
+}
+
+.select-container {
+  position: absolute;
+  padding: 5px;
+  top: 35px;
+  left: 0px;
+  font-size: 28px;
+  font-weight: 800;
+  width: 100%;
+  background-color: white;
+  margin-top: 25px;
+  border-radius: 5px;
+  color: black;
+}
+
+.select-options {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
 }
 
 /* intro section */
