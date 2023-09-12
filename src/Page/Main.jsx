@@ -1,82 +1,31 @@
 import React, { useState } from "react";
-
+import paragraph from "../helper/language";
 import "../Styles.css";
-import { FaGithub, FaDiscord, FaLanguage } from "react-icons/fa";
+import {
+  FaGithub,
+  FaDiscord,
+  FaLanguage,
+  FaAngleUp,
+  FaAngleDown,
+} from "react-icons/fa";
 
 function MainPage() {
   const [language, setLanguage] = useState(
-    localStorage.getItem("language") ?? "tr"
+    localStorage.getItem("language")
+      ? JSON.parse(localStorage.getItem("language"))
+      : { name: "English", code: "en" }
   );
+  const [isShow, setIsShow] = useState(false);
 
   const [languageList] = useState([
     { name: "English", code: "en" },
     { name: "Türkçe", code: "tr" },
   ]);
 
-  const paragraph = [
-    {
-      language: "tr",
-      header: "Biz Kimiz? Ne Yapıyoruz?",
-      paragraph: {
-        __html:
-          " <p>\n" +
-          "                            Afet Yönetim Sistemi,\n" +
-          '                            <a href="https://github.com/acikyazilimagi/afet-org/discussions/35">\n' +
-          '                                <i className="intro-section-link">acikkaynak/afet-org#35 </i>\n' +
-          "                            </a>\n" +
-          "                            alanındaki fikri gönüllü olarak hayata geçirmek için katkı\n" +
-          "                            sağlayan bir topluluktur.\n" +
-          "                        </p>\n" +
-          "                        <p>\n" +
-          "                            Gönüllü olarak kişilerin afet bölgesine kişi ve/veya alet edevat\n" +
-          "                            taşımasındaki süreci bir kuruma bağlı gerçekleştirmesi ve bu\n" +
-          "                            süreçte kişilerin güvenliğinin sağlanması, kurumun\n" +
-          "                            koordinasyonunun sağlanması, doğru envanterin doğru konuma\n" +
-          "                            gönderilmesini hedefliyoruz.\n" +
-          "                        </p>\n" +
-          "                        <p>\n" +
-          "                            Detaylı bilgi için\n" +
-          '                            <a href="https://discord.gg/QADkUTBKGF">\n' +
-          '                                <i className="intro-section-link">Discord </i>\n' +
-          "                            </a>\n" +
-          "                            kanalımıza dahil olabilir, ilgili repositoryleri inceleyebilir,\n" +
-          "                            gönüllü kişilerle iletişime geçerek bize destek olabilirsin.\n" +
-          "                        </p>",
-      },
-      header2: "Hangi Teknolojileri Kullanıyoruz?",
-    },
-    {
-      language: "en",
-      header: "Who Are We? What Are We Doing?",
-      paragraph: {
-        __html:
-          "<p>\n" +
-          "              Afet Yönetim Sistemi,\n" +
-          '              <a href="https://github.com/acikyazilimagi/afet-org/discussions/35%22%3E\n' +
-          '                <i className="intro-section-link ">acikkaynak/afet-org#35 </i>\n' +
-          "              </a>\n" +
-          "              contribution to voluntarily implement the idea in the field\n" +
-          "              it is a community that provides.\n" +
-          "            </p>\n" +
-          "            <p>\n" +
-          "              Volunteer people and / or tools to the disaster area\n" +
-          "              to carry out the process of transportation under an institution and\n" +
-          "              ensuring the safety of people in the process,\n" +
-          "              ensuring the coordination of the right inventory in the right location\n" +
-          "              we aim to send.\n" +
-          "            </p>\n" +
-          "            <p>\n" +
-          "              For detailed information\n" +
-          '              <a href="https://discord.gg/QADkUTBKGF%22%3E\n' +
-          '                <i className="intro-section-link">Discord </i>\n' +
-          "              </a>\n" +
-          "              You can join our channel, review the relevant repositories,\n" +
-          "              You can support us by contacting volunteers.\n" +
-          "            </p>",
-      },
-      header2: "What Technologies Do We Use?",
-    },
-  ];
+  const languageHandler = (e) => {
+    setLanguage(e);
+    localStorage.setItem("language", JSON.stringify(e));
+  };
 
   return (
     <>
@@ -97,27 +46,27 @@ function MainPage() {
               </li>
             </ul>
             <div className="list-item" color="white"></div>
-            <ul>
+            <ul className="select-wrapper" onClick={() => setIsShow(!isShow)}>
               <li>
                 <FaLanguage size="32px" color="rgb(153 185 57)" />
               </li>
-              <select
-                className="select-buttons"
-                onChange={(e) => {
-                  setLanguage(e.target.value);
-                  localStorage.setItem("language", e.target.value);
-                }}
-              >
-                {languageList.map((item) => (
-                  <option
-                    selected={item.code === language}
-                    key={item.code}
-                    value={item.code}
-                  >
-                    {item.name}
-                  </option>
-                ))}
-              </select>
+              <li>{language.name}</li>
+              {isShow ? <FaAngleUp /> : <FaAngleDown />}
+              {isShow && (
+                <ul className="select-container">
+                  {languageList.map((item) =>
+                    item.code === language.code ? null : (
+                      <li
+                        className="select-options"
+                        onClick={() => languageHandler(item)}
+                        key={item.code}
+                      >
+                        {item.name}
+                      </li>
+                    )
+                  )}
+                </ul>
+              )}
             </ul>
           </div>
           <div>
@@ -142,12 +91,16 @@ function MainPage() {
       <section className="intro-section">
         <div>
           <h1 className="intro-section-header">
-            {paragraph.find((item) => item.language === language).header}
+            {
+              paragraph.find((item) => item.language.code === language.code)
+                .header
+            }
           </h1>
           <div
             className="intro-section-paragraph"
             dangerouslySetInnerHTML={
-              paragraph.find((item) => item.language === language).paragraph
+              paragraph.find((item) => item.language.code === language.code)
+                .paragraph
             }
           ></div>
         </div>
@@ -156,7 +109,10 @@ function MainPage() {
         <div className="bg-svg"></div>
         <div className="title-container ">
           <h1 className="info-section-header ">
-            {paragraph.find((item) => item.language === language).header2}
+            {
+              paragraph.find((item) => item.language.code === language.code)
+                .header2
+            }
           </h1>
           <div className="tech-container">
             <ul className="info-tech">
