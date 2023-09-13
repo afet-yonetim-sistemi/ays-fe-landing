@@ -5,6 +5,7 @@
 }
 
 body {
+  zoom: 0.8;
   max-width: 1440px;
   margin: auto;
   background-color: rgb(28 42 63);
