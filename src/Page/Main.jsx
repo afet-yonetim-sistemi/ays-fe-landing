@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import paragraph from "../helper/language";
 import "../Styles.css";
 import {
@@ -10,11 +10,7 @@ import {
 } from "react-icons/fa";
 
 function MainPage() {
-  const [language, setLanguage] = useState(
-    localStorage.getItem("language")
-      ? JSON.parse(localStorage.getItem("language"))
-      : { name: "English", code: "en" }
-  );
+  const [language, setLanguage] = useState({ name: "Türkçe", code: "tr" });
   const [isShow, setIsShow] = useState(false);
 
   const [languageList] = useState([
@@ -24,7 +20,6 @@ function MainPage() {
 
   const languageHandler = (e) => {
     setLanguage(e);
-    localStorage.setItem("language", JSON.stringify(e));
   };
 
   return (
