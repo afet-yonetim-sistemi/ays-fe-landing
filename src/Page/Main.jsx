@@ -113,8 +113,7 @@ function MainPage() {
             <ul className="info-tech">
               <li>Back-End:</li>
               <li>Front-End:</li>
-              <li>iOS:</li>
-              <li>Android:</li>
+              <li>Mobile:</li>
               <li>DevOps:</li>
               <li>UI/UX Design:</li>
               <li>Product:</li>
@@ -139,8 +138,7 @@ function MainPage() {
               <ul className="info-content">
                 <li>Java17, Spring Boot 3, Docker, MySQL</li>
                 <li>React.js, TypeScript</li>
-                <li>Swift</li>
-                <li>Kotlin</li>
+                <li>React Native</li>
                 <li>Amazon Web Services, Terminal Skills</li>
                 <li>Figma</li>
                 <li>Github Project</li>
