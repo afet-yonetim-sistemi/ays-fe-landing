@@ -195,7 +195,8 @@ ul li {
 }
 .tech-container {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 .info-tech {
   color: #1c2a3f;
@@ -210,6 +211,11 @@ ul li {
   fill: #1c2a3f;
   stroke-width: 1px;
   stroke: #1c2a3f;
+  margin: 0 1.5em;
+  height: 230px;
+}
+.tech-line svg {
+  height: 230px;
 }
 
 .tech-content {
@@ -316,8 +322,6 @@ ul li {
 
 @media (max-width: 625px) {
   .tech-container {
-    display: flex;
-    align-items: center;
     width: 100%;
   }
   .footer-area {
@@ -382,13 +386,13 @@ ul li {
   .info-content {
     font-size: 15px;
   }
-  .tech-line svg {
-    height: 100%;
-  }
   .info-tech {
     font-size: 15px;
   }
+  .tech-line {
+    height: 170px;
+  }
   .tech-line svg {
-    height: 160px;
+    height: 170px;
   }
 }

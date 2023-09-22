@@ -6,24 +6,16 @@ const paragraph = [
       __html:
         " <p>\n" +
         "                            Afet Yönetim Sistemi,\n" +
-        '                            <a href="https://github.com/acikyazilimagi/afet-org/discussions/35">\n' +
-        '                                <i className="intro-section-link">acikkaynak/afet-org#35 </i>\n' +
-        "                            </a>\n" +
+        '                            <a href="https://github.com/acikyazilimagi/afet-org/discussions/35">acikkaynak/afet-org#35</a>' +
         "                            alanındaki fikri gönüllü olarak hayata geçirmek için katkı\n" +
         "                            sağlayan bir topluluktur.\n" +
         "                        </p>\n" +
         "                        <p>\n" +
-        "                            Gönüllü olarak kişilerin afet bölgesine kişi ve/veya alet edevat\n" +
-        "                            taşımasındaki süreci bir kuruma bağlı gerçekleştirmesi ve bu\n" +
-        "                            süreçte kişilerin güvenliğinin sağlanması, kurumun\n" +
-        "                            koordinasyonunun sağlanması, doğru envanterin doğru konuma\n" +
-        "                            gönderilmesini hedefliyoruz.\n" +
+        "                            Bir kuruma bağlı olan gönüllü kişilerin afet bölgesine kişi ve/veya alet edevat taşıma sürecinin gerçekleştirilmesi ve bu süreçte kişilerin güvenliğinin sağlanması, kurumun koordinasyonunun sağlanması, doğru envanterin doğru konuma gönderilmesini hedefliyoruz. Afet sonrası yardımların güvenli ve sağlıklı bir şekilde ulaşması için teknik çözümler üretiyoruz.\n" +
         "                        </p>\n" +
         "                        <p>\n" +
         "                            Detaylı bilgi için\n" +
-        '                            <a href="https://discord.gg/QADkUTBKGF">\n' +
-        '                                <i className="intro-section-link">Discord </i>\n' +
-        "                            </a>\n" +
+        '                            <a href="https://discord.gg/QADkUTBKGF">Discord</a>\n' +
         "                            kanalımıza dahil olabilir, ilgili repositoryleri inceleyebilir,\n" +
         "                            gönüllü kişilerle iletişime geçerek bize destek olabilirsin.\n" +
         "                        </p>",
@@ -38,7 +30,7 @@ const paragraph = [
         "<p>\n" +
         "              Afet Yönetim Sistemi,\n" +
         '              <a href="https://github.com/acikyazilimagi/afet-org/discussions/35"\n' +
-        '                <i className="intro-section-link ">acikkaynak/afet-org#35 </i>\n' +
+        '                <span className="intro-section-lin">acikkaynak/afet-org#35</span>\n' +
         "              </a>\n" +
         "              contribution to voluntarily implement the idea in the field\n" +
         "              it is a community that provides.\n" +
