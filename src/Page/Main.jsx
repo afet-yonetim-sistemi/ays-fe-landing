@@ -85,7 +85,7 @@ function MainPage() {
       </header>
       <section className="intro-section">
         <div>
-          <h1 className="intro-section-header">
+          <h1 className="intro-section-header title">
             {
               paragraph.find((item) => item.language.code === language.code)
                 .header
@@ -103,7 +103,7 @@ function MainPage() {
       <section className="info-section">
         <div className="bg-svg"></div>
         <div className="title-container ">
-          <h1 className="info-section-header ">
+          <h1 className="info-section-header title">
             {
               paragraph.find((item) => item.language.code === language.code)
                 .header2
@@ -155,43 +155,35 @@ function MainPage() {
         </div>
       </section>
 
-      <footer className="footer-container">
-        <div className="footer-line">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1300"
-            height="12"
-            viewBox="0 0 1300 12"
-            fill="none"
-          >
-            <path
-              d="M10 5L0 0.226497L0 11.7735L10 7V5ZM1290 7L1300 11.7735V0.226497L1290 5V7ZM9 7H1291V5H9V7Z"
-              fill="white"
-            />
-          </svg>
-          <div className="footer-content">
-            <div className="footer-title">
-              <p className="footer-title-paragraph">
-                Afet Yönetim Sistemi | Copyright © 2023
-              </p>
-            </div>
-            <div className="footer-icon">
-              <ul>
-                <li className="footer-github ">
-                  <a href="https://github.com/afet-yonetim-sistemi">
-                    <FaGithub size="32px" color="white" />
-                  </a>
-                </li>
-                <li className="footer-discord ">
-                  <a href="https://discord.gg/QADkUTBKGF">
-                    <FaDiscord size="32px" color="white" />
-                  </a>
-                </li>
-              </ul>
-            </div>
+      <div className="footer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="12"
+          viewBox="0 0 1300 12"
+          fill="none"
+        >
+          <path
+            d="M10 5L0 0.226497L0 11.7735L10 7V5ZM1290 7L1300 11.7735V0.226497L1290 5V7ZM9 7H1291V5H9V7Z"
+            fill="white"
+          />
+        </svg>
+        <div className="footer-area">
+          <div className="footer-title">
+            <p className="footer-title-paragraph">
+              Afet Yönetim Sistemi | Copyright © 2023
+            </p>
+          </div>
+          <div className="footer-icon">
+            <a href="https://github.com/afet-yonetim-sistemi">
+              <FaGithub size="32px" color="white" />
+            </a>
+            <a href="https://discord.gg/QADkUTBKGF">
+              <FaDiscord size="32px" color="white" />
+            </a>
           </div>
         </div>
-      </footer>
+      </div>
     </>
   );
 }
