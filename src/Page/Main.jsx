@@ -7,6 +7,7 @@ import {
   FaLanguage,
   FaAngleUp,
   FaAngleDown,
+  FaLinkedin
 } from "react-icons/fa";
 
 function MainPage() {
@@ -29,6 +30,11 @@ function MainPage() {
           <div className="header-container-contact-info">
             <ul>
               {" "}
+              <li className="logo--linkedin">
+                <a href="https://www.linkedin.com/company/afetyonetimsistemi">
+                  <FaLinkedin size="32px" color="white" />
+                </a>
+              </li>
               <li className="logo--github ">
                 <a href="https://github.com/afet-yonetim-sistemi">
                   <FaGithub size="32px" color="white" />
@@ -173,6 +179,9 @@ function MainPage() {
             </p>
           </div>
           <div className="footer-icon">
+            <a href="https://www.linkedin.com/company/afetyonetimsistemi">
+              <FaLinkedin size="32px" color="white" />
+            </a>
             <a href="https://github.com/afet-yonetim-sistemi">
               <FaGithub size="32px" color="white" />
             </a>
