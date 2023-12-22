@@ -8,6 +8,8 @@ import {
   FaAngleUp,
   FaAngleDown,
   FaLinkedin,
+  FaConfluence,
+  FaJira,
 } from "react-icons/fa";
 
 function MainPage() {
@@ -45,11 +47,21 @@ function MainPage() {
                   <FaDiscord size="32px" color="white" />
                 </a>
               </li>
+              <li className="logo--confluence ">
+                <a href="https://afetyonetimsistemi.atlassian.net/wiki">
+                  <FaConfluence size="30px" color="white" />
+                </a>
+              </li>
+              <li className="logo--jira ">
+                <a href="https://afetyonetimsistemi.atlassian.net/jira">
+                  <FaJira size="30px" color="white" />
+                </a>
+              </li>
             </ul>
             <div className="list-item" color="white"></div>
             <ul className="select-wrapper" onClick={() => setIsShow(!isShow)}>
               <li>
-                <FaLanguage size="32px" color="rgb(153 185 57)" />
+                <FaLanguage size="30px" color="rgb(153 185 57)" />
               </li>
               <li>{language.name}</li>
               {isShow ? <FaAngleUp /> : <FaAngleDown />}
@@ -188,6 +200,12 @@ function MainPage() {
             </a>
             <a href="https://discord.gg/QADkUTBKGF">
               <FaDiscord size="32px" color="white" />
+            </a>
+            <a href="https://afetyonetimsistemi.atlassian.net/jira">
+              <FaJira size="30px" color="white" />
+            </a>
+            <a href="https://afetyonetimsistemi.atlassian.net/wiki">
+              <FaConfluence size="30px" color="white" />
             </a>
           </div>
         </div>
