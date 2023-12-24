@@ -160,7 +160,7 @@ function MainPage() {
                 <li>React Native</li>
                 <li>Amazon Web Services, Terminal Skills</li>
                 <li>Figma</li>
-                <li>Github Project</li>
+                <li>Jira, Confluence</li>
                 <li>API & UI Test Automation, Manuel Testing</li>
                 <li>Orientation, Organization Bots</li>
               </ul>
