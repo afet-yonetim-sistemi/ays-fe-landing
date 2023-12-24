@@ -9,8 +9,8 @@ import {
   FaAngleDown,
   FaLinkedin,
   FaConfluence,
-  FaJira,
 } from "react-icons/fa";
+import { SiJira } from "react-icons/si";
 
 function MainPage() {
   const [language, setLanguage] = useState({ name: "Türkçe", code: "tr" });
@@ -30,16 +30,11 @@ function MainPage() {
       <header className="header-container">
         <div className="contact-section">
           <div className="header-container-contact-info">
-            <ul>
+            <ul className="contact-info--logo">
               {" "}
               <li className="logo--linkedin">
                 <a href="https://www.linkedin.com/company/afetyonetimsistemi">
                   <FaLinkedin size="32px" color="white" />
-                </a>
-              </li>
-              <li className="logo--github ">
-                <a href="https://github.com/afet-yonetim-sistemi">
-                  <FaGithub size="32px" color="white" />
                 </a>
               </li>
               <li className="logo--discord ">
@@ -47,14 +42,19 @@ function MainPage() {
                   <FaDiscord size="32px" color="white" />
                 </a>
               </li>
-              <li className="logo--confluence ">
-                <a href="https://afetyonetimsistemi.atlassian.net/wiki">
-                  <FaConfluence size="30px" color="white" />
-                </a>
-              </li>
               <li className="logo--jira ">
                 <a href="https://afetyonetimsistemi.atlassian.net/jira">
-                  <FaJira size="30px" color="white" />
+                  <SiJira size="32px" color="white" />
+                </a>
+              </li>
+              <li className="logo--confluence ">
+                <a href="https://afetyonetimsistemi.atlassian.net/wiki">
+                  <FaConfluence size="32px" color="white" />
+                </a>
+              </li>
+              <li className="logo--github ">
+                <a href="https://github.com/afet-yonetim-sistemi">
+                  <FaGithub size="32px" color="white" />
                 </a>
               </li>
             </ul>
@@ -195,17 +195,17 @@ function MainPage() {
             <a href="https://www.linkedin.com/company/afetyonetimsistemi">
               <FaLinkedin size="32px" color="white" />
             </a>
-            <a href="https://github.com/afet-yonetim-sistemi">
-              <FaGithub size="32px" color="white" />
-            </a>
             <a href="https://discord.gg/QADkUTBKGF">
               <FaDiscord size="32px" color="white" />
             </a>
             <a href="https://afetyonetimsistemi.atlassian.net/jira">
-              <FaJira size="30px" color="white" />
+              <SiJira size="30px" color="white" />
             </a>
             <a href="https://afetyonetimsistemi.atlassian.net/wiki">
               <FaConfluence size="30px" color="white" />
+            </a>
+            <a href="https://github.com/afet-yonetim-sistemi">
+              <FaGithub size="32px" color="white" />
             </a>
           </div>
         </div>
