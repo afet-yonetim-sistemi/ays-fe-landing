@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import paragraph from "../helper/language";
 import "../Styles.css";
 import {
@@ -34,27 +34,27 @@ function MainPage() {
               {" "}
               <li className="logo--linkedin">
                 <a href="https://www.linkedin.com/company/afetyonetimsistemi">
-                  <FaLinkedin size="32px" color="white" />
+                  <FaLinkedin color="white" />
                 </a>
               </li>
               <li className="logo--discord ">
                 <a href="https://discord.gg/QADkUTBKGF">
-                  <FaDiscord size="32px" color="white" />
+                  <FaDiscord color="white" />
                 </a>
               </li>
               <li className="logo--jira ">
                 <a href="https://afetyonetimsistemi.atlassian.net/jira">
-                  <SiJira size="32px" color="white" />
+                  <SiJira color="white" />
                 </a>
               </li>
               <li className="logo--confluence ">
                 <a href="https://afetyonetimsistemi.atlassian.net/wiki">
-                  <FaConfluence size="32px" color="white" />
+                  <FaConfluence color="white" />
                 </a>
               </li>
               <li className="logo--github ">
                 <a href="https://github.com/afet-yonetim-sistemi">
-                  <FaGithub size="32px" color="white" />
+                  <FaGithub color="white" />
                 </a>
               </li>
             </ul>
