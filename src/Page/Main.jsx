@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import paragraph from "../helper/language";
 import "../Styles.css";
 import {

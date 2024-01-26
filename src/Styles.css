@@ -355,6 +355,12 @@ ul li {
   .header-container-contact-info li {
     font-size: 25px;
   }
+  .header-container-contact-info ul {
+    gap: 15px;
+  }
+  .list-item {
+    margin: 0 15px 0px 15px;
+  }
   .contact-info--logo {
     font-size: 10px;
   }
@@ -362,7 +368,7 @@ ul li {
     font-size: 35px;
   }
   .info-section-header {
-    font-size: 35px;
+    font-size: 15px;
   }
   .intro-section-paragraph p {
     font-size: 15px;
