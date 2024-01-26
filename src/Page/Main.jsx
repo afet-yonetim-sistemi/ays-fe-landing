@@ -8,7 +8,9 @@ import {
   FaAngleUp,
   FaAngleDown,
   FaLinkedin,
+  FaConfluence,
 } from "react-icons/fa";
+import { SiJira } from "react-icons/si";
 
 function MainPage() {
   const [language, setLanguage] = useState({ name: "Türkçe", code: "tr" });
@@ -28,16 +30,11 @@ function MainPage() {
       <header className="header-container">
         <div className="contact-section">
           <div className="header-container-contact-info">
-            <ul>
+            <ul className="contact-info--logo">
               {" "}
               <li className="logo--linkedin">
                 <a href="https://www.linkedin.com/company/afetyonetimsistemi">
                   <FaLinkedin size="32px" color="white" />
-                </a>
-              </li>
-              <li className="logo--github ">
-                <a href="https://github.com/afet-yonetim-sistemi">
-                  <FaGithub size="32px" color="white" />
                 </a>
               </li>
               <li className="logo--discord ">
@@ -45,11 +42,26 @@ function MainPage() {
                   <FaDiscord size="32px" color="white" />
                 </a>
               </li>
+              <li className="logo--jira ">
+                <a href="https://afetyonetimsistemi.atlassian.net/jira">
+                  <SiJira size="32px" color="white" />
+                </a>
+              </li>
+              <li className="logo--confluence ">
+                <a href="https://afetyonetimsistemi.atlassian.net/wiki">
+                  <FaConfluence size="32px" color="white" />
+                </a>
+              </li>
+              <li className="logo--github ">
+                <a href="https://github.com/afet-yonetim-sistemi">
+                  <FaGithub size="32px" color="white" />
+                </a>
+              </li>
             </ul>
             <div className="list-item" color="white"></div>
             <ul className="select-wrapper" onClick={() => setIsShow(!isShow)}>
               <li>
-                <FaLanguage size="32px" color="rgb(153 185 57)" />
+                <FaLanguage size="30px" color="rgb(153 185 57)" />
               </li>
               <li>{language.name}</li>
               {isShow ? <FaAngleUp /> : <FaAngleDown />}
@@ -148,7 +160,7 @@ function MainPage() {
                 <li>React Native</li>
                 <li>Amazon Web Services, Terminal Skills</li>
                 <li>Figma</li>
-                <li>Github Project</li>
+                <li>Jira, Confluence</li>
                 <li>API & UI Test Automation, Manuel Testing</li>
                 <li>Orientation, Organization Bots</li>
               </ul>
@@ -183,11 +195,17 @@ function MainPage() {
             <a href="https://www.linkedin.com/company/afetyonetimsistemi">
               <FaLinkedin size="32px" color="white" />
             </a>
-            <a href="https://github.com/afet-yonetim-sistemi">
-              <FaGithub size="32px" color="white" />
-            </a>
             <a href="https://discord.gg/QADkUTBKGF">
               <FaDiscord size="32px" color="white" />
+            </a>
+            <a href="https://afetyonetimsistemi.atlassian.net/jira">
+              <SiJira size="30px" color="white" />
+            </a>
+            <a href="https://afetyonetimsistemi.atlassian.net/wiki">
+              <FaConfluence size="30px" color="white" />
+            </a>
+            <a href="https://github.com/afet-yonetim-sistemi">
+              <FaGithub size="32px" color="white" />
             </a>
           </div>
         </div>

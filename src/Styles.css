@@ -37,11 +37,13 @@
 .header-container-contact-info {
   display: flex;
   justify-content: center;
+  margin-bottom: 5px;
+  margin-left: 15px;
 }
 
 .header-container-contact-info ul {
   display: flex;
-  gap: 22px;
+  gap: 30px;
 }
 ul {
   list-style: none;
@@ -66,7 +68,7 @@ ul li {
   line-height: normal;
 }
 .list-item {
-  margin: 0 25px 0px 25px;
+  margin: 0 25px 0px 30px;
   width: 2px;
   height: auto;
   background-color: white;
@@ -348,7 +350,13 @@ ul li {
     padding: 1.5em;
   }
   .header-container-contact-info {
+    font-size: 30px;
+  }
+  .header-container-contact-info li {
     font-size: 25px;
+  }
+  .contact-info--logo {
+    font-size: 10px;
   }
   .intro-section-header {
     font-size: 35px;
