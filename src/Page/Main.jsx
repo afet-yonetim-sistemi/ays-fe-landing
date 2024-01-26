@@ -34,27 +34,27 @@ function MainPage() {
               {" "}
               <li className="logo--linkedin">
                 <a href="https://www.linkedin.com/company/afetyonetimsistemi">
-                  <FaLinkedin color="white" />
+                  <FaLinkedin size="32px" color="white" />
                 </a>
               </li>
               <li className="logo--discord ">
                 <a href="https://discord.gg/QADkUTBKGF">
-                  <FaDiscord color="white" />
+                  <FaDiscord size="32px" color="white" />
                 </a>
               </li>
               <li className="logo--jira ">
                 <a href="https://afetyonetimsistemi.atlassian.net/jira">
-                  <SiJira color="white" />
+                  <SiJira size="32px" color="white" />
                 </a>
               </li>
               <li className="logo--confluence ">
                 <a href="https://afetyonetimsistemi.atlassian.net/wiki">
-                  <FaConfluence color="white" />
+                  <FaConfluence size="32px" color="white" />
                 </a>
               </li>
               <li className="logo--github ">
                 <a href="https://github.com/afet-yonetim-sistemi">
-                  <FaGithub color="white" />
+                  <FaGithub size="32px" color="white" />
                 </a>
               </li>
             </ul>
@@ -160,7 +160,7 @@ function MainPage() {
                 <li>React Native</li>
                 <li>Amazon Web Services, Terminal Skills</li>
                 <li>Figma</li>
-                <li>Github Project</li>
+                <li>Jira, Confluence</li>
                 <li>API & UI Test Automation, Manuel Testing</li>
                 <li>Orientation, Organization Bots</li>
               </ul>
