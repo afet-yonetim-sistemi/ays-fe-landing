@@ -195,7 +195,7 @@ function MainPage() {
             <a href="https://www.linkedin.com/company/afetyonetimsistemi">
               <FaLinkedin size="32px" color="white" />
             </a>
-            <a href="https://discord.gg/QADkUTBKGF">
+            <a href="https://discord.gg/u72sRW5U">
               <FaDiscord size="32px" color="white" />
             </a>
             <a href="https://afetyonetimsistemi.atlassian.net/jira">
