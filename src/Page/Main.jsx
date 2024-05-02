@@ -38,7 +38,7 @@ function MainPage() {
                 </a>
               </li>
               <li className="logo--discord ">
-                <a href="https://discord.gg/QADkUTBKGF">
+                <a href="https://discord.gg/u72sRW5U">
                   <FaDiscord size="32px" color="white" />
                 </a>
               </li>
