@@ -161,7 +161,7 @@ function MainPage() {
                 <li>Amazon Web Services, Terminal Skills</li>
                 <li>Figma</li>
                 <li>Jira, Confluence</li>
-                <li>API & UI Test Automation, Manuel Testing</li>
+                <li>API & UI Test Automation, Manual Testing</li>
                 <li>Orientation, Organization Bots</li>
               </ul>
             </div>
