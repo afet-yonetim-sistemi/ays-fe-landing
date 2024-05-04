@@ -23,7 +23,7 @@ persons to whom the Software is furnished to do so, subject to the following con
    otherwise to promote the sale, use or other dealings in this Software without prior written authorization.
 
 4. Redistributions of any form whatsoever must retain the following acknowledgment: "This product includes software
-   developed by Afet Yönetim Sistemi project (https://github.com/afet-yonetim-sistemi/ays-fe-landing)."
+   developed by Afet Yönetim Sistemi project (https://github.com/afet-yonetim-sistemi/ays-fe-institution/)."
 
 5. Redistributions of any form whatsoever must also include a copy of this license document in the distribution.
 
