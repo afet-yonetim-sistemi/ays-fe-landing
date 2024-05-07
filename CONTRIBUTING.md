@@ -12,17 +12,17 @@ Before you start contributing, please review our [Code of Conduct](CODE_OF_CONDU
 
 If you come across a bug or issue in Afet Yönetim Sistemi, please follow these steps:
 
-1. Check if the issue has already been reported by searching the [issue tracker](https://github.com/afet-yonetim-sistemi/ays-fe-institution/issues).
+1. Check if the issue has already been reported by searching the [issue tracker](https://github.com/afet-yonetim-sistemi/ays-fe-landing/issues).
 
-2. If it hasn't been reported, [open a new issue](https://github.com/afet-yonetim-sistemi/ays-fe-institution/issues/new) and provide detailed information about the bug, including how to reproduce it and what you expected to happen.
+2. If it hasn't been reported, [open a new issue](https://github.com/afet-yonetim-sistemi/ays-fe-landing/issues/new) and provide detailed information about the bug, including how to reproduce it and what you expected to happen.
 
 ### Suggesting Enhancements
 
 We welcome suggestions for new features or enhancements. To suggest an enhancement:
 
-1. Check the [issue tracker](https://github.com/afet-yonetim-sistemi/ays-fe-institution/issues) to see if the enhancement has already been proposed.
+1. Check the [issue tracker](https://github.com/afet-yonetim-sistemi/ays-fe-landing/issues) to see if the enhancement has already been proposed.
 
-2. If not, [open a new issue](https://github.com/afet-yonetim-sistemi/ays-fe-institution/issues/new) and describe your proposed enhancement in detail, including its use case and benefits.
+2. If not, [open a new issue](https://github.com/afet-yonetim-sistemi/ays-fe-landing/issues/new) and describe your proposed enhancement in detail, including its use case and benefits.
 
 ### Contributing Code
 
@@ -41,7 +41,7 @@ To get started with Afet Yönetim Sistemi project, follow these steps:
 1. Clone the project repository to your local machine:
 
 ```bash
-git clone https://github.com/afet-yonetim-sistemi/ays-fe-institution.git
+git clone https://github.com/afet-yonetim-sistemi/ays-fe-landing.git
 ```
 
 2. Install the project dependencies:

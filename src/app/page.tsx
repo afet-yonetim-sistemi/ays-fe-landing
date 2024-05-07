@@ -17,9 +17,13 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-24">
-      <h1 className="text-6xl font-bold text-center">{t('hello')}</h1>
-      <h2>{counter}</h2>
+      <h1 className="text-6xl font-bold text-center">
+        {t('landingInProgress')}
+      </h1>
+      {/*
+       <h2>{counter}</h2>
       <Button onClick={() => dispatch(increment())}>{t('increment')}</Button>
+      */}
     </main>
   )
 }
