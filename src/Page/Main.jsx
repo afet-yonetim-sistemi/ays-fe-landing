@@ -38,7 +38,7 @@ function MainPage() {
                 </a>
               </li>
               <li className="logo--discord ">
-                <a href="https://discord.gg/u72sRW5U">
+                <a href="https://discord.gg/NkAkYajkKa">
                   <FaDiscord size="32px" color="white" />
                 </a>
               </li>
@@ -195,7 +195,7 @@ function MainPage() {
             <a href="https://www.linkedin.com/company/afetyonetimsistemi">
               <FaLinkedin size="32px" color="white" />
             </a>
-            <a href="https://discord.gg/u72sRW5U">
+            <a href="https://discord.gg/NkAkYajkKa">
               <FaDiscord size="32px" color="white" />
             </a>
             <a href="https://afetyonetimsistemi.atlassian.net/jira">
