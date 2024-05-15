@@ -1,4 +1,4 @@
-# AYS | Afet Yönetim Sistemi Institution Frontend
+# AYS | Afet Yönetim Sistemi Landing Frontend
 
 ## Description
 
@@ -11,14 +11,17 @@ This project is designed to be used by non-governmental organizations and volunt
 This project is built using the following technologies:
 
 - [React](https://reactjs.org/)
-- [Pure CSS]()
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Ant Design](https://ant.design/)
+- [Axios](https://axios-http.com/)
+- [OpenAPI Typescript](https://www.npmjs.com/package/openapi-typescript)
 
 ##  Getting Started
 
 ###  Clone the repository
 
 ```bash
-git https://github.com/afet-yonetim-sistemi/ays-fe-landing.git
+git clone https://github.com/afet-yonetim-sistemi/ays-fe-institution
 ```
 
 ###  Install dependencies
@@ -30,7 +33,11 @@ npm install
 ###  Run the project locally
 
 ```bash
-npm start
+npm run dev
 ```
 
-Note that you need to install [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) to run the project locally. We recommend using `version v18` of Node.js.
+Note that you need to install [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) to run the project locally. We recommend using `version v22` of Node.js.
+
+##  Contributing
+
+Thank you for your interest in contributing to Afet Yönetim Sistemi project. We appreciate your help in making our project better and more useful to everyone. To contribute to the project, please read the [contributing guidelines](CONTRIBUTING.md) first.

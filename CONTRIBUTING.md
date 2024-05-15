@@ -53,7 +53,7 @@ npm install
 3. Run the project locally:
 
 ```bash
-npm start
+npm run dev
 ```
 
 Note that you need to install [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) to run the project locally. We recommend using `version v18` of Node.js.
