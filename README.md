@@ -21,7 +21,7 @@ This project is built using the following technologies:
 ###  Clone the repository
 
 ```bash
-git clone https://github.com/afet-yonetim-sistemi/ays-fe-institution
+git clone https://github.com/afet-yonetim-sistemi/ays-fe-landing
 ```
 
 ###  Install dependencies
