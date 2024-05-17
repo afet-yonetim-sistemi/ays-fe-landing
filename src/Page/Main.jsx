@@ -130,20 +130,21 @@ function MainPage() {
           </h1>
           <div className="tech-container">
             <ul className="info-tech">
-              <li>Back-End:</li>
+              <li>Back-End: </li>
               <li>Front-End:</li>
-              <li>Mobile:</li>
               <li>DevOps:</li>
               <li>UI/UX Design:</li>
               <li>Product:</li>
               <li>Test:</li>
               <li>Moderating:</li>
+              <li>Social Media Content Creation:</li>
+              <li>Human Resource Management:</li>
             </ul>
             <div className="tech-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="7"
-                height="256"
+                height="9000"
                 viewBox="0 0 7 256"
                 fill="none"
               >
@@ -156,13 +157,14 @@ function MainPage() {
             <div className="tech-content">
               <ul className="info-content">
                 <li>Java17, Spring Boot 3, Docker, MySQL</li>
-                <li>React.js, TypeScript</li>
-                <li>React Native</li>
+                <li>TypeScript</li>
                 <li>Amazon Web Services, Terminal Skills</li>
                 <li>Figma</li>
                 <li>Jira, Confluence</li>
                 <li>API & UI Test Automation, Manual Testing</li>
                 <li>Orientation, Organization Bots</li>
+                <li>Graphic Design Tools, Social Media Management</li>
+                <li>Volunteer Recruitment and Onboarding, Conflict Resolution Skills</li>
               </ul>
             </div>
           </div>

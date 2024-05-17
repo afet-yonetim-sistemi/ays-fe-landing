@@ -4,29 +4,22 @@ const paragraph = [
     header: "Biz Kimiz? Ne Yapıyoruz?",
     paragraph: {
       __html:
-        "<p>Afet Yönetim Sistemi, <a href='https://github.com/acikyazilimagi/afet-org/discussions/35'>Discussion</a> alanındaki fikri gönüllü olarak hayata geçirmek için katkı sağlayan bir topluluktur.</p>\n" +
-        "<p>Bir kuruma bağlı olan gönüllü kişilerin afet bölgesine kişi ve/veya alet edevat taşıma sürecinin gerçekleştirilmesi ve bu süreçte kişilerin güvenliğinin sağlanması, kurumun koordinasyonunun sağlanması, doğru envanterin doğru konuma gönderilmesini hedefliyoruz. Afet sonrası yardımların güvenli ve sağlıklı bir şekilde ulaşması için teknik çözümler üretiyoruz.</p>\n" +
-        "<p>Daha detaylı bilgiye ulaşmak için <a href='https://github.com/afet-yonetim-sistemi/.github/files/13479159/ays_introduction.pdf' >Tanıtım Dökümanı</a>mızı inceleyebilirsin.</p>\n" +
-        "<p>Bizimle birlikte projede yer almak için <a href='https://discord.gg/NkAkYajkKa'>Discord</a> kanalımıza dahil olabilir, ilgili repositoryleri inceleyebilir, gönüllü kişilerle iletişime geçerek bize destek olabilirsin.</p>\n" +
-        "<p><a href='https://tr.linkedin.com/company/afetyonetimsistemi'>LinkedIn</a> hesabımızı takip edebilir ve gelişmelerden haberdar olabilirsin.</p>",
+        "<p>Afet Yönetim Sistemi, afet bölgelerinde gönüllü yönetimini ve yardım koordinasyonunu sağlayan bir platformdur. Amacımız, afet sırasında ve sonrasında gönüllülerin etkin bir şekilde organize edilmesi ve yardım faaliyetlerinin doğru ve güvenli bir şekilde gerçekleştirilmesidir. Bu platform sayesinde, afet sonrası yardımların hızlı ve etkili bir şekilde ihtiyaç sahiplerine ulaşması sağlanacaktır.</p>\n" +
+        "<p>Platformumuz aynı zamanda kurumların doğrudan etkileşimde bulunabilecekleri açık bir yapı sunmaktadır. Kurumlar bu platforma dahil olarak, nitelikli gönüllü portföylerine erişebilir ve etkinlikler sonrası değerlendirme yapabilirler. Bu sayede, afet yönetim süreçlerinde daha etkin ve organize bir yapı oluşturulması hedeflenmektedir.</p>\n" +
+        "<p>Projeye katkı sağlamak, repositoryleri incelemek ve gönüllü kişilerle iletişime geçmek için web sitemizin en üstünde ve altında bulunan platform ikonlarına tıklayarak erişebilirsiniz. Ayrıca herkese açık olan proje yönetim araçlarımızı da inceleyebilirsiniz.</p>",
     },
-    header2: "Hangi Teknolojileri Kullanıyoruz?",
+    header2: "Katkı Sağlamak İçin Hangi Yetkinliklere Sahip Olmalısınız?",
   },
   {
     language: { name: "English", code: "en" },
-    header: "Who Are We? What Are We Doing?",
+    header: "Who Are We? What Do We Do?",
     paragraph: {
       __html:
-        "<p>Disaster Management System is a community contributing voluntarily to bring the ideas discussed in <a href='https://github.com/acikyazilimagi/afet-org/discussions/35'>Discussion</a> to life.</p>\n" +
-        "<p>It is a community that provides voluntary contributions to implement ideas discussed in the field.</p>\n" +
-        "<p>Our aim to coordinate the process of transporting individuals and/or equipment to disaster areas, ensuring the safety of individuals, coordinating the efforts of the organization, and ensuring that the correct inventory is dispatched to the correct location. We are developing technical solutions to ensure that post-disaster aid reaches its destination safely and efficiently.</p>\n" +
-        "<p>For more detailed information\n" +
-        '  <a href="https://github.com/afet-yonetim-sistemi/.github/files/13479159/ays_introduction.pdf">\n' +
-        "Introduction Document\n" +
-        "  </a>\n" +
-        "  Feel free to join our <a href='https://discord.gg/NkAkYajkKa'>Discord</a> server to participate in the project with us. You can explore the relevant repositories, engage with volunteers, and support us. Follow our <a href='https://tr.linkedin.com/company/afetyonetimsistemi'>LinkedIn</a> account for updates and stay informed about our developments.</p>",
+        "<p>The Disaster Management System is a platform that facilitates volunteer management and aid coordination in disaster areas. Our aim is to effectively organize volunteers during and after disasters and ensure that aid activities are carried out correctly and safely. Through this platform, post-disaster aid will be delivered quickly and effectively to those in need.</p>\n" +
+        "<p>Our platform also provides an open structure where organizations can interact directly. By joining this platform, organizations can access qualified volunteer portfolios and conduct evaluations after events. This will lead to a more efficient and organized structure in disaster management processes.</p>\n" +
+        "<p>To contribute to the project, review repositories, and communicate with volunteers, you can access the platform icons at the top and bottom of our website. Additionally, you can explore our project management tools, which are open to everyone.</p>",
     },
-    header2: "What Technologies Do We Use?",
+    header2: "What Skills Do You Need to Contribute?",
   },
 ];
 
