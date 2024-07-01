@@ -50,7 +50,7 @@ export default function Home() {
 
         <Button
           className="w-full bg-green-500 hover:bg-green-400 text-white"
-          onClick={() => toast({title: "Test Hata Mesajı" , description : "Bu bir test hata mesajıdır" , variant : "success"})}
+          onClick={() => toast({title: "Test Hata Mesajı" , description : "Bu bir test başarı mesajıdır" , variant : "success"})}
         >
           Success Notify
         </Button>
