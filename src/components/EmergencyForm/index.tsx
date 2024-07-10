@@ -1,5 +1,26 @@
-export default function EmergencyForm() {
-  return <div className="w-full">
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger
+} from '@/components/ui/tabs'
 
+export default function EmergencyForm() {
+  return <div className="w-full bg-nightBlue rounded-2xl p-5 text-background space-y-5">
+    <div className="border-b border-background text-4xl font-medium flex-center p-5">
+      <h3>Acil Durum Tahliye Başvurusu</h3>
+    </div>
+    <Tabs defaultValue="self" className="w-full">
+      <TabsList className="grid w-full grid-cols-2 h-auto text-nightBlue">
+        <TabsTrigger value="self">Kendi Adıma</TabsTrigger>
+        <TabsTrigger value="other">Başkası Adına</TabsTrigger>
+      </TabsList>
+      <TabsContent value="self">
+        {/*<SelfEvacuationForm />*/}
+      </TabsContent>
+      <TabsContent value="other">
+        {/*<OtherEvacuationForm />*/}
+      </TabsContent>
+    </Tabs>
   </div>
 }
