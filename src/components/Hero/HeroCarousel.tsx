@@ -1,18 +1,22 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-
-const Images = []
+import images from './images'
+import Image from 'next/image'
 
 export default function HeroCarousel() {
-  return <div className="w-full">
-    <Carousel className="w-full max-w-xs">
+  return <div className="rounded-2xl border border-nightBlue overflow-hidden">
+    <Carousel opts={
+      {
+        align: 'start',
+        loop: true
+      }
+    }>
       <CarouselContent>
-        {/*{Array.from({ length: 5 }).map((_, index) => (*/}
-        {/*  <CarouselItem key={index}>*/}
-        {/*  </CarouselItem>*/}
-        {/*))}*/}
+        {images.map(({ src, alt }, index) => (
+          <CarouselItem key={index}>
+            <Image src={src} alt={alt} className="object-cover w-full" width={500} height={700} priority />
+          </CarouselItem>
+        ))}
       </CarouselContent>
-      {/*<CarouselPrevious />*/}
-      {/*<CarouselNext />*/}
     </Carousel>
   </div>
 }
