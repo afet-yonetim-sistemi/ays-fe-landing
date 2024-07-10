@@ -9,8 +9,8 @@ import Header from '@/components/Header'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: i18n.t('aysTitle'),
-  description: i18n.t('aysDescription')
+  title: i18n.t('title'),
+  description: i18n.t('description')
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

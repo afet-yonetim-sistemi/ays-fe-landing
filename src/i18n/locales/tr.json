@@ -1,7 +1,11 @@
 {
-  "hello": "Merhaba",
-  "increment": "Arttır",
-  "landingInProgress": "Landing in Progress..",
-  "aysTitle": "AYS | Afet Yönetim Sistemi",
-  "aysDescription": "Afet Yönetim Sistemi Resmi İnternet Sitesi"
+  "title": "AYS | Afet Yönetim Sistemi",
+  "description": "Afet Yönetim Sistemi Resmi İnternet Sitesi",
+  "nav": {
+    "home": "Anasayfa"
+  },
+  "header": {
+    "title": "Afet Yönetim Sistemi",
+    "subtitle": "SİSTEM HAYAT KURTARIR"
+  }
 }
