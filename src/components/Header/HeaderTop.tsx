@@ -5,7 +5,7 @@ import { t } from 'i18next'
 
 export default function HeaderTop() {
 
-  return <div className="flex items-center justify-between border-b-2 py-4">
+  return <div className="flex items-center justify-between border-b py-4">
     {/*slogan & logo container*/}
     <div className="flex gap-3">
       <div className="flex items-center justify-center">
