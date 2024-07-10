@@ -3,29 +3,35 @@
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { FaCaretDown } from 'react-icons/fa'
-import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function LanguageSelector() {
-  const [language, setLanguage] = useState('TR')
+  const { i18n } = useTranslation()
+
+  const handleLanguage = (e: string) => {
+    i18n.changeLanguage(e)
+  }
 
   return (
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="space-x-2 text-xl font-semibold"><span>{language}</span>
+          <Button variant="ghost" className="space-x-2 text-xl font-semibold"><span>{i18n.language.toUpperCase()}</span>
             <FaCaretDown /></Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
-          <DropdownMenuLabel>Dil Seçin</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuRadioGroup value={language} onValueChange={setLanguage}>
-            <DropdownMenuRadioItem value="TR">TR</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="EN">EN</DropdownMenuRadioItem>
+        <DropdownMenuContent className="">
+          <DropdownMenuRadioGroup value={i18n.language} onValueChange={handleLanguage}>
+            {
+              i18n.languages.map((language) =>
+                <DropdownMenuRadioItem key={language} value={language}>{language.toUpperCase()}</DropdownMenuRadioItem>
+              )
+            }
           </DropdownMenuRadioGroup>
         </DropdownMenuContent>
       </DropdownMenu>
