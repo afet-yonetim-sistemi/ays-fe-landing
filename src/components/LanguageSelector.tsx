@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next'
 export default function LanguageSelector() {
   const { i18n } = useTranslation()
 
-  const handleLanguage = (e: string) => {
+  const handleLanguageChange = (e: string) => {
     i18n.changeLanguage(e)
   }
 
@@ -26,7 +26,7 @@ export default function LanguageSelector() {
             <FaCaretDown /></Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="">
-          <DropdownMenuRadioGroup value={i18n.language} onValueChange={handleLanguage}>
+          <DropdownMenuRadioGroup value={i18n.language} onValueChange={handleLanguageChange}>
             {
               i18n.languages.map((language) =>
                 <DropdownMenuRadioItem key={language} value={language}>{language.toUpperCase()}</DropdownMenuRadioItem>
