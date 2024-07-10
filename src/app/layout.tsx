@@ -5,6 +5,7 @@ import i18n from '@/i18n'
 import { Providers } from '@/lib/providers'
 import { Toaster } from '@/components/ui/toast/toaster'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <Providers>
       <Header />
       {children}
+      <Footer />
     </Providers>
     <Toaster />
     </body>
