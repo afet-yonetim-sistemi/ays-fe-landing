@@ -20,7 +20,7 @@ export default function HeroCarousel() {
       <CarouselContent>
         {images.map(({ src, alt }, index) => (
           <CarouselItem key={index}>
-            <Image src={src} alt={alt} className="object-contain m-auto hidden md:block" width={400} height={500}
+            <Image src={src} alt={alt} className="object-contain m-auto w-auto hidden md:block" width={400} height={500}
                    priority />
             {/*TODO: tek satır için banner uyumlu görsellerin ayarlanması gerekli*/}
           </CarouselItem>
