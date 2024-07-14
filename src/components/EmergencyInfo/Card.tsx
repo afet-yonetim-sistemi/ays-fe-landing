@@ -1,10 +1,10 @@
-const Card = ({ text }: { text: string }) => {
+import { clsx } from 'clsx'
+
+const Card = ({ className, children }: { className?: string, children: React.ReactNode }) => {
   return (
-    <div className="bg-nightBlue p-5 rounded-lg text-3xl font-medium flex-center py-20">
-      <p className=" text-center">
-        {text}
-      </p>
-    </div>
+    <article className={clsx('bg-nightBlue p-5 rounded-lg text-2xl font-medium flex-center py-10', className)}>
+      {children}
+    </article>
   )
 }
 

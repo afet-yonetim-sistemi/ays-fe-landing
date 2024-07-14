@@ -8,7 +8,11 @@ const CardList = () => {
   return (
     <div className="grid grid-cols-3 gap-5">
       {cardContents.map((card, index) => (
-        <Card key={index} text={card} />
+        <Card key={index}>
+          <p className="text-center">
+            {card}
+          </p>
+        </Card>
       ))}
     </div>
   )
