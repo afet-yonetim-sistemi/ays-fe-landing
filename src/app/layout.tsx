@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Noto_Sans_Anatolian_Hieroglyphs as Nato } from 'next/font/google'
 import './globals.css'
 import i18n from '@/i18n'
 import { Providers } from '@/lib/providers'
@@ -8,7 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/theme-provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const nato = Nato({ subsets: ['latin'], weight: ['400'] })
 
 export const metadata: Metadata = {
   title: i18n.t('title'),
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang={i18n.language} suppressHydrationWarning>
-    <body className={inter.className}>
+    <body className={nato.className}>
     <ThemeProvider
       attribute="class"
       defaultTheme="system"
