@@ -6,7 +6,7 @@ const SlogansData: string[] = ['Bilgi teyit edilmeye muhtaçtır', 'Teyit edilme
 const Slogans: JSX.Element[] = SlogansData.map((slogan, index) => {
     const sloganData = slogan.split(' ')
     return <div id="slogan" key={index}
-                className={clsx('flex flex-col w-auto items-start justify-center gap-2 h-full m-auto text-6xl font-black text-background', montserrat.className)}>
+                className={clsx('flex flex-col w-auto items-start justify-center gap-2 h-full m-auto text-5xl md:text-6xl font-black text-background', montserrat.className)}>
       {sloganData.map((word, i) =>
         <span key={i}
               className={clsx('min-w-[70%] bg-nightBlue p-2 px-5', {

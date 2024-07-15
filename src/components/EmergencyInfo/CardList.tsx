@@ -6,7 +6,7 @@ const CardList = () => {
   const cardContents: string[] = t('emergencyInfo.cards', { returnObjects: true })
 
   return (
-    <div className="grid grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-5">
       {cardContents.map((card, index) => (
         <Card key={index}>
           <p className="text-center">
