@@ -51,7 +51,7 @@ export default function DrawerNav() {
         }
       </div>
       <DrawerFooter>
-        <SocialIcons className="text-4xl mb-5" />
+        <SocialIcons className="text-3xl mb-2" />
       </DrawerFooter>
     </DrawerContent>
   </Drawer>

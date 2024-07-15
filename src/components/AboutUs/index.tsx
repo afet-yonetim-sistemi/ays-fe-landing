@@ -6,10 +6,10 @@ export default function AboutUs() {
 
   return <section className="bg-green w-full py-10 text-background">
     <Container className="space-y-5">
-      <h2 className="font-medium text-5xl text-center">
+      <h2 className="font-bold text-4xl md:text-5xl text-center">
         {t('aboutUs.title')}
       </h2>
-      <div className="font-medium text-2xl space-y-5 text-center lg:text-start">
+      <div className="font-medium text-md md:text-xl space-y-5 text-center lg:text-start">
         <p>
           {t('aboutUs.description1')}
         </p>
