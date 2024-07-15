@@ -4,8 +4,7 @@ import LanguageSelector from '@/components/LanguageSelector'
 import { t } from 'i18next'
 
 export default function HeaderTop() {
-
-  return <div className="flex items-center justify-between border-b py-4">
+  return <div className="items-center justify-between border-b py-4 hidden lg:flex">
     {/*slogan & logo container*/}
     <div className="flex gap-3">
       <div className="flex items-center justify-center">
