@@ -21,5 +21,12 @@
     "title": "Biz Kimiz? Ne Yapıyoruz?",
     "description1": "Afet Yönetim Sistemi, afet bölgelerinde gönüllü yönetimini ve yardım koordinasyonunu sağlayan bir platformdur. Amacımız, afet sırasında ve sonrasında gönüllülerin etkin bir şekilde organize edilmesi ve yardım faaliyetlerinin doğru ve güvenli bir şekilde gerçekleştirilmesidir. Bu platform sayesinde, afet sonrası yardımların hızlı ve etkili bir şekilde ihtiyaç sahiplerine ulaşması sağlanacaktır.",
     "description2": "Platformumuz aynı zamanda kurumların doğrudan etkileşimde bulunabilecekleri açık bir yapı sunmaktadır. Kurumlar bu platforma dahil olarak, nitelikli gönüllü portföylerine erişebilir ve etkinlikler sonrası değerlendirme yapabilirler. Bu sayede, afet yönetim süreçlerinde daha etkin ve organize bir yapı oluşturulması hedeflenmektedir."
-  }
+  },
+  "slogans": [
+    "Bilgi teyit edilmeye muhtaçtır",
+    "Teyit edilmemiş bilgi yanlış bilgidir",
+    "Emin olmadığın bilgi için talepte bulunma",
+    "Doğru bilgi hayat kurtarır",
+    "İsraf değil yardım et"
+  ]
 }
