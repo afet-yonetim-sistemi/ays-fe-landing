@@ -17,6 +17,7 @@ import { clsx } from 'clsx'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import SocialIcons from '@/components/SocialIcons'
+import LanguageSelector from '@/components/LanguageSelector'
 
 export default function DrawerNav() {
   const [open, setOpen] = useState(false)
@@ -33,6 +34,7 @@ export default function DrawerNav() {
         <DrawerTitle className="text-2xl">{t('header.title')}</DrawerTitle>
         <DrawerDescription className="text-sm text-background/60">{t('header.subtitle')}</DrawerDescription>
       </DrawerHeader>
+      <LanguageSelector className="ml-2" />
       <div className="flex flex-col items-center justify-center gap-2">
         {
           Navigations.map(({ pathName: path, title, Icon }) =>
