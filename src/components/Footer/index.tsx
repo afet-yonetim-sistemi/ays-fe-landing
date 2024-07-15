@@ -11,7 +11,7 @@ export default function Footer() {
       <span>{t('copyright')}</span>
       <div className="flex items-center justify-between gap-5">
         <SocialIcons className="text-3xl" />
-        <LanguageSelector className="hidden lg:block" />
+        <LanguageSelector className="hidden lg:flex" />
       </div>
     </Container>
   </footer>
