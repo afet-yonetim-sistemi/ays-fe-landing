@@ -2,7 +2,14 @@ import { clsx } from 'clsx'
 import { montserrat } from '@/styles/fonts'
 import { t } from 'i18next'
 
-const SlogansData: string[] = t('slogans', { returnObjects: true })
+// const SlogansData: string[] = t('slogans', { returnObjects: true })
+const SlogansData: string[] = [
+  'Bilgi teyit edilmeye muhtaçtır',
+  'Teyit edilmemiş bilgi yanlış bilgidir',
+  'Emin olmadığın bilgi için talepte bulunma',
+  'Doğru bilgi hayat kurtarır',
+  'İsraf değil yardım et'
+]
 
 const Slogans: JSX.Element[] = SlogansData.map((slogan, index) => {
     const sloganData = slogan.split(' ')
