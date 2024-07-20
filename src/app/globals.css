@@ -83,7 +83,7 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-nightBlue text-background;
     }
 
     .flex-center {
