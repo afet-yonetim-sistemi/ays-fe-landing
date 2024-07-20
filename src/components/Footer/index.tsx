@@ -5,7 +5,7 @@ import Container from '@/components/Container'
 
 export default function Footer() {
   const { t } = i18n
-  return <footer className="bg-nightBlue w-full text-background">
+  return <footer className="bg-nightBlue w-full">
     <Container
       className="py-5 flex items-center justify-between flex-col lg:flex-row gap-4 lg:gap-0">
       <span className="text-sm md:text-md">{t('copyright')}</span>

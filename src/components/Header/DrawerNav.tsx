@@ -29,7 +29,7 @@ export default function DrawerNav() {
       {open ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
     </DrawerTrigger>
     <DrawerContent
-      className="h-full mr-[20vw] bg-nightBlue text-background rounded-none border-0 border-r-2 border-background">
+      className="h-full mr-[20vw] bg-nightBlue rounded-none border-0 border-r-2 border-background">
       <DrawerHeader>
         <DrawerTitle className="text-2xl">{t('header.title')}</DrawerTitle>
         <DrawerDescription className="text-sm text-background/60">{t('header.subtitle')}</DrawerDescription>
