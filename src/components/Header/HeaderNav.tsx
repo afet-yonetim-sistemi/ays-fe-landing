@@ -10,7 +10,7 @@ export default function HeaderNav() {
   const pathName = usePathname()
   const { t } = useTranslation()
   return (
-    <nav className="items-center justify-between font-normal text-normal hidden lg:flex">
+    <nav className="items-center justify-between font-normal text-normal hidden lg:flex pb-2">
       {
         Navigations.map(({ pathName: path, title, Icon }) =>
           <Link href={path} key={path} className={clsx('flex-center gap-2 py-1',
