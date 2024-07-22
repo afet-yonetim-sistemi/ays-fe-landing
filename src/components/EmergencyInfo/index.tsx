@@ -8,7 +8,7 @@ const EmergencyInfo = () => {
 
   return (
     <section>
-      <Container className="text-background flex flex-col gap-2 lg:gap-5">
+      <Container className="flex flex-col gap-2 lg:gap-5">
         <CardList />
         <Card>
           <p className="text-center">

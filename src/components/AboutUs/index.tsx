@@ -4,7 +4,7 @@ import i18n from 'i18next'
 export default function AboutUs() {
   const { t } = i18n
 
-  return <section className="bg-green w-full py-10 text-background">
+  return <section className="bg-green w-full py-10">
     <Container className="space-y-5">
       <h2 className="font-bold text-4xl md:text-5xl text-center">
         {t('aboutUs.title')}
