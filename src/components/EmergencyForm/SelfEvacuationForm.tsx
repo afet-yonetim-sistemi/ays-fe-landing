@@ -8,8 +8,9 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 
-import PhoneInput, { CountryData } from 'react-phone-input-2'
+import { CountryData } from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import PhoneInput from '@/components/ui/PhoneInput'
 
 export default function SelfEvacuationForm() {
   const [country, setCountry] = useState(null)
@@ -51,30 +52,44 @@ export default function SelfEvacuationForm() {
         </div>
 
         {/*Phone Number block*/}
-        <div className="grid grid-cols-1">
-          <FormField name="phoneNumber" render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <PhoneInput
-                  containerClass="w-full"
-                  country={'tr'}
-                  placeholder="Telefon Numarası"
-                  enableSearch={true}
-                  searchClass="bg-white "
-                  searchPlaceholder="Ara..."
-                  searchNotFound="Bulunamadı"
-                  inputClass="py-5 !w-full"
-                  onChange={(value: string, country: CountryData) => {
-                    const countryCode: string = country.dialCode
-                    const lineNumber: string = value.slice(countryCode.length)
-                    field.onChange({ countryCode, lineNumber })
-                  }}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )} />
-        </div>
+        <FormField name="phoneNumber" render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <PhoneInput
+                onChange={(value: string, country: CountryData) => {
+                  const countryCode: string = country.dialCode
+                  const lineNumber: string = value.slice(countryCode.length)
+                  field.onChange({ countryCode, lineNumber })
+                }}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )} />
+
+        {/*number of seats block*/}
+        <FormField name="seatingCount" render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <Input
+                placeholder="Koltuk Sayısı"
+                type="number"
+                min={0}
+                max={999}
+                {...field}
+                onChange={(e) => field.onChange(Number(e.target.value))}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )} />
+
+        <hr />
+        <span className="font-bold text-white block text-center">Başvurunun Yapıldığı Konum</span>
+        {/*application location box*/}
+
+
+
         <Button type="submit">Gönder</Button>
       </form>
     </Form>
