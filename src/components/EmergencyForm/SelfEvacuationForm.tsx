@@ -11,11 +11,9 @@ import { useState } from 'react'
 import { CountryData } from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import PhoneInput from '@/components/ui/PhoneInput'
+import SelectLocation from '@/components/SelectLocation'
 
 export default function SelfEvacuationForm() {
-  const [country, setCountry] = useState(null)
-  const [phoneNumber, setPhoneNumber] = useState(null)
-
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -87,8 +85,34 @@ export default function SelfEvacuationForm() {
         <hr />
         <span className="font-bold text-white block text-center">Başvurunun Yapıldığı Konum</span>
         {/*application location box*/}
+        <div className="grid grid-cols-2 gap-2">
+          <FormField control={form.control} name="sourceCity" render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <SelectLocation
+                  type="city"
+                  value={field.value}
+                  onChange={field.onChange}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )} />
 
-
+          <FormField control={form.control} name="sourceDistrict" render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <SelectLocation
+                  type="district"
+                  cityValue={form.watch('sourceCity')}
+                  value={field.value}
+                  onChange={field.onChange}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )} />
+        </div>
 
         <Button type="submit">Gönder</Button>
       </form>
