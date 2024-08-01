@@ -1,0 +1,50 @@
+import { z } from 'zod'
+
+const phoneNumberSchema = z.object({
+  countryCode: z.string().regex(/^\d+$/, { message: 'Ülke kodu sadece rakamlardan oluşmalıdır' }),
+  lineNumber: z.string().regex(/^\d+$/, { message: 'Telefon numarası sadece rakamlardan oluşmalıdır' })
+})
+
+const formSchema = z.object({
+  applicantFirstName: z.string()
+    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' })
+    .optional(),
+  applicantLastName: z.string()
+    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' })
+    .optional(),
+  applicantPhoneNumber: phoneNumberSchema.optional(),
+  firstName: z.string()
+    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+  lastName: z.string()
+    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+  phoneNumber: phoneNumberSchema,
+  sourceCity: z.string()
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+  sourceDistrict: z.string()
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+  address: z.string()
+    .min(20, { message: 'Minimum 20 karakter uzunluğunda olmalıdır' })
+    .max(250, { message: 'Maksimum 250 karakter uzunluğunda olabilir' }),
+  seatingCount: z.number()
+    .positive({ message: 'Pozitif bir sayı olmalıdır' })
+    .max(999, { message: 'Maksimum 3 haneli bir sayı olmalıdır' }),
+  targetCity: z.string()
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+  targetDistrict: z.string()
+    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
+    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' })
+})
+
+export { formSchema }
+export type FormSchema = z.infer<typeof formSchema>;
