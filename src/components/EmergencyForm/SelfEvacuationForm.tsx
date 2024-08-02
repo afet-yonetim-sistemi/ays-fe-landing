@@ -13,21 +13,54 @@ import PhoneInput from '@/components/ui/PhoneInput'
 import SelectLocation from '@/components/SelectLocation'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { http } from '@/configs/axiosConfig'
+import { toast } from '@/components/ui/toast/use-toast'
+import { useState } from 'react'
 
 export default function SelfEvacuationForm() {
+  const [loading, setLoading] = useState<boolean>(false)
+
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       firstName: '',
       lastName: '',
       seatingCount: 0,
-      phoneNumber: { countryCode: '', lineNumber: '' }
+      phoneNumber: { countryCode: '90', lineNumber: '' },
+      sourceCity: '',
+      sourceDistrict: '',
+      address: '',
+      targetCity: '',
+      targetDistrict: ''
     }
   })
 
   const onSubmitForm = (values: FormSchema) => {
-    console.log('Values : ', values)
+    setLoading(true)
+
+    http.post('emergency-evacuation-application', values)
+      .then(({ data }) => {
+        if (data.isSuccess) {
+          toast({
+            variant: 'success',
+            title: 'İşlem Başarılı',
+            description: 'Başvurunuz kontrol edilmek üzere başarıyla alınmıştır'
+          })
+          form.reset()
+        } else {
+          toast({
+            variant: 'destructive',
+            title: 'İşlem Başarısız',
+            description: 'İşlem sırasında bir hata meydana geldi'
+          })
+        }
+      })
+      .catch(err => console.error(err))
+      .finally(() => setLoading(false))
   }
+
+  const countryCodeError = form.getFieldState('phoneNumber.countryCode', form.formState).error
+  const lineNumberError = form.getFieldState('phoneNumber.lineNumber', form.formState).error
 
   return (
     <Form {...form}>
@@ -58,6 +91,7 @@ export default function SelfEvacuationForm() {
           <FormItem>
             <FormControl>
               <PhoneInput
+                value={field.value.countryCode + field.value.lineNumber}
                 onChange={(value: string, country: CountryData) => {
                   const countryCode: string = country.dialCode
                   const lineNumber: string = value.slice(countryCode.length)
@@ -65,7 +99,10 @@ export default function SelfEvacuationForm() {
                 }}
               />
             </FormControl>
-            <FormMessage />
+            <div className="text-red-500 font-thin text-sm flex gap-2">
+              <span>{countryCodeError?.message}</span>
+              <span>{lineNumberError?.message}</span>
+            </div>
           </FormItem>
         )} />
 
@@ -165,7 +202,9 @@ export default function SelfEvacuationForm() {
           )} />
         </div>
 
-        <Button type="submit" className="!bg-submitBlue w-full text-lg">Gönder</Button>
+        <Button disabled={loading} type="submit" className="!bg-submitBlue w-full text-lg">
+          {loading ? 'Gönderiliyor...' : 'Gönder'}
+        </Button>
       </form>
     </Form>
   )
