@@ -23,6 +23,7 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ type, value, onChange, 
     if (type === 'city') {
       setItems(CityAndDistrick)
     } else if (type === 'district' && cityValue) {
+      onChange('')
       const selectedCity = CityAndDistrick.find(city => city.name === cityValue)
       setItems(selectedCity?.districts || [])
     }
