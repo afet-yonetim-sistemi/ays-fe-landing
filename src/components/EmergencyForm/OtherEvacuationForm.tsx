@@ -57,7 +57,6 @@ export default function OtherEvacuationForm() {
 
   const onSubmitForm = (values: FormSchema) => {
     setLoading(true)
-
     http.post('emergency-evacuation-application', values)
       .then(({ data }) => {
         if (data.isSuccess) {
@@ -67,6 +66,7 @@ export default function OtherEvacuationForm() {
             description: 'Başvurunuz kontrol edilmek üzere başarıyla alınmıştır'
           })
           form.reset()
+          setStep(1)
         } else {
           toast({
             variant: 'destructive',
