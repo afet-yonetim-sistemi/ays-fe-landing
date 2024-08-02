@@ -29,7 +29,7 @@ export default function SelfEvacuationForm() {
       <form onSubmit={form.handleSubmit(onSubmitForm)} className="text-nightBlue font-semibold space-y-2">
         {/* name surname block*/}
         <div className="grid grid-cols-2 gap-2">
-          <FormField control={form.control} name="firstName" render={({ field }) => (
+          <FormField name="firstName" render={({ field }) => (
             <FormItem>
               <FormControl>
                 <Input placeholder="İsim" {...field} />
@@ -38,7 +38,7 @@ export default function SelfEvacuationForm() {
             </FormItem>
           )} />
 
-          <FormField control={form.control} name="lastName" render={({ field }) => (
+          <FormField name="lastName" render={({ field }) => (
             <FormItem>
               <FormControl>
                 <Input placeholder="Soyisim" {...field} />
@@ -85,7 +85,7 @@ export default function SelfEvacuationForm() {
         <span className="font-bold text-white block text-center">Başvurunun Yapıldığı Konum</span>
         {/*application location box*/}
         <div className="grid grid-cols-2 gap-2">
-          <FormField control={form.control} name="sourceCity" render={({ field }) => (
+          <FormField name="sourceCity" render={({ field }) => (
             <FormItem>
               <FormControl>
                 <SelectLocation
@@ -98,7 +98,7 @@ export default function SelfEvacuationForm() {
             </FormItem>
           )} />
 
-          <FormField control={form.control} name="sourceDistrict" render={({ field }) => (
+          <FormField name="sourceDistrict" render={({ field }) => (
             <FormItem>
               <FormControl>
                 <SelectLocation
