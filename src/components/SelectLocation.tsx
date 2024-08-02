@@ -27,7 +27,7 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ type, value, onChange, 
       const selectedCity = CityAndDistrick.find(city => city.name === cityValue)
       setItems(selectedCity?.districts || [])
     }
-  }, [type, cityValue])
+  }, [type, cityValue, onChange])
 
   const handleSelect = useCallback((selectedValue: string) => {
     onChange(selectedValue)
