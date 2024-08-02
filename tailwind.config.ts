@@ -27,6 +27,7 @@ const config = {
         green: 'hsl(var(--green))',
         nightBlue: 'hsl(var(--nightBlue))',
         olivieGreen: 'hsl(var(--olivieGreen))',
+        submitBlue: 'hsl(var(--submitBlue))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
