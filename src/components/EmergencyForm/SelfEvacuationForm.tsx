@@ -11,11 +11,16 @@ import { CountryData } from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import PhoneInput from '@/components/ui/PhoneInput'
 import SelectLocation from '@/components/SelectLocation'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
 
 export default function SelfEvacuationForm() {
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      firstName: '',
+      lastName: '',
+      seatingCount: 0,
       phoneNumber: { countryCode: '', lineNumber: '' }
     }
   })
@@ -26,7 +31,7 @@ export default function SelfEvacuationForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmitForm)} className="text-nightBlue font-semibold space-y-2">
+      <form onSubmit={form.handleSubmit(onSubmitForm)} className="text-nightBlue space-y-2">
         {/* name surname block*/}
         <div className="grid grid-cols-2 gap-2">
           <FormField name="firstName" render={({ field }) => (
@@ -68,14 +73,19 @@ export default function SelfEvacuationForm() {
         <FormField name="seatingCount" render={({ field }) => (
           <FormItem>
             <FormControl>
-              <Input
-                placeholder="Koltuk Sayısı"
-                type="number"
-                min={0}
-                max={999}
-                {...field}
-                onChange={(e) => field.onChange(Number(e.target.value))}
-              />
+              <div className="flex items-center justify-between gap-5">
+                <Label htmlFor="seatingCount" className="text-background text-nowrap font-semibold">Koltuk
+                  Sayısı:</Label>
+                <Input
+                  id="seatingCount"
+                  placeholder="Koltuk Sayısı"
+                  type="number"
+                  min={0}
+                  max={999}
+                  {...field}
+                  onChange={(e) => field.onChange(Number(e.target.value))}
+                />
+              </div>
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -113,7 +123,49 @@ export default function SelfEvacuationForm() {
           )} />
         </div>
 
-        <Button type="submit">Gönder</Button>
+        <FormField name="address" render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <Textarea {...field} placeholder="Açık adres" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )} />
+
+        <hr />
+        <span className="font-bold text-white block text-center">Tahliye Sağlanacak Konum</span>
+
+        {/*target location box*/}
+        <div className="grid grid-cols-2 gap-2">
+          <FormField name="targetCity" render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <SelectLocation
+                  type="city"
+                  value={field.value}
+                  onChange={field.onChange}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )} />
+
+          <FormField name="targetDistrict" render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <SelectLocation
+                  type="district"
+                  cityValue={form.watch('targetCity')}
+                  value={field.value}
+                  onChange={field.onChange}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )} />
+        </div>
+
+        <Button type="submit" className="!bg-submitBlue w-full text-lg">Gönder</Button>
       </form>
     </Form>
   )
