@@ -28,10 +28,10 @@ const formSchema = z.object({
   phoneNumber: phoneNumberSchema,
   sourceCity: z.string()
     .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
   sourceDistrict: z.string()
     .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
   address: z.string()
     .min(20, { message: 'Minimum 20 karakter uzunluğunda olmalıdır' })
     .max(250, { message: 'Maksimum 250 karakter uzunluğunda olabilir' }),
@@ -40,10 +40,10 @@ const formSchema = z.object({
     .max(999, { message: 'Maksimum 3 haneli bir sayı olmalıdır' }),
   targetCity: z.string()
     .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' }),
+    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
   targetDistrict: z.string()
     .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-Z\s]*$/, { message: 'Özel karakter içeremez' })
+    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' })
 })
 
 export { formSchema }
