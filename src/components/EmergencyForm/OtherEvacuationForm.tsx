@@ -55,28 +55,42 @@ export default function OtherEvacuationForm() {
 
   const prevStep = () => setStep(1)
 
-  const onSubmitForm = (values: FormSchema) => {
+  const handleErrors = (err: any) => {
+    const errData = err?.response?.data
+    if (errData && errData.subErrors) {
+      if (errData.subErrors[0]?.field === 'phoneNumber') {
+        toast({ variant: 'destructive', title: 'İşlem Başarısız', description: 'Geçerli bir telefon numarası giriniz' })
+        return
+      }
+    }
+    toast({ variant: 'destructive', title: 'İşlem Başarısız', description: 'İşlem sırasında bir hata meydana geldi' })
+  }
+
+  const onSubmitForm = async (values: FormSchema) => {
     setLoading(true)
-    http.post('emergency-evacuation-application', values)
-      .then(({ data }) => {
-        if (data.isSuccess) {
-          toast({
-            variant: 'success',
-            title: 'İşlem Başarılı',
-            description: 'Başvurunuz kontrol edilmek üzere başarıyla alınmıştır'
-          })
-          form.reset()
-          setStep(1)
-        } else {
-          toast({
-            variant: 'destructive',
-            title: 'İşlem Başarısız',
-            description: 'İşlem sırasında bir hata meydana geldi'
-          })
-        }
-      })
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false))
+
+    try {
+      const { data } = await http.post('emergency-evacuation-application', values)
+      if (data.isSuccess) {
+        toast({
+          variant: 'success',
+          title: 'İşlem Başarılı',
+          description: 'Başvurunuz kontrol edilmek üzere başarıyla alınmıştır'
+        })
+        setStep(1)
+        form.reset()
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'İşlem Başarısız',
+          description: 'İşlem sırasında bir hata meydana geldi'
+        })
+      }
+    } catch (err) {
+      handleErrors(err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
