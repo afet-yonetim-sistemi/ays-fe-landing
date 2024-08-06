@@ -5,7 +5,7 @@ import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from 'c
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from '@/components/ui/button'
-import CityAndDistrick from '@/data/cities_districts.json'
+import CityAndDistrict from '@/data/cities_districts.json'
 import { cn } from '@/lib/utils'
 
 interface SelectLocationProps {
@@ -21,10 +21,10 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ type, value, onChange, 
 
   useEffect(() => {
     if (type === 'city') {
-      setItems(CityAndDistrick)
+      setItems(CityAndDistrict)
     } else if (type === 'district' && cityValue) {
       onChange('')
-      const selectedCity = CityAndDistrick.find(city => city.name === cityValue)
+      const selectedCity = CityAndDistrict.find(city => city.name === cityValue)
       setItems(selectedCity?.districts || [])
     }
   }, [type, cityValue, onChange])
