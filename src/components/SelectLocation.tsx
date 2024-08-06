@@ -34,12 +34,14 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ type, value, onChange, 
     setOpen(false)
   }, [onChange])
 
-  const placeholder = type === 'city' ? 'Bir Şehir Seçin' : 'Bir İlçe Seçin'
+  const disabledDistrict: boolean = (type === 'district' && !cityValue)
+  const placeholder = type === 'city' ? 'Bir Şehir Seçin' : disabledDistrict ? 'Bir Şehir Seçmelisin' : 'Bir İlçe Seçin'
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="flex items-center justify-between gap-5 w-full">
+        <Button variant="outline" disabled={disabledDistrict}
+                className="flex items-center justify-between gap-5 w-full">
           <span>{value || placeholder}</span>
           <IoCaretDown className="text-4xl" />
         </Button>
