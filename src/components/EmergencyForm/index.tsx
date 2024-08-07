@@ -4,6 +4,8 @@ import {
   TabsList,
   TabsTrigger
 } from '@/components/ui/tabs'
+import SelfEvacuationForm from '@/components/EmergencyForm/SelfEvacuationForm'
+import OtherEvacuationForm from '@/components/EmergencyForm/OtherEvacuationForm'
 
 export default function EmergencyForm() {
   return <div className="w-full bg-nightBlue rounded-2xl p-5 space-y-5">
@@ -16,10 +18,10 @@ export default function EmergencyForm() {
         <TabsTrigger value="other">Başkası Adına</TabsTrigger>
       </TabsList>
       <TabsContent value="self">
-        {/*<SelfEvacuationForm />*/}
+        <SelfEvacuationForm />
       </TabsContent>
       <TabsContent value="other">
-        {/*<OtherEvacuationForm />*/}
+        <OtherEvacuationForm />
       </TabsContent>
     </Tabs>
   </div>
