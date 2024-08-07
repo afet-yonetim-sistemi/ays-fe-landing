@@ -11,5 +11,7 @@ export default function PhoneInput(props: PhoneInputProps) {
     searchPlaceholder="Ara..."
     searchNotFound="Bulunamadı"
     inputClass="py-5 !w-full"
+    inputProps={{ name: 'phone' }}
+    countryCodeEditable={false}
   />
 }
