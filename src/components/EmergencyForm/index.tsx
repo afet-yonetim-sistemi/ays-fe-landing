@@ -14,8 +14,8 @@ export default function EmergencyForm() {
     </div>
     <Tabs defaultValue="self" className="w-full">
       <TabsList className="grid w-full grid-cols-2 h-auto text-nightBlue">
-        <TabsTrigger value="self" className="text-lg">Kendi Adıma</TabsTrigger>
-        <TabsTrigger value="other" className="text-lg">Başkası Adına</TabsTrigger>
+        <TabsTrigger value="self" className="text-lg lg:text-2xl">Kendi Adıma</TabsTrigger>
+        <TabsTrigger value="other" className="text-lg lg:text-2xl">Başkası Adına</TabsTrigger>
       </TabsList>
       <TabsContent value="self">
         <SelfEvacuationForm />
