@@ -1,4 +1,4 @@
-# AYS | Afet Yönetim Sistemi Landing Frontend
+# AYS | Afet Yönetim Sistemi FE Landing [![Application Status](https://github.com/afet-yonetim-sistemi/ays-fe-landing/actions/workflows/application-health-checker.yml/badge.svg)](https://github.com/afet-yonetim-sistemi/ays-fe-landing/actions/workflows/application-health-checker.yml)
 
 ## Description
 
