@@ -6,18 +6,16 @@ import { formSchema, type FormSchema } from '@/components/EmergencyForm/schema/f
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-
 import { CountryData } from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import PhoneInput from '@/components/ui/PhoneInput'
 import SelectLocation from '@/components/SelectLocation'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { http } from '@/configs/axiosConfig'
-import { toast } from '@/components/ui/toast/use-toast'
 import { useState } from 'react'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { FiAlertTriangle } from 'react-icons/fi'
+import onSubmitForm from '@/services/formService'
 
 export default function OtherEvacuationForm() {
   const [loading, setLoading] = useState<boolean>(false)
@@ -55,47 +53,18 @@ export default function OtherEvacuationForm() {
 
   const prevStep = () => setStep(1)
 
-  const handleErrors = (err: any) => {
-    const errData = err?.response?.data
-    if (errData && errData.subErrors) {
-      if (errData.subErrors[0]?.field === 'phoneNumber') {
-        toast({ variant: 'destructive', title: 'İşlem Başarısız', description: 'Geçerli bir telefon numarası giriniz' })
-        return
-      }
-    }
-    toast({ variant: 'destructive', title: 'İşlem Başarısız', description: 'İşlem sırasında bir hata meydana geldi' })
-  }
-
-  const onSubmitForm = async (values: FormSchema) => {
+  const onSubmit = async (values: FormSchema) => {
     setLoading(true)
-
-    try {
-      const { data } = await http.post('emergency-evacuation-application', values)
-      if (data.isSuccess) {
-        toast({
-          variant: 'success',
-          title: 'İşlem Başarılı',
-          description: 'Başvurunuz kontrol edilmek üzere başarıyla alınmıştır'
-        })
-        setStep(1)
-        form.reset()
-      } else {
-        toast({
-          variant: 'destructive',
-          title: 'İşlem Başarısız',
-          description: 'İşlem sırasında bir hata meydana geldi'
-        })
-      }
-    } catch (err) {
-      handleErrors(err)
-    } finally {
-      setLoading(false)
-    }
+    await onSubmitForm(values, () => {
+      setStep(1)
+      form.reset()
+    })
+    setLoading(false)
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmitForm)} className="text-nightBlue space-y-2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="text-nightBlue space-y-2">
         {
           step === 1 ?
             <> {/* step 1  */}
