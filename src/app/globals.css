@@ -41,7 +41,8 @@
     --nightBlue: 219 33% 16%;
     --olivieGreen: 74 43% 51% 0.2;
     --green: 74 43% 51%;
-    --submitBlue: 198 100%, 50% --navWhite: #f1f5f9;
+    --submitBlue: 198 100%, 50%;
+    --navWhite: #f1f5f9;
   }
 
   .dark {
