@@ -31,7 +31,7 @@ export default function OtherEvacuationForm() {
       applicantPhoneNumber: { countryCode: '90', lineNumber: '' },
       firstName: '',
       lastName: '',
-      seatingCount: 0,
+      seatingCount: 1,
       phoneNumber: { countryCode: '90', lineNumber: '' },
       sourceCity: '',
       sourceDistrict: '',
@@ -56,7 +56,13 @@ export default function OtherEvacuationForm() {
 
   const onSubmit = async (values: FormSchema) => {
     setLoading(true)
-    await onSubmitForm(values, () => {
+    await onSubmitForm({
+      ...values,
+      firstName: values.firstName.trim(),
+      lastName: values.lastName.trim(),
+      applicantFirstName: values.applicantFirstName?.trim(),
+      applicantLastName: values.applicantLastName?.trim()
+    }, () => {
       setStep(1)
       form.reset()
     })
