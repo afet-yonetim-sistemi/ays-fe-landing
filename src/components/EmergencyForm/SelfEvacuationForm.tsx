@@ -37,7 +37,7 @@ export default function SelfEvacuationForm() {
 
   const onSubmit = async (values: FormSchema) => {
     setLoading(true)
-    await onSubmitForm(values, () => {
+    await onSubmitForm({ ...values, firstName: values.firstName.trim(), lastName: values.lastName.trim() }, () => {
       form.reset()
     })
     setLoading(false)
