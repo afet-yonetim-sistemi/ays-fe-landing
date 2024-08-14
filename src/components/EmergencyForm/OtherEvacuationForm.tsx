@@ -23,6 +23,7 @@ export default function OtherEvacuationForm() {
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
+    mode: 'onSubmit',
     defaultValues: {
       applicantFirstName: '',
       applicantLastName: '',
@@ -47,6 +48,7 @@ export default function OtherEvacuationForm() {
   const nextStep = async () => {
     const isValid = await form.trigger(['applicantFirstName', 'applicantLastName', 'applicantPhoneNumber'])
     if (isValid) {
+      form.clearErrors()
       setStep(2)
     }
   }
