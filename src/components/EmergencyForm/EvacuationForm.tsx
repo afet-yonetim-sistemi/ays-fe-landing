@@ -127,7 +127,6 @@ export default function EvacuationForm({ form }: { form: any }) {
             <FormMessage />
           </FormItem>
         )} />
-
         <hr />
         <span className="font-bold text-white block text-center">Tahliye Sağlanacak Konum</span>
 
