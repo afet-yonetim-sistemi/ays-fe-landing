@@ -37,7 +37,7 @@ const formSchema = z.object({
   address: z.string()
     .min(20, { message: 'Minimum 20 karakter uzunluğunda olmalıdır' })
     .max(250, { message: 'Maksimum 250 karakter uzunluğunda olabilir' }),
-  seatingCount: z.number()
+  seatingCount: z.number({ message: 'Koltuk sayısı belirtmelisin' })
     .positive({ message: 'Pozitif bir sayı olmalıdır' })
     .max(999, { message: 'Maksimum 3 haneli bir sayı olmalıdır' }),
   targetCity: z.string()

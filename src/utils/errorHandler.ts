@@ -5,14 +5,21 @@ const handleFormErrors = (err: any) => {
 
   if (errData && errData.subErrors && errData.subErrors.length > 0) {
     console.log(errData)
-    const phoneFields = ['phoneNumber', 'applicantPhoneNumber']
-    const phoneError = errData.subErrors.find((subError: any) => phoneFields.includes(subError.field))
+    const phoneError = errData.subErrors.find((subError: any) => ['phoneNumber', 'applicantPhoneNumber'].includes(subError.field))
+    const duplicatePhoneError = errData.subErrors.find((subError: any) => subError.field === 'phoneNumberMustNotBeSameOne')
 
     if (phoneError) {
       toast({
         variant: 'destructive',
         title: 'İşlem Başarısız',
         description: 'Geçerli bir telefon numarası giriniz'
+      })
+      return
+    } else if (duplicatePhoneError) {
+      toast({
+        variant: 'destructive',
+        title: 'İşlem Başarısız',
+        description: 'Başkası adına yapılan başvurular için girilen telefon numaraları aynı olamaz'
       })
       return
     }
