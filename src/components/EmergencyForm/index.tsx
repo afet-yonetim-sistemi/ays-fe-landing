@@ -5,7 +5,7 @@ import {
   TabsTrigger
 } from '@/components/ui/tabs'
 import SelfEvacuationForm from '@/components/EmergencyForm/SelfEvacuationForm'
-import OtherEvacuationForm from '@/components/EmergencyForm/OtherEvacuationForm'
+import ProxyEvacuationForm from '@/components/EmergencyForm/ProxyEvacuationForm'
 
 export default function EmergencyForm() {
   return <div className="w-full bg-nightBlue rounded-2xl p-5 space-y-5">
@@ -21,7 +21,7 @@ export default function EmergencyForm() {
         <SelfEvacuationForm />
       </TabsContent>
       <TabsContent value="other">
-        <OtherEvacuationForm />
+        <ProxyEvacuationForm />
       </TabsContent>
     </Tabs>
   </div>

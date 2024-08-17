@@ -15,7 +15,7 @@ import { FiAlertTriangle } from 'react-icons/fi'
 import onSubmitForm from '@/services/formService'
 import EvacuationForm from '@/components/EmergencyForm/EvacuationForm'
 
-export default function OtherEvacuationForm() {
+export default function ProxyEvacuationForm() {
   const [loading, setLoading] = useState<boolean>(false)
   const [step, setStep] = useState<number>(1)
 
