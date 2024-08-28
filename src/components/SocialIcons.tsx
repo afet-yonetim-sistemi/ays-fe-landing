@@ -9,7 +9,7 @@ export default function SocialIcons({ className }: { className?: string }) {
     <div
       className={clsx(
         'flex items-center justify-center w-full gap-4 text-2xl text-navWhite',
-        className,
+        className
       )}
     >
       <Link target="_blank" href={'https://x.com/afetyonetims'}>

@@ -5,9 +5,7 @@
     "population": 2270298,
     "area": 13844,
     "altitude": 25,
-    "areaCode": [
-      322
-    ],
+    "areaCode": [322],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -134,9 +132,7 @@
     "population": 604978,
     "area": 7337,
     "altitude": 701,
-    "areaCode": [
-      416
-    ],
+    "areaCode": [416],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -227,9 +223,7 @@
     "population": 751344,
     "area": 14016,
     "altitude": 1012,
-    "areaCode": [
-      272
-    ],
+    "areaCode": [272],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -374,9 +368,7 @@
     "population": 511238,
     "area": 11099,
     "altitude": 1630,
-    "areaCode": [
-      472
-    ],
+    "areaCode": [472],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -461,9 +453,7 @@
     "population": 339529,
     "area": 5628,
     "altitude": 400,
-    "areaCode": [
-      358
-    ],
+    "areaCode": [358],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -542,9 +532,7 @@
     "population": 5803482,
     "area": 25632,
     "altitude": 905,
-    "areaCode": [
-      312
-    ],
+    "areaCode": [312],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -731,9 +719,7 @@
     "population": 2696249,
     "area": 20177,
     "altitude": 62,
-    "areaCode": [
-      242
-    ],
+    "areaCode": [242],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -884,9 +870,7 @@
     "population": 172356,
     "area": 7393,
     "altitude": 530,
-    "areaCode": [
-      466
-    ],
+    "areaCode": [466],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -977,9 +961,7 @@
     "population": 1161702,
     "area": 8116,
     "altitude": 92,
-    "areaCode": [
-      256
-    ],
+    "areaCode": [256],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -1118,9 +1100,7 @@
     "population": 1273519,
     "area": 14583,
     "altitude": 145,
-    "areaCode": [
-      266
-    ],
+    "areaCode": [266],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -1277,9 +1257,7 @@
     "population": 228058,
     "area": 4179,
     "altitude": 513,
-    "areaCode": [
-      228
-    ],
+    "areaCode": [228],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -1364,9 +1342,7 @@
     "population": 285655,
     "area": 8004,
     "altitude": 1159,
-    "areaCode": [
-      426
-    ],
+    "areaCode": [426],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -1451,9 +1427,7 @@
     "population": 359747,
     "area": 8294,
     "altitude": 1637,
-    "areaCode": [
-      434
-    ],
+    "areaCode": [434],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -1532,9 +1506,7 @@
     "population": 324789,
     "area": 8313,
     "altitude": 741,
-    "areaCode": [
-      374
-    ],
+    "areaCode": [374],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -1625,9 +1597,7 @@
     "population": 277452,
     "area": 7175,
     "altitude": 963,
-    "areaCode": [
-      248
-    ],
+    "areaCode": [248],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -1730,9 +1700,7 @@
     "population": 3214571,
     "area": 10813,
     "altitude": 238,
-    "areaCode": [
-      224
-    ],
+    "areaCode": [224],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -1871,9 +1839,7 @@
     "population": 570499,
     "area": 9817,
     "altitude": 11,
-    "areaCode": [
-      286
-    ],
+    "areaCode": [286],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -1982,9 +1948,7 @@
     "population": 205501,
     "area": 7542,
     "altitude": 730,
-    "areaCode": [
-      376
-    ],
+    "areaCode": [376],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -2093,9 +2057,7 @@
     "population": 528351,
     "area": 12428,
     "altitude": 822,
-    "areaCode": [
-      364
-    ],
+    "areaCode": [364],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -2216,9 +2178,7 @@
     "population": 1059082,
     "area": 12134,
     "altitude": 392,
-    "areaCode": [
-      258
-    ],
+    "areaCode": [258],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -2369,9 +2329,7 @@
     "population": 1818133,
     "area": 15168,
     "altitude": 674,
-    "areaCode": [
-      412
-    ],
+    "areaCode": [412],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -2510,9 +2468,7 @@
     "population": 419913,
     "area": 6145,
     "altitude": 50,
-    "areaCode": [
-      284
-    ],
+    "areaCode": [284],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -2603,9 +2559,7 @@
     "population": 604411,
     "area": 9383,
     "altitude": 1041,
-    "areaCode": [
-      424
-    ],
+    "areaCode": [424],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -2708,9 +2662,7 @@
     "population": 243399,
     "area": 11815,
     "altitude": 1216,
-    "areaCode": [
-      446
-    ],
+    "areaCode": [446],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -2801,9 +2753,7 @@
     "population": 749993,
     "area": 25006,
     "altitude": 1923,
-    "areaCode": [
-      442
-    ],
+    "areaCode": [442],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -2960,9 +2910,7 @@
     "population": 915418,
     "area": 13960,
     "altitude": 796,
-    "areaCode": [
-      222
-    ],
+    "areaCode": [222],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -3083,9 +3031,7 @@
     "population": 2164134,
     "area": 6803,
     "altitude": 838,
-    "areaCode": [
-      342
-    ],
+    "areaCode": [342],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -3176,9 +3122,7 @@
     "population": 461712,
     "area": 7025,
     "altitude": 14,
-    "areaCode": [
-      454
-    ],
+    "areaCode": [454],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -3311,9 +3255,7 @@
     "population": 148539,
     "area": 6668,
     "altitude": 1174,
-    "areaCode": [
-      456
-    ],
+    "areaCode": [456],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -3386,9 +3328,7 @@
     "population": 287625,
     "area": 7095,
     "altitude": 1756,
-    "areaCode": [
-      438
-    ],
+    "areaCode": [438],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -3455,9 +3395,7 @@
     "population": 1544640,
     "area": 5524,
     "altitude": 89,
-    "areaCode": [
-      326
-    ],
+    "areaCode": [326],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -3584,9 +3522,7 @@
     "population": 449777,
     "area": 8946,
     "altitude": 1058,
-    "areaCode": [
-      246
-    ],
+    "areaCode": [246],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -3701,9 +3637,7 @@
     "population": 1938389,
     "area": 16010,
     "altitude": 18,
-    "areaCode": [
-      324
-    ],
+    "areaCode": [324],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -3818,10 +3752,7 @@
     "population": 15655924,
     "area": 5461,
     "altitude": 25,
-    "areaCode": [
-      212,
-      216
-    ],
+    "areaCode": [212, 216],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -4092,9 +4023,7 @@
     "population": 4479525,
     "area": 11891,
     "altitude": 9,
-    "areaCode": [
-      232
-    ],
+    "areaCode": [232],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -4311,9 +4240,7 @@
     "population": 278335,
     "area": 10193,
     "altitude": 1756,
-    "areaCode": [
-      474
-    ],
+    "areaCode": [474],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -4398,9 +4325,7 @@
     "population": 388990,
     "area": 13064,
     "altitude": 814,
-    "areaCode": [
-      366
-    ],
+    "areaCode": [366],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -4557,9 +4482,7 @@
     "population": 1445683,
     "area": 16970,
     "altitude": 1060,
-    "areaCode": [
-      352
-    ],
+    "areaCode": [352],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -4692,9 +4615,7 @@
     "population": 377156,
     "area": 6459,
     "altitude": 231,
-    "areaCode": [
-      288
-    ],
+    "areaCode": [288],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -4779,9 +4700,7 @@
     "population": 247179,
     "area": 6584,
     "altitude": 991,
-    "areaCode": [
-      386
-    ],
+    "areaCode": [386],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -4860,9 +4779,7 @@
     "population": 2102907,
     "area": 3397,
     "altitude": 4,
-    "areaCode": [
-      262
-    ],
+    "areaCode": [262],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -4971,9 +4888,7 @@
     "population": 2320241,
     "area": 40838,
     "altitude": 1023,
-    "areaCode": [
-      332
-    ],
+    "areaCode": [332],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -5196,9 +5111,7 @@
     "population": 575674,
     "area": 11634,
     "altitude": 958,
-    "areaCode": [
-      274
-    ],
+    "areaCode": [274],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -5313,9 +5226,7 @@
     "population": 742725,
     "area": 12259,
     "altitude": 970,
-    "areaCode": [
-      422
-    ],
+    "areaCode": [422],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -5430,9 +5341,7 @@
     "population": 1475716,
     "area": 13339,
     "altitude": 79,
-    "areaCode": [
-      236
-    ],
+    "areaCode": [236],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -5571,9 +5480,7 @@
     "population": 1116618,
     "area": 14520,
     "altitude": 562,
-    "areaCode": [
-      344
-    ],
+    "areaCode": [344],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -5676,9 +5583,7 @@
     "population": 888874,
     "area": 8780,
     "altitude": 938,
-    "areaCode": [
-      482
-    ],
+    "areaCode": [482],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -5775,9 +5680,7 @@
     "population": 1066736,
     "area": 12654,
     "altitude": 659,
-    "areaCode": [
-      252
-    ],
+    "areaCode": [252],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -5892,9 +5795,7 @@
     "population": 399879,
     "area": 8650,
     "altitude": 1334,
-    "areaCode": [
-      436
-    ],
+    "areaCode": [436],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -5967,9 +5868,7 @@
     "population": 315994,
     "area": 5485,
     "altitude": 1197,
-    "areaCode": [
-      384
-    ],
+    "areaCode": [384],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -6054,9 +5953,7 @@
     "population": 377080,
     "area": 7234,
     "altitude": 1239,
-    "areaCode": [
-      388
-    ],
+    "areaCode": [388],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -6129,9 +6026,7 @@
     "population": 775800,
     "area": 5861,
     "altitude": 25,
-    "areaCode": [
-      452
-    ],
+    "areaCode": [452],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -6282,9 +6177,7 @@
     "population": 350506,
     "area": 3835,
     "altitude": 11,
-    "areaCode": [
-      464
-    ],
+    "areaCode": [464],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -6393,9 +6286,7 @@
     "population": 1098115,
     "area": 4824,
     "altitude": 41,
-    "areaCode": [
-      264
-    ],
+    "areaCode": [264],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -6528,9 +6419,7 @@
     "population": 1377546,
     "area": 9725,
     "altitude": 10,
-    "areaCode": [
-      362
-    ],
+    "areaCode": [362],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -6669,9 +6558,7 @@
     "population": 347412,
     "area": 5717,
     "altitude": 887,
-    "areaCode": [
-      484
-    ],
+    "areaCode": [484],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -6750,9 +6637,7 @@
     "population": 229716,
     "area": 5717,
     "altitude": 27,
-    "areaCode": [
-      368
-    ],
+    "areaCode": [368],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -6843,9 +6728,7 @@
     "population": 650401,
     "area": 28164,
     "altitude": 1313,
-    "areaCode": [
-      346
-    ],
+    "areaCode": [346],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -6984,9 +6867,7 @@
     "population": 1167059,
     "area": 6190,
     "altitude": 28,
-    "areaCode": [
-      282
-    ],
+    "areaCode": [282],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -7089,9 +6970,7 @@
     "population": 606934,
     "area": 10042,
     "altitude": 630,
-    "areaCode": [
-      356
-    ],
+    "areaCode": [356],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -7200,9 +7079,7 @@
     "population": 824352,
     "area": 4628,
     "altitude": 36,
-    "areaCode": [
-      462
-    ],
+    "areaCode": [462],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -7347,9 +7224,7 @@
     "population": 89317,
     "area": 7582,
     "altitude": 922,
-    "areaCode": [
-      428
-    ],
+    "areaCode": [428],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -7434,9 +7309,7 @@
     "population": 2213964,
     "area": 19242,
     "altitude": 527,
-    "areaCode": [
-      414
-    ],
+    "areaCode": [414],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -7551,9 +7424,7 @@
     "population": 377001,
     "area": 5555,
     "altitude": 915,
-    "areaCode": [
-      276
-    ],
+    "areaCode": [276],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -7626,9 +7497,7 @@
     "population": 1127612,
     "area": 20921,
     "altitude": 1728,
-    "areaCode": [
-      432
-    ],
+    "areaCode": [432],
     "isMetropolitan": true,
     "nuts": {
       "nuts1": {
@@ -7743,9 +7612,7 @@
     "population": 420699,
     "area": 13690,
     "altitude": 1317,
-    "areaCode": [
-      354
-    ],
+    "areaCode": [354],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -7866,9 +7733,7 @@
     "population": 591492,
     "area": 3342,
     "altitude": 10,
-    "areaCode": [
-      372
-    ],
+    "areaCode": [372],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -7953,9 +7818,7 @@
     "population": 438504,
     "area": 7659,
     "altitude": 1228,
-    "areaCode": [
-      382
-    ],
+    "areaCode": [382],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8040,9 +7903,7 @@
     "population": 86047,
     "area": 3746,
     "altitude": 1555,
-    "areaCode": [
-      458
-    ],
+    "areaCode": [458],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8097,9 +7958,7 @@
     "population": 263960,
     "area": 8678,
     "altitude": 1063,
-    "areaCode": [
-      338
-    ],
+    "areaCode": [338],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8172,9 +8031,7 @@
     "population": 285744,
     "area": 4791,
     "altitude": 746,
-    "areaCode": [
-      318
-    ],
+    "areaCode": [318],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8265,9 +8122,7 @@
     "population": 647205,
     "area": 4477,
     "altitude": 570,
-    "areaCode": [
-      488
-    ],
+    "areaCode": [488],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8340,9 +8195,7 @@
     "population": 570745,
     "area": 7078,
     "altitude": 1343,
-    "areaCode": [
-      486
-    ],
+    "areaCode": [486],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8421,9 +8274,7 @@
     "population": 207238,
     "area": 2330,
     "altitude": 12,
-    "areaCode": [
-      378
-    ],
+    "areaCode": [378],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8484,9 +8335,7 @@
     "population": 92819,
     "area": 4934,
     "altitude": 1799,
-    "areaCode": [
-      478
-    ],
+    "areaCode": [478],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8559,9 +8408,7 @@
     "population": 209738,
     "area": 3664,
     "altitude": 860,
-    "areaCode": [
-      476
-    ],
+    "areaCode": [476],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8622,9 +8469,7 @@
     "population": 304780,
     "area": 798,
     "altitude": 8,
-    "areaCode": [
-      226
-    ],
+    "areaCode": [226],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8697,9 +8542,7 @@
     "population": 255242,
     "area": 4142,
     "altitude": 264,
-    "areaCode": [
-      370
-    ],
+    "areaCode": [370],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8772,9 +8615,7 @@
     "population": 155179,
     "area": 1412,
     "altitude": 660,
-    "areaCode": [
-      348
-    ],
+    "areaCode": [348],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8835,9 +8676,7 @@
     "population": 557666,
     "area": 3320,
     "altitude": 121,
-    "areaCode": [
-      328
-    ],
+    "areaCode": [328],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {
@@ -8916,9 +8755,7 @@
     "population": 409865,
     "area": 2492,
     "altitude": 149,
-    "areaCode": [
-      380
-    ],
+    "areaCode": [380],
     "isMetropolitan": false,
     "nuts": {
       "nuts1": {

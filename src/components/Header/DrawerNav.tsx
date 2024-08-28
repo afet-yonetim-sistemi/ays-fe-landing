@@ -7,7 +7,7 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger
+  DrawerTrigger,
 } from '@/components/ui/drawer'
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from 'react-icons/ai'
 import { useState } from 'react'
@@ -24,35 +24,40 @@ export default function DrawerNav() {
   const pathName = usePathname()
   const { t } = useTranslation()
 
-  return <Drawer direction="left" open={open} onOpenChange={setOpen}>
-    <DrawerTrigger>
-      {open ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
-    </DrawerTrigger>
-    <DrawerContent
-      className="h-full mr-[20vw] bg-nightBlue rounded-none border-0 border-r-2 border-background">
-      <DrawerHeader>
-        <DrawerTitle className="text-2xl">{t('header.title')}</DrawerTitle>
-        <DrawerDescription className="text-sm text-background/60">{t('header.subtitle')}</DrawerDescription>
-      </DrawerHeader>
-      <LanguageSelector className="ml-2" />
-      <div className="flex flex-col items-center justify-center gap-2">
-        {
-          Navigations.map(({ pathName: path, title, Icon }) =>
-            <Link href={path} key={path}
-                  className={clsx('flex items-center justify-start gap-2 text-2xl hover:text-green/50 hover:bg-black/20 py-4 pl-5 w-full',
-                    {
-                      'text-green': pathName === path
-                    }
-                  )}>
+  return (
+    <Drawer direction="left" open={open} onOpenChange={setOpen}>
+      <DrawerTrigger>
+        {open ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
+      </DrawerTrigger>
+      <DrawerContent className="h-full mr-[20vw] bg-nightBlue rounded-none border-0 border-r-2 border-background">
+        <DrawerHeader>
+          <DrawerTitle className="text-2xl">{t('header.title')}</DrawerTitle>
+          <DrawerDescription className="text-sm text-background/60">
+            {t('header.subtitle')}
+          </DrawerDescription>
+        </DrawerHeader>
+        <LanguageSelector className="ml-2" />
+        <div className="flex flex-col items-center justify-center gap-2">
+          {Navigations.map(({ pathName: path, title, Icon }) => (
+            <Link
+              href={path}
+              key={path}
+              className={clsx(
+                'flex items-center justify-start gap-2 text-2xl hover:text-green/50 hover:bg-black/20 py-4 pl-5 w-full',
+                {
+                  'text-green': pathName === path,
+                }
+              )}
+            >
               <Icon />
               <span>{t(`nav.${title}`)}</span>
             </Link>
-          )
-        }
-      </div>
-      <DrawerFooter>
-        <SocialIcons className="text-3xl mb-2" />
-      </DrawerFooter>
-    </DrawerContent>
-  </Drawer>
+          ))}
+        </div>
+        <DrawerFooter>
+          <SocialIcons className="text-3xl mb-2" />
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  )
 }

@@ -2,7 +2,10 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { formSchema, type FormSchema } from '@/components/EmergencyForm/schema/formSchema'
+import {
+  formSchema,
+  type FormSchema,
+} from '@/components/EmergencyForm/schema/formSchema'
 import { Form } from '@/components/ui/form'
 import { Button } from '@/components/ui/button'
 
@@ -25,23 +28,37 @@ export default function SelfEvacuationForm() {
       sourceDistrict: '',
       address: '',
       targetCity: '',
-      targetDistrict: ''
-    }
+      targetDistrict: '',
+    },
   })
 
   const onSubmit = async (values: FormSchema) => {
     setLoading(true)
-    await onSubmitForm({ ...values, firstName: values.firstName.trim(), lastName: values.lastName.trim() }, () => {
-      form.reset()
-    })
+    await onSubmitForm(
+      {
+        ...values,
+        firstName: values.firstName.trim(),
+        lastName: values.lastName.trim(),
+      },
+      () => {
+        form.reset()
+      }
+    )
     setLoading(false)
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="text-nightBlue space-y-2">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="text-nightBlue space-y-2"
+      >
         <EvacuationForm form={form} />
-        <Button disabled={loading} type="submit" className="!bg-submitBlue w-full text-lg">
+        <Button
+          disabled={loading}
+          type="submit"
+          className="!bg-submitBlue w-full text-lg"
+        >
           {loading ? 'Gönderiliyor...' : 'Gönder'}
         </Button>
       </form>

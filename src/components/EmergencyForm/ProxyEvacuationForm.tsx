@@ -2,8 +2,17 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { formSchema, type FormSchema } from '@/components/EmergencyForm/schema/formSchema'
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
+import {
+  formSchema,
+  type FormSchema,
+} from '@/components/EmergencyForm/schema/formSchema'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { CountryData } from 'react-phone-input-2'
@@ -34,15 +43,25 @@ export default function ProxyEvacuationForm() {
       sourceDistrict: '',
       address: '',
       targetCity: '',
-      targetDistrict: ''
-    }
+      targetDistrict: '',
+    },
   })
 
-  const applicantCountryCodeError = form.getFieldState('applicantPhoneNumber.countryCode', form.formState).error
-  const applicantLineNumberError = form.getFieldState('applicantPhoneNumber.lineNumber', form.formState).error
+  const applicantCountryCodeError = form.getFieldState(
+    'applicantPhoneNumber.countryCode',
+    form.formState
+  ).error
+  const applicantLineNumberError = form.getFieldState(
+    'applicantPhoneNumber.lineNumber',
+    form.formState
+  ).error
 
   const nextStep = async () => {
-    const isValid = await form.trigger(['applicantFirstName', 'applicantLastName', 'applicantPhoneNumber'])
+    const isValid = await form.trigger([
+      'applicantFirstName',
+      'applicantLastName',
+      'applicantPhoneNumber',
+    ])
     if (isValid) {
       form.clearErrors()
       setStep(2)
@@ -53,54 +72,73 @@ export default function ProxyEvacuationForm() {
 
   const onSubmit = async (values: FormSchema) => {
     setLoading(true)
-    await onSubmitForm({
-      ...values,
-      firstName: values.firstName.trim(),
-      lastName: values.lastName.trim(),
-      applicantFirstName: values.applicantFirstName?.trim(),
-      applicantLastName: values.applicantLastName?.trim()
-    }, () => {
-      setStep(1)
-      form.reset()
-    })
+    await onSubmitForm(
+      {
+        ...values,
+        firstName: values.firstName.trim(),
+        lastName: values.lastName.trim(),
+        applicantFirstName: values.applicantFirstName?.trim(),
+        applicantLastName: values.applicantLastName?.trim(),
+      },
+      () => {
+        setStep(1)
+        form.reset()
+      }
+    )
     setLoading(false)
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="text-nightBlue space-y-2">
-        {
-          step === 1 ?
-            <> {/* step 1  */}
-              <div className="grid grid-cols-2 gap-2">
-                <FormField key="applicantFirstName" name="applicantFirstName" render={({ field }) => (
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="text-nightBlue space-y-2"
+      >
+        {step === 1 ? (
+          <>
+            {' '}
+            {/* step 1  */}
+            <div className="grid grid-cols-2 gap-2">
+              <FormField
+                key="applicantFirstName"
+                name="applicantFirstName"
+                render={({ field }) => (
                   <FormItem>
                     <FormControl>
                       <Input placeholder="İsim" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
-                )} />
+                )}
+              />
 
-                <FormField key="applicantLastName" name="applicantLastName" render={({ field }) => (
+              <FormField
+                key="applicantLastName"
+                name="applicantLastName"
+                render={({ field }) => (
                   <FormItem>
                     <FormControl>
                       <Input placeholder="Soyisim" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
-                )} />
-              </div>
-
-              {/*Phone Number block*/}
-              <FormField key="applicantPhoneNumber" name="applicantPhoneNumber" render={({ field }) => (
+                )}
+              />
+            </div>
+            {/*Phone Number block*/}
+            <FormField
+              key="applicantPhoneNumber"
+              name="applicantPhoneNumber"
+              render={({ field }) => (
                 <FormItem>
                   <FormControl>
                     <PhoneInput
                       value={field.value.countryCode + field.value.lineNumber}
                       onChange={(value: string, country: CountryData) => {
                         const countryCode: string = country.dialCode
-                        const lineNumber: string = value.slice(countryCode.length)
+                        const lineNumber: string = value.slice(
+                          countryCode.length
+                        )
                         field.onChange({ countryCode, lineNumber })
                       }}
                     />
@@ -111,32 +149,50 @@ export default function ProxyEvacuationForm() {
                     <span>{applicantLineNumberError?.message}</span>
                   </div>
                 </FormItem>
-              )} />
-
-              <Alert variant="default" className="bg-transparent border-orange-500 text-backgorund">
-                <FiAlertTriangle className="text-xl !text-orange-500" />
-                <AlertTitle className="font-semibold text-orange-500">Dikkat</AlertTitle>
-                <AlertDescription className="w-full text-orange-500 ">
-                  Formun bu kısmını kendinize ait bilgiler ile doldurarak diğer adıma geçin!
-                </AlertDescription>
-              </Alert>
-
-              <Button disabled={loading} onClick={nextStep} className="!bg-submitBlue float-end text-lg w-full mt-2">
-                ileri
+              )}
+            />
+            <Alert
+              variant="default"
+              className="bg-transparent border-orange-500 text-backgorund"
+            >
+              <FiAlertTriangle className="text-xl !text-orange-500" />
+              <AlertTitle className="font-semibold text-orange-500">
+                Dikkat
+              </AlertTitle>
+              <AlertDescription className="w-full text-orange-500 ">
+                Formun bu kısmını kendinize ait bilgiler ile doldurarak diğer
+                adıma geçin!
+              </AlertDescription>
+            </Alert>
+            <Button
+              disabled={loading}
+              onClick={nextStep}
+              className="!bg-submitBlue float-end text-lg w-full mt-2"
+            >
+              ileri
+            </Button>
+          </>
+        ) : (
+          <>
+            <EvacuationForm form={form} />
+            <div className="w-full grid grid-cols-2 gap-2">
+              <Button
+                disabled={loading}
+                onClick={prevStep}
+                className="!bg-submitBlue text-lg"
+              >
+                Geri
               </Button>
-            </> :
-            <>
-              <EvacuationForm form={form} />
-              <div className="w-full grid grid-cols-2 gap-2">
-                <Button disabled={loading} onClick={prevStep} className="!bg-submitBlue text-lg">
-                  Geri
-                </Button>
-                <Button disabled={loading} type="submit" className="!bg-submitBlue text-lg">
-                  Gönder
-                </Button>
-              </div>
-            </>
-        }
+              <Button
+                disabled={loading}
+                type="submit"
+                className="!bg-submitBlue text-lg"
+              >
+                Gönder
+              </Button>
+            </div>
+          </>
+        )}
       </form>
     </Form>
   )

@@ -1,8 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { IoCaretDown } from 'react-icons/io5'
 import { FaCheck } from 'react-icons/fa6'
-import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from 'cmdk'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import {
+  Command,
+  CommandEmpty,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from 'cmdk'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from '@/components/ui/button'
 import CityAndDistrict from '@/data/cities_districts.json'
@@ -12,10 +22,15 @@ interface SelectLocationProps {
   type: 'city' | 'district'
   value: string
   onChange: (value: string) => void
-  cityValue?: string  // Only needed for district selection
+  cityValue?: string // Only needed for district selection
 }
 
-const SelectLocation: React.FC<SelectLocationProps> = ({ type, value, onChange, cityValue }) => {
+const SelectLocation: React.FC<SelectLocationProps> = ({
+  type,
+  value,
+  onChange,
+  cityValue,
+}) => {
   const [open, setOpen] = useState(false)
   const [items, setItems] = useState<{ name: string }[]>([])
 
@@ -24,24 +39,37 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ type, value, onChange, 
       setItems(CityAndDistrict)
     } else if (type === 'district' && cityValue) {
       onChange('')
-      const selectedCity = CityAndDistrict.find(city => city.name === cityValue)
+      const selectedCity = CityAndDistrict.find(
+        (city) => city.name === cityValue
+      )
       setItems(selectedCity?.districts || [])
     }
   }, [type, cityValue, onChange])
 
-  const handleSelect = useCallback((selectedValue: string) => {
-    onChange(selectedValue)
-    setOpen(false)
-  }, [onChange])
+  const handleSelect = useCallback(
+    (selectedValue: string) => {
+      onChange(selectedValue)
+      setOpen(false)
+    },
+    [onChange]
+  )
 
-  const disabledDistrict: boolean = (type === 'district' && !cityValue)
-  const placeholder = type === 'city' ? 'Bir Şehir Seçin' : disabledDistrict ? 'Bir Şehir Seçmelisin' : 'Bir İlçe Seçin'
+  const disabledDistrict: boolean = type === 'district' && !cityValue
+  const placeholder =
+    type === 'city'
+      ? 'Bir Şehir Seçin'
+      : disabledDistrict
+        ? 'Bir Şehir Seçmelisin'
+        : 'Bir İlçe Seçin'
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" disabled={disabledDistrict}
-                className="flex items-center justify-between gap-5 w-full">
+        <Button
+          variant="outline"
+          disabled={disabledDistrict}
+          className="flex items-center justify-between gap-5 w-full"
+        >
           <span>{value || placeholder}</span>
           <IoCaretDown className="text-4xl" />
         </Button>
@@ -62,7 +90,11 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ type, value, onChange, 
                   className="w-full text-lg font-semibold p-1 px-2 hover:bg-gray-500/20 cursor-pointer rounded-sm flex items-center justify-between"
                 >
                   <span>{item.name}</span>
-                  <FaCheck className={cn('opacity-0', { 'opacity-100': item.name === value })} />
+                  <FaCheck
+                    className={cn('opacity-0', {
+                      'opacity-100': item.name === value,
+                    })}
+                  />
                 </CommandItem>
               ))}
             </CommandList>
