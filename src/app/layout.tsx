@@ -8,30 +8,31 @@ import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/theme-provider'
 import { nato } from '@/styles/fonts'
 
-
 export const metadata: Metadata = {
   title: i18n.t('title'),
-  description: i18n.t('description')
+  description: i18n.t('description'),
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang={i18n.language} suppressHydrationWarning>
-    <body className={nato.className}>
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <Providers>
-        <Header />
-        {children}
-        <Footer />
-      </Providers>
-    </ThemeProvider>
-    <Toaster />
-    </body>
+      <body className={nato.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
+        </ThemeProvider>
+        <Toaster />
+      </body>
     </html>
   )
 }

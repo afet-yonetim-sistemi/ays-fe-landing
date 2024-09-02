@@ -6,8 +6,8 @@ import localeTR from './locales/tr.json'
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
   tr: {
-    translation: localeTR
-  }
+    translation: localeTR,
+  },
 }
 
 i18n.init({
@@ -17,9 +17,9 @@ i18n.init({
   // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
   // if you're using a language detector, do not define the lng option
   interpolation: {
-    escapeValue: false // react already safes from xss
+    escapeValue: false, // react already safes from xss
   },
-  debug: process.env.NODE_ENV === 'development'
+  debug: process.env.NODE_ENV === 'development',
 })
 
 export default i18n

@@ -1,6 +1,6 @@
 import {
   Noto_Sans_Anatolian_Hieroglyphs as Nato,
-  Montserrat
+  Montserrat,
 } from 'next/font/google'
 import { NextFont } from 'next/dist/compiled/@next/font'
 
