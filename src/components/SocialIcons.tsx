@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 import Link from 'next/link'
-import { FaConfluence, FaDiscord, FaGithub, FaLinkedin } from 'react-icons/fa'
-import { FaXTwitter } from 'react-icons/fa6'
+import { FaConfluence, FaDiscord, FaGithub,  FaLinkedin } from 'react-icons/fa'
+import { FaXTwitter, FaInstagram } from 'react-icons/fa6'
 import { SiJira } from 'react-icons/si'
 
 export default function SocialIcons({ className }: { className?: string }) {
@@ -12,6 +12,9 @@ export default function SocialIcons({ className }: { className?: string }) {
         className
       )}
     >
+      <Link target="_blank" href={'https://instagram.com/afetyonetimsistemi'}>
+        <FaInstagram />
+      </Link>
       <Link target="_blank" href={'https://x.com/afetyonetims'}>
         <FaXTwitter />
       </Link>
