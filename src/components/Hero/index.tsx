@@ -6,6 +6,8 @@ import nextConfig from '../../../next.config.mjs'
 export default function HeroSection() {
   
   const showEmergencyForm = nextConfig.env?.showEmergencyForm === 'true'
+  console.log(process.env.NEXT_PUBLIC_ENVIRONMENT);
+  
   const contClassByConfig = showEmergencyForm === true ? "grid grid-cols-1 lg:grid-cols-2 gap-5" : "grid grid-cols-1 lg:grid-cols-1 gap-5"
 
   return (
