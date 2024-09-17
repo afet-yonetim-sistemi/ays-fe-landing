@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    env: {
-        showEmergencyForm: process.env.NEXT_PUBLIC_ENVIRONMENT === 'test' ? 'true' : 'false'
-    }
-};
+const nextConfig = {}
 
-export default nextConfig;
+export default nextConfig
