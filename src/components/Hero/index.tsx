@@ -3,7 +3,7 @@ import Container from '@/components/Container'
 import EmergencyForm from '@/components/EmergencyForm'
 
 const HeroSection: React.FC = () => {
-  const showEmergencyForm = process.env.NEXT_PUBLIC_ENVIRONMENT === 'test'
+  const showEmergencyForm = !process.env.NEXT_PUBLIC_ENVIRONMENT
 
   return (
     <section className="w-full bg-green py-5 lg:px-5">
