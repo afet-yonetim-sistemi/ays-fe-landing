@@ -1,14 +1,16 @@
 'use client'
 
+import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { clsx } from 'clsx'
 import { useTranslation } from 'react-i18next'
 import Navigations from '@/components/Header/Navigations'
 
-export default function HeaderNav() {
+const HeaderNav: React.FC = (): JSX.Element => {
   const pathName = usePathname()
   const { t } = useTranslation()
+
   return (
     <nav className="items-center justify-between font-normal text-normal hidden lg:flex pb-2">
       {Navigations.map(({ pathName: path, title, Icon }) => (
@@ -26,3 +28,5 @@ export default function HeaderNav() {
     </nav>
   )
 }
+
+export default HeaderNav

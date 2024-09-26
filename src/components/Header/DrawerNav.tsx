@@ -9,7 +9,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
-import { AiOutlineMenuUnfold, AiOutlineMenuFold } from 'react-icons/ai'
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
 import { useState } from 'react'
 import Navigations from '@/components/Header/Navigations'
 import Link from 'next/link'
@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next'
 import SocialIcons from '@/components/SocialIcons'
 import LanguageSelector from '@/components/LanguageSelector'
 
-export default function DrawerNav() {
+const DrawerNav: React.FC = (): JSX.Element => {
   const [open, setOpen] = useState(false)
   const pathName = usePathname()
   const { t } = useTranslation()
@@ -61,3 +61,5 @@ export default function DrawerNav() {
     </Drawer>
   )
 }
+
+export default DrawerNav

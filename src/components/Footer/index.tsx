@@ -1,9 +1,10 @@
+import React from 'react'
 import SocialIcons from '@/components/SocialIcons'
 import LanguageSelector from '@/components/LanguageSelector'
 import i18n from 'i18next'
 import Container from '@/components/Container'
 
-export default function Footer() {
+const Footer: React.FC = (): JSX.Element => {
   const { t } = i18n
   return (
     <footer className="bg-nightBlue w-full">
@@ -17,3 +18,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer

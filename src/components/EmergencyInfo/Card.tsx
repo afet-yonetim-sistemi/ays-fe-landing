@@ -1,12 +1,10 @@
+import React from 'react'
 import { clsx } from 'clsx'
 
-const Card = ({
-  className,
-  children,
-}: {
+const Card: React.FC<{
   className?: string
   children: React.ReactNode
-}) => {
+}> = ({ className, children }): JSX.Element => {
   return (
     <article
       className={clsx(

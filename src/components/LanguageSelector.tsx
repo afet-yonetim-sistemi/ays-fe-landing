@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,10 +17,10 @@ export default function LanguageSelector({
   className,
 }: {
   className?: string
-}) {
+}): JSX.Element {
   const { i18n } = useTranslation()
 
-  const handleLanguageChange = (e: string) => {
+  const handleLanguageChange = (e: string): void => {
     i18n.changeLanguage(e)
   }
 
@@ -35,7 +36,7 @@ export default function LanguageSelector({
             <FaCaretDown />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="">
+        <DropdownMenuContent>
           <DropdownMenuRadioGroup
             value={i18n.language}
             onValueChange={handleLanguageChange}

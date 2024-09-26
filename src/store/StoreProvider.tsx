@@ -1,7 +1,7 @@
 'use client'
 import { useRef } from 'react'
 import { Provider } from 'react-redux'
-import { makeStore, AppStore } from './store'
+import { AppStore, makeStore } from './store'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 
@@ -9,19 +9,18 @@ export default function StoreProvider({
   children,
 }: {
   children: React.ReactNode
-}) {
+}): JSX.Element {
   const storeRef = useRef<AppStore>()
   if (!storeRef.current) {
-    // Create the store instance the first time this renders
     const store = makeStore()
     storeRef.current = store
-    //@ts-ignore
+    // @ts-expect-error: Assigning persistor to storeRef.current requires type assertion.
     storeRef.current.__persistor = persistStore(store)
   }
 
   return (
     <Provider store={storeRef.current}>
-      {/* @ts-ignore*/}
+      {/* @ts-expect-error: Accessing __persistor property which lacks type definition. */}
       <PersistGate loading={null} persistor={storeRef.current.__persistor}>
         {children}
       </PersistGate>

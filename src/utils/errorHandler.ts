@@ -1,15 +1,27 @@
 import { toast } from '@/components/ui/toast/use-toast'
 
-const handleFormErrors = (err: any) => {
+interface SubError {
+  field: string
+  message?: string
+}
+
+interface ErrorResponse {
+  subErrors: SubError[]
+}
+
+const handleFormErrors = (err: {
+  response?: { data?: ErrorResponse }
+}): void => {
   const errData = err?.response?.data
 
   if (errData && errData.subErrors && errData.subErrors.length > 0) {
     console.log(errData)
-    const phoneError = errData.subErrors.find((subError: any) =>
+
+    const phoneError = errData.subErrors.find((subError) =>
       ['phoneNumber', 'applicantPhoneNumber'].includes(subError.field)
     )
     const duplicatePhoneError = errData.subErrors.find(
-      (subError: any) => subError.field === 'phoneNumberMustNotBeSameOne'
+      (subError) => subError.field === 'phoneNumberMustNotBeSameOne'
     )
 
     if (phoneError) {

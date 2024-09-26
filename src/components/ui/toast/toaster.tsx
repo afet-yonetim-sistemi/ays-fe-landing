@@ -10,7 +10,7 @@ import {
 } from './toast'
 import { useToast } from './use-toast'
 
-export function Toaster() {
+const Toaster = (): JSX.Element => {
   const { toasts } = useToast()
 
   return (
@@ -33,3 +33,5 @@ export function Toaster() {
     </ToastProvider>
   )
 }
+
+export default Toaster

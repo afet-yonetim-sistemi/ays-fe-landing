@@ -14,7 +14,7 @@ import { useState } from 'react'
 import onSubmitForm from '@/services/formService'
 import EvacuationForm from '@/components/EmergencyForm/EvacuationForm'
 
-export default function SelfEvacuationForm() {
+export default function SelfEvacuationForm(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false)
 
   const form = useForm<FormSchema>({
@@ -32,7 +32,7 @@ export default function SelfEvacuationForm() {
     },
   })
 
-  const onSubmit = async (values: FormSchema) => {
+  const onSubmit = async (values: FormSchema): Promise<void> => {
     setLoading(true)
     await onSubmitForm(
       {

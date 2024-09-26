@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import {
   FormControl,
   FormField,
@@ -12,8 +13,29 @@ import { CountryData } from 'react-phone-input-2'
 import { Label } from '@/components/ui/label'
 import SelectLocation from '@/components/SelectLocation'
 import { Textarea } from '@/components/ui/textarea'
+import { UseFormReturn } from 'react-hook-form'
 
-export default function EvacuationForm({ form }: { form: any }) {
+// Define the specific form schema for better typing
+interface EvacuationFormSchema {
+  firstName: string
+  lastName: string
+  phoneNumber: {
+    countryCode: string
+    lineNumber: string
+  }
+  seatingCount: number
+  sourceCity: string
+  sourceDistrict: string
+  address: string
+  targetCity: string
+  targetDistrict: string
+}
+
+interface EvacuationFormProps {
+  form: UseFormReturn<EvacuationFormSchema>
+}
+
+const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
   const countryCodeError = form.getFieldState(
     'phoneNumber.countryCode',
     form.formState
@@ -25,7 +47,7 @@ export default function EvacuationForm({ form }: { form: any }) {
 
   return (
     <>
-      {/* name surname block*/}
+      {/* Name Fields */}
       <div className="grid grid-cols-2 gap-2">
         <FormField
           name="firstName"
@@ -38,7 +60,6 @@ export default function EvacuationForm({ form }: { form: any }) {
             </FormItem>
           )}
         />
-
         <FormField
           name="lastName"
           render={({ field }) => (
@@ -52,7 +73,7 @@ export default function EvacuationForm({ form }: { form: any }) {
         />
       </div>
 
-      {/*Phone Number block*/}
+      {/* Phone Number Field */}
       <FormField
         name="phoneNumber"
         render={({ field }) => (
@@ -75,7 +96,7 @@ export default function EvacuationForm({ form }: { form: any }) {
         )}
       />
 
-      {/*number of seats block*/}
+      {/* Seating Count */}
       <FormField
         name="seatingCount"
         render={({ field }) => (
@@ -92,15 +113,13 @@ export default function EvacuationForm({ form }: { form: any }) {
                   id="seatingCount"
                   placeholder="Koltuk Sayısı"
                   type="number"
-                  onWheel={(e: any) => e.target.blur()}
+                  onWheel={(e: React.WheelEvent<HTMLInputElement>) =>
+                    e.currentTarget.blur()
+                  }
                   {...field}
                   onChange={(e) => {
-                    const value = e.target.value ? Number(e.target.value) : ''
-                    if (typeof value === 'number') {
-                      if (value <= 999 && value > -1) {
-                        field.onChange(value)
-                      }
-                    } else {
+                    const value = e.target.valueAsNumber
+                    if (value <= 999 && value > -1) {
                       field.onChange(value)
                     }
                   }}
@@ -113,10 +132,10 @@ export default function EvacuationForm({ form }: { form: any }) {
       />
 
       <hr />
+      {/* Source Location */}
       <span className="font-bold text-white block text-center">
         Başvurunun Yapıldığı Konum
       </span>
-      {/*application location box*/}
       <div className="grid grid-cols-2 gap-2">
         <FormField
           name="sourceCity"
@@ -133,7 +152,6 @@ export default function EvacuationForm({ form }: { form: any }) {
             </FormItem>
           )}
         />
-
         <FormField
           name="sourceDistrict"
           render={({ field }) => (
@@ -152,6 +170,7 @@ export default function EvacuationForm({ form }: { form: any }) {
         />
       </div>
 
+      {/* Address */}
       <FormField
         name="address"
         render={({ field }) => (
@@ -163,12 +182,12 @@ export default function EvacuationForm({ form }: { form: any }) {
           </FormItem>
         )}
       />
+
       <hr />
+      {/* Target Location */}
       <span className="font-bold text-white block text-center">
         Tahliye Sağlanacak Konum
       </span>
-
-      {/*target location box*/}
       <div className="grid grid-cols-2 gap-2">
         <FormField
           name="targetCity"
@@ -185,7 +204,6 @@ export default function EvacuationForm({ form }: { form: any }) {
             </FormItem>
           )}
         />
-
         <FormField
           name="targetDistrict"
           render={({ field }) => (
@@ -206,3 +224,5 @@ export default function EvacuationForm({ form }: { form: any }) {
     </>
   )
 }
+
+export default EvacuationForm
