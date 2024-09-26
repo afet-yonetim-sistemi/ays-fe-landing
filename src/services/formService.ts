@@ -3,6 +3,15 @@ import { http } from '@/configs/axiosConfig'
 import { toast } from '@/components/ui/toast/use-toast'
 import { handleFormErrors } from '@/utils/errorHandler'
 
+interface SubError {
+  field: string
+  message?: string
+}
+
+interface ErrorResponse {
+  subErrors: SubError[]
+}
+
 const onSubmitForm = async (
   values: FormSchema,
   cb: () => void
@@ -24,7 +33,7 @@ const onSubmitForm = async (
       })
     }
   } catch (err) {
-    handleFormErrors(err)
+    handleFormErrors(err as { response?: { data?: ErrorResponse } })
   }
 }
 
