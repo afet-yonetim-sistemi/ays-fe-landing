@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Metadata } from 'next'
 import './globals.css'
 import i18n from '@/i18n'
