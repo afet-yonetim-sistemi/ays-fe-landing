@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,11 +12,11 @@ import { FaCaretDown } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import { clsx } from 'clsx'
 
-export default function LanguageSelector({
+const LanguageSelector = ({
   className,
 }: {
   className?: string
-}): JSX.Element {
+}): JSX.Element => {
   const { i18n } = useTranslation()
 
   const handleLanguageChange = (e: string): void => {
@@ -52,3 +51,5 @@ export default function LanguageSelector({
     </div>
   )
 }
+
+export default LanguageSelector

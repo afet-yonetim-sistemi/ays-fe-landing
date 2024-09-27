@@ -1,4 +1,3 @@
-import React from 'react'
 import Card from './Card'
 import i18n from 'i18next'
 

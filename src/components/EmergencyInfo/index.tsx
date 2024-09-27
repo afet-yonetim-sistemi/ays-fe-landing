@@ -1,4 +1,3 @@
-import React from 'react'
 import CardList from './CardList'
 import i18n from 'i18next'
 import Container from '@/components/Container'

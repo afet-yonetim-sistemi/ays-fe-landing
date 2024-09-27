@@ -1,10 +1,9 @@
-import React from 'react'
 import Image from 'next/image'
 import SocialIcons from '@/components/SocialIcons'
 import LanguageSelector from '@/components/LanguageSelector'
 import { useTranslation } from 'react-i18next'
 
-export default function HeaderTop(): JSX.Element {
+const HeaderTop = (): JSX.Element => {
   const { t } = useTranslation()
 
   return (
@@ -26,3 +25,5 @@ export default function HeaderTop(): JSX.Element {
     </div>
   )
 }
+
+export default HeaderTop

@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import {
   FormControl,
   FormField,
@@ -15,7 +14,6 @@ import SelectLocation from '@/components/SelectLocation'
 import { Textarea } from '@/components/ui/textarea'
 import { UseFormReturn } from 'react-hook-form'
 
-// Define the specific form schema for better typing
 interface EvacuationFormSchema {
   firstName: string
   lastName: string
@@ -47,7 +45,6 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
 
   return (
     <>
-      {/* Name Fields */}
       <div className="grid grid-cols-2 gap-2">
         <FormField
           name="firstName"
@@ -73,7 +70,6 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
         />
       </div>
 
-      {/* Phone Number Field */}
       <FormField
         name="phoneNumber"
         render={({ field }) => (
@@ -96,7 +92,6 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
         )}
       />
 
-      {/* Seating Count */}
       <FormField
         name="seatingCount"
         render={({ field }) => (
@@ -132,7 +127,6 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
       />
 
       <hr />
-      {/* Source Location */}
       <span className="font-bold text-white block text-center">
         Başvurunun Yapıldığı Konum
       </span>
@@ -170,7 +164,6 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
         />
       </div>
 
-      {/* Address */}
       <FormField
         name="address"
         render={({ field }) => (
@@ -184,7 +177,6 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
       />
 
       <hr />
-      {/* Target Location */}
       <span className="font-bold text-white block text-center">
         Tahliye Sağlanacak Konum
       </span>

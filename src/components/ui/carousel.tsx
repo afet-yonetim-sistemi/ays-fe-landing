@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import * as React from 'react'
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react'
@@ -115,7 +115,7 @@ const Carousel = React.forwardRef<
       api.on('select', onSelect)
 
       return (): void => {
-        api.off('select', onSelect)
+        api?.off('select', onSelect)
       }
     }, [api, onSelect])
 

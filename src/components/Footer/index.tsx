@@ -1,4 +1,3 @@
-import React from 'react'
 import SocialIcons from '@/components/SocialIcons'
 import LanguageSelector from '@/components/LanguageSelector'
 import i18n from 'i18next'

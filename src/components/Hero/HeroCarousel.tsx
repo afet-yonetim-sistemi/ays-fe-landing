@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +8,7 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import Slogans from '@/components/Slogans'
 
-export default function HeroCarousel(): JSX.Element {
+const HeroCarousel = (): JSX.Element => {
   return (
     <div>
       <Carousel
@@ -35,3 +34,5 @@ export default function HeroCarousel(): JSX.Element {
     </div>
   )
 }
+
+export default HeroCarousel

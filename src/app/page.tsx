@@ -1,4 +1,3 @@
-import React from 'react'
 import Main from '@/components/main'
 import Hero from '@/components/Hero'
 import EmergencyInfo from '../components/EmergencyInfo'

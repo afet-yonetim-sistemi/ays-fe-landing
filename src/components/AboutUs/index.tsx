@@ -1,4 +1,3 @@
-import React from 'react'
 import Container from '@/components/Container'
 import i18n from 'i18next'
 
