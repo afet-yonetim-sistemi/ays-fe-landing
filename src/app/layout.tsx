@@ -13,9 +13,7 @@ export const metadata: Metadata = {
   description: i18n.t('description'),
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang={i18n.language} suppressHydrationWarning>
       <body className={nato.className}>
@@ -36,3 +34,5 @@ export default function RootLayout({
     </html>
   )
 }
+
+export default RootLayout

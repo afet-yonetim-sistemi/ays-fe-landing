@@ -24,7 +24,7 @@ const actionTypes = {
 
 let count = 0
 
-function genId() {
+function genId(): string {
   count = (count + 1) % Number.MAX_SAFE_INTEGER
   return count.toString()
 }
@@ -55,7 +55,7 @@ interface State {
 
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
 
-const addToRemoveQueue = (toastId: string) => {
+const addToRemoveQueue = (toastId: string): void => {
   if (toastTimeouts.has(toastId)) {
     return
   }
@@ -90,8 +90,6 @@ export const reducer = (state: State, action: Action): State => {
     case 'DISMISS_TOAST': {
       const { toastId } = action
 
-      // ! Side effects ! - This could be extracted into a dismissToast() action,
-      // but I'll keep it here for simplicity
       if (toastId) {
         addToRemoveQueue(toastId)
       } else {
@@ -130,7 +128,7 @@ const listeners: Array<(state: State) => void> = []
 
 let memoryState: State = { toasts: [] }
 
-function dispatch(action: Action) {
+function dispatch(action: Action): void {
   memoryState = reducer(memoryState, action)
   listeners.forEach((listener) => {
     listener(memoryState)
@@ -139,15 +137,19 @@ function dispatch(action: Action) {
 
 type Toast = Omit<ToasterToast, 'id'>
 
-function toast({ ...props }: Toast) {
+function toast({ ...props }: Toast): {
+  id: string
+  dismiss: () => void
+  update: (props: ToasterToast) => void
+} {
   const id = genId()
 
-  const update = (props: ToasterToast) =>
+  const update = (props: ToasterToast): void =>
     dispatch({
       type: 'UPDATE_TOAST',
       toast: { ...props, id },
     })
-  const dismiss = () => dispatch({ type: 'DISMISS_TOAST', toastId: id })
+  const dismiss = (): void => dispatch({ type: 'DISMISS_TOAST', toastId: id })
 
   dispatch({
     type: 'ADD_TOAST',
@@ -168,12 +170,19 @@ function toast({ ...props }: Toast) {
   }
 }
 
-function useToast() {
+function useToast(): State & {
+  toast: (props: Toast) => {
+    id: string
+    dismiss: () => void
+    update: (props: ToasterToast) => void
+  }
+  dismiss: (toastId?: string) => void
+} {
   const [state, setState] = React.useState<State>(memoryState)
 
   React.useEffect(() => {
     listeners.push(setState)
-    return () => {
+    return (): void => {
       const index = listeners.indexOf(setState)
       if (index > -1) {
         listeners.splice(index, 1)

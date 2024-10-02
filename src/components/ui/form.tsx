@@ -33,7 +33,7 @@ const FormField = <
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
   ...props
-}: ControllerProps<TFieldValues, TName>) => {
+}: ControllerProps<TFieldValues, TName>): JSX.Element => {
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />
@@ -41,6 +41,7 @@ const FormField = <
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext)
   const itemContext = React.useContext(FormItemContext)
@@ -75,7 +76,7 @@ const FormItemContext = React.createContext<FormItemContextValue>(
 const FormItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, ref): JSX.Element => {
   const id = React.useId()
 
   return (
@@ -89,7 +90,7 @@ FormItem.displayName = 'FormItem'
 const FormLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, ref): JSX.Element => {
   const { error, formItemId } = useFormField()
 
   return (
@@ -106,7 +107,7 @@ FormLabel.displayName = 'FormLabel'
 const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
+>(({ ...props }, ref): JSX.Element => {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
   return (
@@ -128,7 +129,7 @@ FormControl.displayName = 'FormControl'
 const FormDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, ref): JSX.Element => {
   const { formDescriptionId } = useFormField()
 
   return (
@@ -145,7 +146,7 @@ FormDescription.displayName = 'FormDescription'
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
+>(({ className, children, ...props }, ref): JSX.Element | null => {
   const { error, formMessageId } = useFormField()
   const body = error ? String(error?.message) : children
 

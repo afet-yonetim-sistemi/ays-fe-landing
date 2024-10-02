@@ -1,18 +1,26 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { persistReducer } from 'redux-persist'
+import { configureStore, Store } from '@reduxjs/toolkit'
+import { persistReducer, Storage } from 'redux-persist'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 
 import rootReducer from './reducers'
 
-const createNoopStorage = () => {
+interface NoopStorage extends Storage {
+  getItem(key: string): Promise<string | null>
+
+  setItem(key: string, value: string): Promise<void>
+
+  removeItem(key: string): Promise<void>
+}
+
+const createNoopStorage = (): NoopStorage => {
   return {
-    getItem(_key: any) {
+    getItem(): Promise<string | null> {
       return Promise.resolve(null)
     },
-    setItem(_key: any, value: any) {
-      return Promise.resolve(value)
+    setItem(): Promise<void> {
+      return Promise.resolve()
     },
-    removeItem(_key: any) {
+    removeItem(): Promise<void> {
       return Promise.resolve()
     },
   }
@@ -29,8 +37,8 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-export const makeStore = () => {
-  const store = configureStore({
+export const makeStore = (): Store => {
+  return configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
@@ -38,7 +46,6 @@ export const makeStore = () => {
       }),
     devTools: true,
   })
-  return store
 }
 
 // Infer the type of makeStore

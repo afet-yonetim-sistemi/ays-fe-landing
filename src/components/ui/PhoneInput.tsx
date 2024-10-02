@@ -1,6 +1,6 @@
 import ReactPhoneInput, { PhoneInputProps } from 'react-phone-input-2'
 
-export default function PhoneInput(props: PhoneInputProps) {
+const PhoneInput: React.FC<PhoneInputProps> = (props) => {
   return (
     <ReactPhoneInput
       {...props}
@@ -17,3 +17,5 @@ export default function PhoneInput(props: PhoneInputProps) {
     />
   )
 }
+
+export default PhoneInput

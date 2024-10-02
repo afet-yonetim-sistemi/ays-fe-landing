@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import SelfEvacuationForm from '@/components/EmergencyForm/SelfEvacuationForm'
 import ProxyEvacuationForm from '@/components/EmergencyForm/ProxyEvacuationForm'
 
-export default function EmergencyForm() {
+const EmergencyForm: React.FC = (): JSX.Element => {
   return (
     <div className="w-full bg-nightBlue rounded-2xl p-5 space-y-5">
       <div className="border-b border-background text-4xl font-medium flex-center p-5">
@@ -27,3 +27,5 @@ export default function EmergencyForm() {
     </div>
   )
 }
+
+export default EmergencyForm

@@ -1,7 +1,7 @@
 import Container from '@/components/Container'
 import i18n from 'i18next'
 
-export default function AboutUs() {
+const AboutUs: React.FC = () => {
   const { t } = i18n
 
   return (
@@ -18,3 +18,5 @@ export default function AboutUs() {
     </section>
   )
 }
+
+export default AboutUs

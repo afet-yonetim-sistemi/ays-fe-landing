@@ -12,14 +12,14 @@ import { FaCaretDown } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import { clsx } from 'clsx'
 
-export default function LanguageSelector({
+const LanguageSelector = ({
   className,
 }: {
   className?: string
-}) {
+}): JSX.Element => {
   const { i18n } = useTranslation()
 
-  const handleLanguageChange = (e: string) => {
+  const handleLanguageChange = (e: string): void => {
     i18n.changeLanguage(e)
   }
 
@@ -35,7 +35,7 @@ export default function LanguageSelector({
             <FaCaretDown />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="">
+        <DropdownMenuContent>
           <DropdownMenuRadioGroup
             value={i18n.language}
             onValueChange={handleLanguageChange}
@@ -51,3 +51,5 @@ export default function LanguageSelector({
     </div>
   )
 }
+
+export default LanguageSelector

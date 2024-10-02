@@ -3,7 +3,7 @@ import Hero from '@/components/Hero'
 import EmergencyInfo from '../components/EmergencyInfo'
 import AboutUs from '@/components/AboutUs'
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <Main>
       <Hero />
@@ -12,3 +12,5 @@ export default function Home() {
     </Main>
   )
 }
+
+export default Home

@@ -1,12 +1,15 @@
+'use client'
+
 import Image from 'next/image'
 import SocialIcons from '@/components/SocialIcons'
 import LanguageSelector from '@/components/LanguageSelector'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
-export default function HeaderTop() {
+const HeaderTop = (): JSX.Element => {
+  const { t } = useTranslation()
+
   return (
     <div className="items-center justify-between border-b py-2 hidden lg:flex">
-      {/*slogan & logo container*/}
       <div className="flex gap-3">
         <div className="flex items-center justify-center">
           <Image src="/logo.png" alt="logo" width={60} height={60} />
@@ -16,14 +19,13 @@ export default function HeaderTop() {
           <span className="font-medium text-base">{t('header.subtitle')}</span>
         </div>
       </div>
-      {/*slogan & logo container*/}
 
-      {/*social icon & language container*/}
       <div className="flex items-center justify-between gap-5">
         <SocialIcons />
         <LanguageSelector />
       </div>
-      {/*social icon & language container*/}
     </div>
   )
 }
+
+export default HeaderTop

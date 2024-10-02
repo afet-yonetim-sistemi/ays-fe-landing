@@ -3,7 +3,7 @@ import i18n from 'i18next'
 import Container from '@/components/Container'
 import Card from '@/components/EmergencyInfo/Card'
 
-const EmergencyInfo = () => {
+const EmergencyInfo: React.FC = (): JSX.Element => {
   const { t } = i18n
 
   return (

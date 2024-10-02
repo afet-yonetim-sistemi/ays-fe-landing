@@ -8,7 +8,7 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import Slogans from '@/components/Slogans'
 
-export default function HeroCarousel() {
+const HeroCarousel = (): JSX.Element => {
   return (
     <div>
       <Carousel
@@ -34,3 +34,5 @@ export default function HeroCarousel() {
     </div>
   )
 }
+
+export default HeroCarousel
