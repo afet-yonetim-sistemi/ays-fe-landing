@@ -1,7 +1,7 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import {
   formSchema,
   type FormSchema,
@@ -23,8 +23,9 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { FiAlertTriangle } from 'react-icons/fi'
 import onSubmitForm from '@/services/formService'
 import EvacuationForm from '@/components/EmergencyForm/EvacuationForm'
+import React from 'react'
 
-export default function ProxyEvacuationForm() {
+export default function ProxyEvacuationForm(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false)
   const [step, setStep] = useState<number>(1)
 
@@ -56,7 +57,7 @@ export default function ProxyEvacuationForm() {
     form.formState
   ).error
 
-  const nextStep = async () => {
+  const nextStep = async (): Promise<void> => {
     const isValid = await form.trigger([
       'applicantFirstName',
       'applicantLastName',
@@ -68,9 +69,9 @@ export default function ProxyEvacuationForm() {
     }
   }
 
-  const prevStep = () => setStep(1)
+  const prevStep = (): void => setStep(1)
 
-  const onSubmit = async (values: FormSchema) => {
+  const onSubmit: SubmitHandler<FormSchema> = async (values) => {
     setLoading(true)
     await onSubmitForm(
       {
@@ -96,8 +97,6 @@ export default function ProxyEvacuationForm() {
       >
         {step === 1 ? (
           <>
-            {' '}
-            {/* step 1  */}
             <div className="grid grid-cols-2 gap-2">
               <FormField
                 key="applicantFirstName"
@@ -125,7 +124,6 @@ export default function ProxyEvacuationForm() {
                 )}
               />
             </div>
-            {/*Phone Number block*/}
             <FormField
               key="applicantPhoneNumber"
               name="applicantPhoneNumber"
@@ -143,7 +141,6 @@ export default function ProxyEvacuationForm() {
                       }}
                     />
                   </FormControl>
-                  {/*<FormMessage />*/}
                   <div className="text-red-500 font-thin text-sm flex gap-2">
                     <span>{applicantCountryCodeError?.message}</span>
                     <span>{applicantLineNumberError?.message}</span>

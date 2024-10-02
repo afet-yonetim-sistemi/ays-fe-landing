@@ -1,8 +1,6 @@
 import { clsx } from 'clsx'
 import { montserrat } from '@/styles/fonts'
-import { t } from 'i18next'
 
-// const SlogansData: string[] = t('slogans', { returnObjects: true })
 const SlogansData: string[] = [
   'Bilgi teyit edilmeye muhtaçtır',
   'Teyit edilmemiş bilgi yanlış bilgidir',
@@ -11,7 +9,7 @@ const SlogansData: string[] = [
   'İsraf değil yardım et',
 ]
 
-const Slogans: JSX.Element[] = SlogansData.map((slogan, index) => {
+const Slogans: JSX.Element[] = SlogansData.map((slogan, index): JSX.Element => {
   const sloganData = slogan.split(' ')
   return (
     <div
@@ -22,19 +20,21 @@ const Slogans: JSX.Element[] = SlogansData.map((slogan, index) => {
         montserrat.className
       )}
     >
-      {sloganData.map((word, i) => (
-        <span
-          key={i}
-          className={clsx('min-w-[70%] bg-nightBlue p-2 px-5', {
-            'self-start text-end': i % 2 === 0,
-            'self-end text-start': i % 2 !== 0,
-            'lg:ml-5': Math.random() > 0.5,
-            'lg:mr-5': Math.random() < 0.5,
-          })}
-        >
-          {word.toLocaleUpperCase('tr-TR')}
-        </span>
-      ))}
+      {sloganData.map(
+        (word, i): JSX.Element => (
+          <span
+            key={i}
+            className={clsx('min-w-[70%] bg-nightBlue p-2 px-5', {
+              'self-start text-end': i % 2 === 0,
+              'self-end text-start': i % 2 !== 0,
+              'lg:ml-5': Math.random() > 0.5,
+              'lg:mr-5': Math.random() < 0.5,
+            })}
+          >
+            {word.toLocaleUpperCase('tr-TR')}
+          </span>
+        )
+      )}
     </div>
   )
 })

@@ -4,7 +4,7 @@ import Container from '@/components/Container'
 import DrawerNav from '@/components/Header/DrawerNav'
 import Image from 'next/image'
 
-export default function Header() {
+const Header = (): JSX.Element => {
   return (
     <header className="w-full bg-nightBlue/90 backdrop-blur-md sticky top-0 z-40">
       <Container className="lg:space-y-4">
@@ -24,3 +24,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header

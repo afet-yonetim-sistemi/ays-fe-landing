@@ -1,7 +1,7 @@
 import Card from './Card'
 import i18n from 'i18next'
 
-const CardList = () => {
+const CardList: React.FC = (): JSX.Element => {
   const { t } = i18n
   const cardContents: string[] = t('emergencyInfo.cards', {
     returnObjects: true,
