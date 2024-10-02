@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import {
   FormControl,
   FormField,
@@ -13,7 +14,6 @@ import { Label } from '@/components/ui/label'
 import SelectLocation from '@/components/SelectLocation'
 import { Textarea } from '@/components/ui/textarea'
 import { UseFormReturn } from 'react-hook-form'
-import React from 'react'
 
 interface EvacuationFormSchema {
   firstName: string
@@ -112,13 +112,8 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                   onWheel={(e: React.WheelEvent<HTMLInputElement>) =>
                     e.currentTarget.blur()
                   }
-                  onWheel={(e: React.WheelEvent<HTMLInputElement>) =>
-                    e.currentTarget.blur()
-                  }
                   {...field}
                   onChange={(e) => {
-                    const value = e.target.valueAsNumber
-                    if (value <= 999 && value > -1) {
                     const value = e.target.valueAsNumber
                     if (value <= 999 && value > -1) {
                       field.onChange(value)
@@ -182,7 +177,6 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
         )}
       />
 
-
       <hr />
       <span className="font-bold text-white block text-center">
         Tahliye Sağlanacak Konum
@@ -223,7 +217,5 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
     </>
   )
 }
-
-export default EvacuationForm
 
 export default EvacuationForm
