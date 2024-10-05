@@ -2,6 +2,7 @@ import type { FormSchema } from '@/components/EmergencyForm/schema/formSchema'
 import { http } from '@/configs/axiosConfig'
 import { toast } from '@/components/ui/toast/use-toast'
 import { handleFormErrors } from '@/utils/errorHandler'
+import { AxiosError } from 'axios'
 
 interface SubError {
   field: string
@@ -33,7 +34,7 @@ const onSubmitForm = async (
       })
     }
   } catch (err) {
-    handleFormErrors(err as { response?: { data?: ErrorResponse } })
+    handleFormErrors(err as AxiosError<ErrorResponse>)
   }
 }
 

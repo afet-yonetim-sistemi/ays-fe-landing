@@ -1,4 +1,6 @@
 import { toast } from '@/components/ui/toast/use-toast'
+import { handleApiError } from '@/lib/handleApiError'
+import { AxiosError } from 'axios'
 
 interface SubError {
   field: string
@@ -9,9 +11,7 @@ interface ErrorResponse {
   subErrors: SubError[]
 }
 
-const handleFormErrors = (err: {
-  response?: { data?: ErrorResponse }
-}): void => {
+const handleFormErrors = (err: AxiosError<ErrorResponse>): void => {
   const errData = err?.response?.data
 
   if (errData && errData.subErrors && errData.subErrors.length > 0) {
@@ -41,12 +41,7 @@ const handleFormErrors = (err: {
       return
     }
   }
-
-  toast({
-    variant: 'destructive',
-    title: 'İşlem Başarısız',
-    description: 'İşlem sırasında bir hata meydana geldi',
-  })
+  handleApiError(err)
 }
 
 export { handleFormErrors }
