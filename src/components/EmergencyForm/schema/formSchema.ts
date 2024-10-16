@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const noSpecialCharLengthSchema = (
+const noSpecialCharWithLengthSchema = (
   minLength: number,
   maxLength: number
 ): z.ZodString =>
@@ -29,14 +29,14 @@ const phoneNumberSchema = z.object({
 })
 
 const formSchema = z.object({
-  applicantFirstName: noSpecialCharLengthSchema(2, 100).optional(),
-  applicantLastName: noSpecialCharLengthSchema(2, 100).optional(),
+  applicantFirstName: noSpecialCharWithLengthSchema(2, 100).optional(),
+  applicantLastName: noSpecialCharWithLengthSchema(2, 100).optional(),
   applicantPhoneNumber: phoneNumberSchema.optional(),
-  firstName: noSpecialCharLengthSchema(2, 100),
-  lastName: noSpecialCharLengthSchema(2, 100),
+  firstName: noSpecialCharWithLengthSchema(2, 100),
+  lastName: noSpecialCharWithLengthSchema(2, 100),
   phoneNumber: phoneNumberSchema,
-  sourceCity: noSpecialCharLengthSchema(1, 100),
-  sourceDistrict: noSpecialCharLengthSchema(1, 100),
+  sourceCity: noSpecialCharWithLengthSchema(1, 100),
+  sourceDistrict: noSpecialCharWithLengthSchema(1, 100),
   address: z
     .string()
     .min(20, { message: 'Minimum 20 karakter uzunluğunda olmalıdır' })
@@ -45,8 +45,8 @@ const formSchema = z.object({
     .number({ message: 'Koltuk sayısı belirtmelisin' })
     .positive({ message: 'Pozitif bir sayı olmalıdır' })
     .max(999, { message: 'Maksimum 3 haneli bir sayı olmalıdır' }),
-  targetCity: noSpecialCharLengthSchema(1, 100),
-  targetDistrict: noSpecialCharLengthSchema(1, 100),
+  targetCity: noSpecialCharWithLengthSchema(1, 100),
+  targetDistrict: noSpecialCharWithLengthSchema(1, 100),
 })
 
 export { formSchema }
