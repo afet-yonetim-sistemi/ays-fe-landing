@@ -13,7 +13,7 @@ const noSpecialCharAndLengthValidaton = (
       message: `Maksimum ${maxLength} karakter uzunluğunda olabilir`,
     })
     .regex(/^(?![^a-zA-ZÇçĞğİıÖöŞşÜü])[a-zA-ZÇçĞğİıÖöŞşÜü ,.'-]*$/, {
-      message: 'Özel karakter içeremez',
+      message: 'Özel karakter veya sayı içeremez',
     })
 
 const requiredFieldValidation = (): z.ZodString =>
