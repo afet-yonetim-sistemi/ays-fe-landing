@@ -1,5 +1,22 @@
 import { z } from 'zod'
 
+const noSpecialCharAndLengthValidaton = (
+  minLength: number,
+  maxLength: number
+): z.ZodString =>
+  z
+    .string()
+    .min(minLength, {
+      message: `Minimum ${minLength} karakter uzunluğunda olmalıdır`,
+    })
+    .max(maxLength, {
+      message: `Maksimum ${maxLength} karakter uzunluğunda olabilir`,
+    })
+    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' })
+
+const requiredFieldValidation = (): z.ZodString =>
+  z.string().min(1, { message: `Bu alan zorunludur` })
+
 const phoneNumberSchema = z.object({
   countryCode: z
     .string()
@@ -7,47 +24,22 @@ const phoneNumberSchema = z.object({
     .regex(/^\d+$/, { message: 'Ülke kodu sadece rakamlardan oluşmalıdır' }),
   lineNumber: z
     .string()
-    .min(1, { message: 'Bir numara girmelisin' })
+    .min(10, { message: 'Lütfen geçerli bir telefon numarası girin' })
+    .max(10, { message: 'Lütfen geçerli bir telefon numarası girin' })
     .regex(/^\d+$/, {
       message: 'Telefon numarası sadece rakamlardan oluşmalıdır',
     }),
 })
 
 const formSchema = z.object({
-  applicantFirstName: z
-    .string()
-    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' })
-    .optional(),
-  applicantLastName: z
-    .string()
-    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' })
-    .optional(),
+  applicantFirstName: noSpecialCharAndLengthValidaton(2, 100).optional(),
+  applicantLastName: noSpecialCharAndLengthValidaton(2, 100).optional(),
   applicantPhoneNumber: phoneNumberSchema.optional(),
-  firstName: z
-    .string()
-    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
-  lastName: z
-    .string()
-    .min(2, { message: 'Minimum 2 karakter uzunluğunda olmalıdır' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
+  firstName: noSpecialCharAndLengthValidaton(2, 100),
+  lastName: noSpecialCharAndLengthValidaton(2, 100),
   phoneNumber: phoneNumberSchema,
-  sourceCity: z
-    .string()
-    .min(1, { message: 'Bir şehir seçmelisin' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
-  sourceDistrict: z
-    .string()
-    .min(1, { message: 'Bir ilçe seçmelisin' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
+  sourceCity: requiredFieldValidation(),
+  sourceDistrict: requiredFieldValidation(),
   address: z
     .string()
     .min(20, { message: 'Minimum 20 karakter uzunluğunda olmalıdır' })
@@ -56,16 +48,8 @@ const formSchema = z.object({
     .number({ message: 'Koltuk sayısı belirtmelisin' })
     .positive({ message: 'Pozitif bir sayı olmalıdır' })
     .max(999, { message: 'Maksimum 3 haneli bir sayı olmalıdır' }),
-  targetCity: z
-    .string()
-    .min(1, { message: 'Bir şehir seçmelisin' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
-  targetDistrict: z
-    .string()
-    .min(1, { message: 'Bir ilçe seçmelisin' })
-    .max(100, { message: 'Maksimum 100 karakter uzunluğunda olabilir' })
-    .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' }),
+  targetCity: requiredFieldValidation(),
+  targetDistrict: requiredFieldValidation(),
 })
 
 export { formSchema }
