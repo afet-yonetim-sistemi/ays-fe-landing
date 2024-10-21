@@ -21,8 +21,8 @@ const phoneNumberSchema = z.object({
     .regex(/^\d+$/, { message: 'Ülke kodu sadece rakamlardan oluşmalıdır' }),
   lineNumber: z
     .string()
-    .min(10, { message: 'Telefon numarası 10 haneli olmalıdır' })
-    .max(10, { message: 'Telefon numarası 10 haneli olmalıdır' })
+    .min(10, { message: 'Lütfen geçerli bir telefon numarası girin' })
+    .max(10, { message: 'Lütfen geçerli bir telefon numarası girin' })
     .regex(/^\d+$/, {
       message: 'Telefon numarası sadece rakamlardan oluşmalıdır',
     }),
