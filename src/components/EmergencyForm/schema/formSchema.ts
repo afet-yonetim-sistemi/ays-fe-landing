@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const noSpecialCharAndLengthSchema = (
+const noSpecialCharAndLengthValidaton = (
   minLength: number,
   maxLength: number
 ): z.ZodString =>
@@ -13,6 +13,9 @@ const noSpecialCharAndLengthSchema = (
       message: `Maksimum ${maxLength} karakter uzunluğunda olabilir`,
     })
     .regex(/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/, { message: 'Özel karakter içeremez' })
+
+const requiredFieldValidation = (): z.ZodString =>
+  z.string().min(1, { message: `Bu alan zorunludur` })
 
 const phoneNumberSchema = z.object({
   countryCode: z
@@ -29,14 +32,14 @@ const phoneNumberSchema = z.object({
 })
 
 const formSchema = z.object({
-  applicantFirstName: noSpecialCharAndLengthSchema(2, 100).optional(),
-  applicantLastName: noSpecialCharAndLengthSchema(2, 100).optional(),
+  applicantFirstName: noSpecialCharAndLengthValidaton(2, 100).optional(),
+  applicantLastName: noSpecialCharAndLengthValidaton(2, 100).optional(),
   applicantPhoneNumber: phoneNumberSchema.optional(),
-  firstName: noSpecialCharAndLengthSchema(2, 100),
-  lastName: noSpecialCharAndLengthSchema(2, 100),
+  firstName: noSpecialCharAndLengthValidaton(2, 100),
+  lastName: noSpecialCharAndLengthValidaton(2, 100),
   phoneNumber: phoneNumberSchema,
-  sourceCity: noSpecialCharAndLengthSchema(1, 100),
-  sourceDistrict: noSpecialCharAndLengthSchema(1, 100),
+  sourceCity: requiredFieldValidation(),
+  sourceDistrict: requiredFieldValidation(),
   address: z
     .string()
     .min(20, { message: 'Minimum 20 karakter uzunluğunda olmalıdır' })
@@ -45,8 +48,8 @@ const formSchema = z.object({
     .number({ message: 'Koltuk sayısı belirtmelisin' })
     .positive({ message: 'Pozitif bir sayı olmalıdır' })
     .max(999, { message: 'Maksimum 3 haneli bir sayı olmalıdır' }),
-  targetCity: noSpecialCharAndLengthSchema(1, 100),
-  targetDistrict: noSpecialCharAndLengthSchema(1, 100),
+  targetCity: requiredFieldValidation(),
+  targetDistrict: requiredFieldValidation(),
 })
 
 export { formSchema }
