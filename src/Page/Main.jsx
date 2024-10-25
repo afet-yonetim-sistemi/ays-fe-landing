@@ -3,13 +3,14 @@ import paragraph from "../helper/language";
 import "../Styles.css";
 import {
   FaGithub,
-  FaDiscord,
+  FaSlack,
   FaLanguage,
   FaAngleUp,
   FaAngleDown,
   FaLinkedin,
   FaConfluence,
-} from "react-icons/fa";
+  FaXTwitter,
+} from "react-icons/fa6";
 import { SiJira } from "react-icons/si";
 
 function MainPage() {
@@ -37,9 +38,14 @@ function MainPage() {
                   <FaLinkedin size="32px" color="white" />
                 </a>
               </li>
-              <li className="logo--discord ">
-                <a href="https://discord.gg/NkAkYajkKa">
-                  <FaDiscord size="32px" color="white" />
+              <li className="logo--twitter ">
+                <a href="https://x.com/afetyonetims">
+                  <FaXTwitter size="32px" color="white" />
+                </a>
+              </li>
+              <li className="logo--slack ">
+                <a href="https://join.slack.com/t/afetyonetimsistemi/shared_invite/zt-2s7h4ggpe-Cz_MLUXNyzqS2lmGLaIVBw">
+                  <FaSlack size="32px" color="white" />
                 </a>
               </li>
               <li className="logo--jira ">
@@ -76,7 +82,7 @@ function MainPage() {
                       >
                         {item.name}
                       </li>
-                    )
+                    ),
                   )}
                 </ul>
               )}
@@ -130,7 +136,7 @@ function MainPage() {
           </h1>
           <div className="tech-container">
             <ul className="info-tech">
-              <li>Back-End: </li>
+              <li>Back-End:</li>
               <li>Front-End:</li>
               <li>DevOps:</li>
               <li>UI/UX Design:</li>
@@ -197,8 +203,11 @@ function MainPage() {
             <a href="https://www.linkedin.com/company/afetyonetimsistemi">
               <FaLinkedin size="32px" color="white" />
             </a>
-            <a href="https://discord.gg/NkAkYajkKa">
-              <FaDiscord size="32px" color="white" />
+            <a href="https://x.com/afetyonetims">
+              <FaXTwitter size="32px" color="white" />
+            </a>
+            <a href="https://join.slack.com/t/afetyonetimsistemi/shared_invite/zt-2s7h4ggpe-Cz_MLUXNyzqS2lmGLaIVBw">
+              <FaSlack size="32px" color="white" />
             </a>
             <a href="https://afetyonetimsistemi.atlassian.net/jira">
               <SiJira size="30px" color="white" />
