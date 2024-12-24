@@ -37,8 +37,7 @@ jobs:
 
       # If you wish to not fail your job when the Quality Gate is red, comment out the
       # following lines.
-      # Checks the SonarQube Quality Gate status.
-      - uses: sonarsource/sonarqube-quality-gate-action@master
+      - uses: sonarsource/sonarqube-quality-gate-action@master # Checks the SonarQube Quality Gate status.
         timeout-minutes: 5 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
