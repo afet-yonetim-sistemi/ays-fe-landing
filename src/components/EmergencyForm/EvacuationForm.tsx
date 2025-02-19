@@ -157,6 +157,11 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                   cityValue={form.watch('sourceCity')}
                   value={field.value}
                   onChange={field.onChange}
+                  disabledOptions={
+                    form.watch('sourceCity') === form.watch('targetCity')
+                      ? [form.watch('targetDistrict')]
+                      : []
+                  }
                 />
               </FormControl>
               <FormMessage />
@@ -207,6 +212,11 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                   cityValue={form.watch('targetCity')}
                   value={field.value}
                   onChange={field.onChange}
+                  disabledOptions={
+                    form.watch('sourceCity') === form.watch('targetCity')
+                      ? [form.watch('sourceDistrict')]
+                      : []
+                  }
                 />
               </FormControl>
               <FormMessage />
