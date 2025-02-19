@@ -23,6 +23,7 @@ interface SelectLocationProps {
   value: string
   onChange: (value: string) => void
   cityValue?: string // Only needed for district selection
+  disabledOptions?: string[] // New prop for disabling specific options
 }
 
 const SelectLocation: React.FC<SelectLocationProps> = ({
@@ -30,6 +31,7 @@ const SelectLocation: React.FC<SelectLocationProps> = ({
   value,
   onChange,
   cityValue,
+  disabledOptions = [], // Default to empty array
 }) => {
   const [open, setOpen] = useState(false)
   const [items, setItems] = useState<{ name: string }[]>([])
@@ -48,10 +50,12 @@ const SelectLocation: React.FC<SelectLocationProps> = ({
 
   const handleSelect = useCallback(
     (selectedValue: string) => {
-      onChange(selectedValue)
-      setOpen(false)
+      if (!disabledOptions.includes(selectedValue)) {
+        onChange(selectedValue)
+        setOpen(false)
+      }
     },
-    [onChange]
+    [onChange, disabledOptions]
   )
 
   const disabledDistrict: boolean = type === 'district' && !cityValue
@@ -87,14 +91,25 @@ const SelectLocation: React.FC<SelectLocationProps> = ({
                 <CommandItem
                   key={i}
                   onSelect={() => handleSelect(item.name)}
-                  className="w-full text-lg font-semibold p-1 px-2 hover:bg-gray-500/20 cursor-pointer rounded-sm flex items-center justify-between"
+                  className={cn(
+                    'w-full text-lg font-semibold p-1 px-2 cursor-pointer rounded-sm flex items-center justify-between',
+                    {
+                      'text-gray-400 cursor-not-allowed':
+                        disabledOptions.includes(item.name),
+                      'hover:bg-gray-500/20': !disabledOptions.includes(
+                        item.name
+                      ),
+                    }
+                  )}
                 >
                   <span>{item.name}</span>
-                  <FaCheck
-                    className={cn('opacity-0', {
-                      'opacity-100': item.name === value,
-                    })}
-                  />
+                  {!disabledOptions.includes(item.name) && (
+                    <FaCheck
+                      className={cn('opacity-0', {
+                        'opacity-100': item.name === value,
+                      })}
+                    />
+                  )}
                 </CommandItem>
               ))}
             </CommandList>

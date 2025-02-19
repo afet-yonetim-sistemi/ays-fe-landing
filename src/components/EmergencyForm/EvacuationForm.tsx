@@ -44,6 +44,9 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
     form.formState
   ).error
 
+  const sourceDistrict = form.watch('sourceDistrict')
+  const targetDistrict = form.watch('targetDistrict')
+
   return (
     <>
       <div className="grid grid-cols-2 gap-2">
@@ -157,6 +160,7 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                   cityValue={form.watch('sourceCity')}
                   value={field.value}
                   onChange={field.onChange}
+                  disabledOptions={[targetDistrict]}
                 />
               </FormControl>
               <FormMessage />
@@ -207,6 +211,7 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                   cityValue={form.watch('targetCity')}
                   value={field.value}
                   onChange={field.onChange}
+                  disabledOptions={[sourceDistrict]}
                 />
               </FormControl>
               <FormMessage />
