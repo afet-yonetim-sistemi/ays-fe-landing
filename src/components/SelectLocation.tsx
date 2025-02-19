@@ -23,7 +23,7 @@ interface SelectLocationProps {
   value: string
   onChange: (value: string) => void
   cityValue?: string // Only needed for district selection
-  disabledOptions?: string[] // New prop for disabling specific options
+  disabledOptions?: string[]
 }
 
 const SelectLocation: React.FC<SelectLocationProps> = ({
@@ -31,7 +31,7 @@ const SelectLocation: React.FC<SelectLocationProps> = ({
   value,
   onChange,
   cityValue,
-  disabledOptions = [], // Default to empty array
+  disabledOptions = [],
 }) => {
   const [open, setOpen] = useState(false)
   const [items, setItems] = useState<{ name: string }[]>([])
