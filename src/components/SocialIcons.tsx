@@ -22,7 +22,11 @@ const socialLinks = [
     icon: FaInstagram,
     label: 'Instagram',
   },
-  { href: 'https://x.com/afetyonetims', icon: FaXTwitter, label: 'Twitter/X' },
+  {
+    href: 'https://x.com/afetyonetims',
+    icon: FaXTwitter,
+    label: 'X (fka Twitter)',
+  },
   {
     href: 'https://www.linkedin.com/company/afetyonetimsistemi/',
     icon: FaLinkedin,
