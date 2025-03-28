@@ -1,51 +1,81 @@
 import { clsx } from 'clsx'
 import Link from 'next/link'
-import { FaConfluence, FaDiscord, FaGithub, FaLinkedin } from 'react-icons/fa'
-import { FaInstagram, FaXTwitter } from 'react-icons/fa6'
+import {
+  FaConfluence,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaSlack,
+  FaXTwitter,
+} from 'react-icons/fa6'
 import { SiJira } from 'react-icons/si'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './ui/tooltip'
 
-export default function SocialIcons({
-  className,
-}: {
-  className?: string
-}): JSX.Element {
+const socialLinks = [
+  {
+    href: 'https://instagram.com/afetyonetimsistemi',
+    icon: FaInstagram,
+    label: 'Instagram',
+  },
+  {
+    href: 'https://x.com/afetyonetims',
+    icon: FaXTwitter,
+    label: 'X (fka Twitter)',
+  },
+  {
+    href: 'https://www.linkedin.com/company/afetyonetimsistemi/',
+    icon: FaLinkedin,
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://join.slack.com/t/afetyonetimsistemi/shared_invite/zt-2s7h4ggpe-Cz_MLUXNyzqS2lmGLaIVBw',
+    icon: FaSlack,
+    label: 'Slack',
+  },
+  {
+    href: 'https://afetyonetimsistemi.atlassian.net/jira',
+    icon: SiJira,
+    label: 'Jira',
+  },
+  {
+    href: 'https://afetyonetimsistemi.atlassian.net/wiki',
+    icon: FaConfluence,
+    label: 'Confluence',
+  },
+  {
+    href: 'https://github.com/afet-yonetim-sistemi',
+    icon: FaGithub,
+    label: 'GitHub',
+  },
+]
+
+const SocialIcons: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div
-      className={clsx(
-        'flex items-center justify-center w-full gap-4 text-2xl text-navWhite',
-        className
-      )}
-    >
-      <Link target="_blank" href={'https://instagram.com/afetyonetimsistemi'}>
-        <FaInstagram />
-      </Link>
-      <Link target="_blank" href={'https://x.com/afetyonetims'}>
-        <FaXTwitter />
-      </Link>
-      <Link
-        target="_blank"
-        href={'https://www.linkedin.com/company/afetyonetimsistemi/'}
+    <TooltipProvider>
+      <div
+        className={clsx(
+          'flex items-center justify-center w-full gap-4 text-2xl text-navWhite',
+          className
+        )}
       >
-        <FaLinkedin />
-      </Link>
-      <Link target="_blank" href={'https://discord.gg/NkAkYajkKa'}>
-        <FaDiscord />
-      </Link>
-      <Link
-        target="_blank"
-        href={'https://afetyonetimsistemi.atlassian.net/jira'}
-      >
-        <SiJira />
-      </Link>
-      <Link
-        target="_blank"
-        href={'https://afetyonetimsistemi.atlassian.net/wiki'}
-      >
-        <FaConfluence />
-      </Link>
-      <Link target="_blank" href={'https://github.com/afet-yonetim-sistemi'}>
-        <FaGithub />
-      </Link>
-    </div>
+        {socialLinks.map(({ href, icon: Icon, label }) => (
+          <Tooltip key={href}>
+            <TooltipTrigger asChild>
+              <Link target="_blank" href={href}>
+                <Icon />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>{label}</TooltipContent>
+          </Tooltip>
+        ))}
+      </div>
+    </TooltipProvider>
   )
 }
+
+export default SocialIcons
