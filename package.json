@@ -30,6 +30,7 @@
     "cmdk": "^1.0.0",
     "embla-carousel-autoplay": "^8.1.6",
     "embla-carousel-react": "^8.1.6",
+    "google-libphonenumber": "^3.2.40",
     "i18next": "^23.11.3",
     "lucide-react": "^0.399.0",
     "next": "14.2.26",
@@ -48,6 +49,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/google-libphonenumber": "^7.4.30",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
