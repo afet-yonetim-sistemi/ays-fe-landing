@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import SelectLocation from '@/components/SelectLocation'
 import {
   FormControl,
   FormField,
@@ -8,12 +8,11 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import PhoneInput from '@/components/ui/PhoneInput'
-import { CountryData } from 'react-phone-input-2'
 import { Label } from '@/components/ui/label'
-import SelectLocation from '@/components/SelectLocation'
+import PhoneInput from '@/components/ui/PhoneInput'
 import { Textarea } from '@/components/ui/textarea'
 import { UseFormReturn } from 'react-hook-form'
+import { CountryData } from 'react-phone-input-2'
 
 interface EvacuationFormSchema {
   firstName: string
@@ -35,15 +34,6 @@ interface EvacuationFormProps {
 }
 
 const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
-  const countryCodeError = form.getFieldState(
-    'phoneNumber.countryCode',
-    form.formState
-  ).error
-  const lineNumberError = form.getFieldState(
-    'phoneNumber.lineNumber',
-    form.formState
-  ).error
-
   return (
     <>
       <div className="grid grid-cols-2 gap-2">
@@ -73,22 +63,22 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
 
       <FormField
         name="phoneNumber"
-        render={({ field }) => (
+        render={({ field, fieldState }) => (
           <FormItem>
             <FormControl>
               <PhoneInput
-                value={field.value.countryCode + field.value.lineNumber}
+                value={
+                  (field.value?.countryCode || '') +
+                  (field.value?.lineNumber || '')
+                }
                 onChange={(value: string, country: CountryData) => {
-                  const countryCode: string = country.dialCode
-                  const lineNumber: string = value.slice(countryCode.length)
+                  const countryCode = country.dialCode
+                  const lineNumber = value.slice(countryCode.length)
                   field.onChange({ countryCode, lineNumber })
                 }}
               />
             </FormControl>
-            <div className="text-red-500 font-thin text-sm flex gap-2">
-              <span>{countryCodeError?.message}</span>
-              <span>{lineNumberError?.message}</span>
-            </div>
+            <FormMessage>{fieldState.error?.message}</FormMessage>
           </FormItem>
         )}
       />

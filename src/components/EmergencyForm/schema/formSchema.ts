@@ -1,4 +1,51 @@
 import { z } from 'zod'
+import { PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber'
+
+const phoneUtil = PhoneNumberUtil.getInstance()
+
+const phoneNumberSchema = z
+  .object({
+    countryCode: z
+      .string()
+      .min(1, { message: 'Bir ülke kodu seçilmeli' })
+      .regex(/^\d+$/, { message: 'Ülke kodu sadece rakamlardan oluşmalıdır' }),
+    lineNumber: z
+      .string()
+      .min(1, { message: 'Lütfen geçerli bir telefon numarası girin' })
+      .regex(/^\d+$/, {
+        message: 'Telefon numarası sadece rakamlardan oluşmalıdır',
+      }),
+  })
+  .superRefine(({ countryCode, lineNumber }, ctx) => {
+    const fullNumber = `+${countryCode}${lineNumber}`
+
+    try {
+      const parsed = phoneUtil.parse(fullNumber, 'TR')
+
+      if (!phoneUtil.isValidNumber(parsed)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'Lütfen geçerli bir telefon numarası girin',
+        })
+      }
+
+      const digitsOnly = phoneUtil
+        .format(parsed, PhoneNumberFormat.E164)
+        .replace(/\D/g, '')
+
+      if (digitsOnly.length !== 12) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'Telefon numarası 12 haneli olmalıdır',
+        })
+      }
+    } catch (err) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Lütfen geçerli bir telefon numarası girin',
+      })
+    }
+  })
 
 const noSpecialCharAndLengthValidaton = (
   minLength: number,
@@ -18,20 +65,6 @@ const noSpecialCharAndLengthValidaton = (
 
 const requiredFieldValidation = (): z.ZodString =>
   z.string().min(1, { message: `Bu alan zorunludur` })
-
-const phoneNumberSchema = z.object({
-  countryCode: z
-    .string()
-    .min(1, { message: 'Bir ülke kodu seçilmeli' })
-    .regex(/^\d+$/, { message: 'Ülke kodu sadece rakamlardan oluşmalıdır' }),
-  lineNumber: z
-    .string()
-    .min(10, { message: 'Lütfen geçerli bir telefon numarası girin' })
-    .max(10, { message: 'Lütfen geçerli bir telefon numarası girin' })
-    .regex(/^\d+$/, {
-      message: 'Telefon numarası sadece rakamlardan oluşmalıdır',
-    }),
-})
 
 const formSchema = z.object({
   applicantFirstName: noSpecialCharAndLengthValidaton(2, 100).optional(),

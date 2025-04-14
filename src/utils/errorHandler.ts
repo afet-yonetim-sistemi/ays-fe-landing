@@ -15,8 +15,6 @@ const handleFormErrors = (err: AxiosError<ErrorResponse>): void => {
   const errData = err?.response?.data
 
   if (errData && errData.subErrors && errData.subErrors.length > 0) {
-    console.log(errData)
-
     const phoneError = errData.subErrors.find((subError) =>
       ['phoneNumber', 'applicantPhoneNumber'].includes(subError.field)
     )

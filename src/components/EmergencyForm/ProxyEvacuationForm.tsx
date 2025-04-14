@@ -1,11 +1,13 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import EvacuationForm from '@/components/EmergencyForm/EvacuationForm'
 import {
   formSchema,
   type FormSchema,
 } from '@/components/EmergencyForm/schema/formSchema'
+import PhoneInput from '@/components/ui/PhoneInput'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -14,16 +16,13 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import onSubmitForm from '@/services/formService'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { FiAlertTriangle } from 'react-icons/fi'
 import { CountryData } from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import PhoneInput from '@/components/ui/PhoneInput'
-import { useState } from 'react'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { FiAlertTriangle } from 'react-icons/fi'
-import onSubmitForm from '@/services/formService'
-import EvacuationForm from '@/components/EmergencyForm/EvacuationForm'
-import React from 'react'
 
 export default function ProxyEvacuationForm(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false)
@@ -47,15 +46,6 @@ export default function ProxyEvacuationForm(): JSX.Element {
       targetDistrict: '',
     },
   })
-
-  const applicantCountryCodeError = form.getFieldState(
-    'applicantPhoneNumber.countryCode',
-    form.formState
-  ).error
-  const applicantLineNumberError = form.getFieldState(
-    'applicantPhoneNumber.lineNumber',
-    form.formState
-  ).error
 
   const nextStep = async (): Promise<void> => {
     const isValid = await form.trigger([
@@ -127,24 +117,22 @@ export default function ProxyEvacuationForm(): JSX.Element {
             <FormField
               key="applicantPhoneNumber"
               name="applicantPhoneNumber"
-              render={({ field }) => (
+              render={({ field, fieldState }) => (
                 <FormItem>
                   <FormControl>
                     <PhoneInput
-                      value={field.value.countryCode + field.value.lineNumber}
+                      value={
+                        (field.value?.countryCode || '') +
+                        (field.value?.lineNumber || '')
+                      }
                       onChange={(value: string, country: CountryData) => {
-                        const countryCode: string = country.dialCode
-                        const lineNumber: string = value.slice(
-                          countryCode.length
-                        )
+                        const countryCode = country.dialCode
+                        const lineNumber = value.slice(countryCode.length)
                         field.onChange({ countryCode, lineNumber })
                       }}
                     />
                   </FormControl>
-                  <div className="text-red-500 font-thin text-sm flex gap-2">
-                    <span>{applicantCountryCodeError?.message}</span>
-                    <span>{applicantLineNumberError?.message}</span>
-                  </div>
+                  <FormMessage>{fieldState.error?.message}</FormMessage>
                 </FormItem>
               )}
             />

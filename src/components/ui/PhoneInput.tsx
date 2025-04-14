@@ -1,19 +1,22 @@
+import { cn } from '@/lib/utils'
 import ReactPhoneInput, { PhoneInputProps } from 'react-phone-input-2'
 
 const PhoneInput: React.FC<PhoneInputProps> = (props) => {
   return (
     <ReactPhoneInput
       {...props}
-      containerClass="w-full"
-      country={'tr'}
+      country="tr"
       placeholder="Telefon Numarası"
       enableSearch={true}
-      searchClass="bg-white "
       searchPlaceholder="Ara..."
       searchNotFound="Bulunamadı"
-      inputClass="py-5 !w-full"
-      inputProps={{ name: 'phone' }}
       countryCodeEditable={false}
+      onlyCountries={['tr']}
+      disableDropdown
+      containerClass={cn('!w-full')}
+      inputClass={cn('!w-full')}
+      buttonClass={cn('!pointer-events-none hover:!cursor-not-allowed')}
+      inputProps={{ name: 'phone' }}
     />
   )
 }
