@@ -81,8 +81,7 @@ const formSchema = z.object({
     .max(250, { message: 'Maksimum 250 karakter uzunluğunda olabilir' }),
   seatingCount: z
     .number({ message: 'Koltuk sayısı belirtmelisin' })
-    .int({ message: 'Pozitif bir tam sayı olmalıdır' })
-    .positive({ message: 'Pozitif bir tam sayı olmalıdır' })
+    .positive({ message: 'Koltuk sayısı belirtmelisin' })
     .max(999, { message: 'Maksimum 3 haneli bir sayı olmalıdır' }),
   targetCity: requiredFieldValidation(),
   targetDistrict: requiredFieldValidation(),

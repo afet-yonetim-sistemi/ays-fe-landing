@@ -13,6 +13,7 @@ import PhoneInput from '@/components/ui/PhoneInput'
 import { Textarea } from '@/components/ui/textarea'
 import { UseFormReturn } from 'react-hook-form'
 import { CountryData } from 'react-phone-input-2'
+import { NumericInput } from '../NumericInput'
 
 interface EvacuationFormSchema {
   firstName: string
@@ -95,20 +96,13 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                 >
                   Koltuk Sayısı:
                 </Label>
-                <Input
-                  id="seatingCount"
+                <NumericInput
+                  id={field.name}
+                  value={field.value}
+                  onValueChange={field.onChange}
+                  onBlur={field.onBlur}
+                  maxLength={3}
                   placeholder="Koltuk Sayısı"
-                  type="number"
-                  onWheel={(e: React.WheelEvent<HTMLInputElement>) =>
-                    e.currentTarget.blur()
-                  }
-                  {...field}
-                  onChange={(e) => {
-                    const value = e.target.valueAsNumber
-                    if (value <= 999 && value > -1) {
-                      field.onChange(value)
-                    }
-                  }}
                 />
               </div>
             </FormControl>
