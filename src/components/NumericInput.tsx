@@ -40,7 +40,7 @@ export const NumericInput = React.forwardRef<
       type="text"
       inputMode="numeric"
       pattern="[0-9]*"
-      value={value === undefined ? '' : value}
+      value={value ?? ''}
       onKeyDown={handleKeyDown}
       onChange={handleChange}
       onBlur={onBlur}
