@@ -102,7 +102,7 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                   onValueChange={field.onChange}
                   onBlur={field.onBlur}
                   maxLength={3}
-                  placeholder="Koltuk Sayısı"
+                  placeholder="Talep Edilen Koltuk Sayısı"
                 />
               </div>
             </FormControl>
