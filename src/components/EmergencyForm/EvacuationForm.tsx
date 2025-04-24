@@ -93,11 +93,11 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
                   htmlFor="seatingCount"
                   className="text-background text-nowrap font-semibold"
                 >
-                  Koltuk Sayısı:
+                  Talep Edilen Koltuk Sayısı:
                 </Label>
                 <Input
                   id="seatingCount"
-                  placeholder="Koltuk Sayısı"
+                  placeholder="Talep Edilen Koltuk Sayısı"
                   type="number"
                   onWheel={(e: React.WheelEvent<HTMLInputElement>) =>
                     e.currentTarget.blur()
@@ -174,7 +174,7 @@ const EvacuationForm: React.FC<EvacuationFormProps> = ({ form }) => {
 
       <hr />
       <span className="font-bold text-white block text-center">
-        Tahliye Sağlanacak Konum
+        Gidilecek Konum
       </span>
       <div className="grid grid-cols-2 gap-2">
         <FormField
