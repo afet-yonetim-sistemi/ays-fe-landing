@@ -37,7 +37,7 @@ export default function ProxyEvacuationForm(): JSX.Element {
       applicantPhoneNumber: { countryCode: '90', lineNumber: '' },
       firstName: '',
       lastName: '',
-      seatingCount: 1,
+      seatingCount: 0,
       phoneNumber: { countryCode: '90', lineNumber: '' },
       sourceCity: '',
       sourceDistrict: '',

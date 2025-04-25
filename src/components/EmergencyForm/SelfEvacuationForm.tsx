@@ -22,7 +22,7 @@ export default function SelfEvacuationForm(): JSX.Element {
     defaultValues: {
       firstName: '',
       lastName: '',
-      seatingCount: 1,
+      seatingCount: 0,
       phoneNumber: { countryCode: '90', lineNumber: '' },
       sourceCity: '',
       sourceDistrict: '',
