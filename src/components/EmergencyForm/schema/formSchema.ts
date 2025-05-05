@@ -36,7 +36,7 @@ const phoneNumberSchema = z
       if (digitsOnly.length !== 12) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
-          message: 'Telefon numarası 12 haneli olmalıdır',
+          message: 'Telefon numarası 10 haneli olmalıdır',
         })
       }
     } catch (err) {
