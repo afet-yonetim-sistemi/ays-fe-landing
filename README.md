@@ -50,22 +50,22 @@ Note that you need to install [Node.js](https://nodejs.org/en/) and [npm](https:
 
 This project uses Husky to run automated checks before each commit:
 
-1. **Lint-staged**: Runs ESLint and Prettier on staged files
-2. **TypeScript**: Type checks the entire project
-3. **SonarQube** (optional): Runs code quality analysis if `SONAR_TOKEN` is set
+1. **Lint-staged**: Runs on **changed files only**
+   - **Prettier**: Code formatting
+   - **ESLint**: Code quality, style, and complexity checks
+2. **TypeScript**: Type checks the **entire project**
 
-To enable SonarQube analysis locally:
+### Code Quality Tools
 
-```bash
-# Get your token from: https://sonarqube.afetyonetimsistemi.org/account/security
-export SONAR_TOKEN=your_sonar_token
+- **ESLint**: Enforces code style and catches common errors
+  - Complexity checks (max 15)
+  - Max function depth (4 levels)
+  - Max lines per function (150)
+  - Duplicate imports detection
+  - Unreachable code detection
+- **TypeScript**: Static type checking
+- **SonarQube** (CI/CD only): Full project analysis on the server
 
-# Or add it to your .env file
-echo "SONAR_TOKEN=your_sonar_token" >> .env
-```
-
-**Note**: SonarQube analysis is optional and won't block commits if the token is not set.
-
-##  Contributing
+##   Contributing
 
 Thank you for your interest in contributing to Afet Yönetim Sistemi project. We appreciate your help in making our project better and more useful to everyone. To contribute to the project, please read the [contributing guidelines](CONTRIBUTING.md) first.

@@ -56,6 +56,13 @@ const config = [
       ],
 
       '@next/next/no-img-element': 'warn',
+
+      'no-duplicate-imports': 'error',
+      'no-unreachable': 'error',
+      'no-constant-condition': 'warn',
+      complexity: ['warn', 15],
+      'max-depth': ['warn', 4],
+      'max-lines-per-function': ['warn', { max: 150, skipBlankLines: true }],
     },
   },
 
@@ -80,6 +87,10 @@ const config = [
           ],
         },
       ],
+
+      'no-duplicate-imports': 'error',
+      'no-unreachable': 'error',
+      complexity: ['warn', 15],
     },
   },
 

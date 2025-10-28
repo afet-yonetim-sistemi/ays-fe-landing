@@ -17,18 +17,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "🧠 Running SonarQube analysis..."
-# Only run if SONAR_TOKEN is set
-if [ -n "$SONAR_TOKEN" ]; then
-  npx sonar-scanner -Dsonar.token="$SONAR_TOKEN"
-  
-  if [ $? -ne 0 ]; then
-    echo "⚠️  SonarQube analysis failed, but allowing commit."
-    echo "Please review the issues in SonarQube dashboard."
-  fi
-else
-  echo "⏭️  Skipping SonarQube (SONAR_TOKEN not set)"
-  echo "To enable: export SONAR_TOKEN=your_token"
-fi
-
 echo "✅ All checks passed. Proceeding with commit..."
