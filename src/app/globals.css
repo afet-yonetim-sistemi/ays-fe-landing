@@ -1,7 +1,8 @@
 @import 'tailwindcss';
-@tailwind utilities;
-@import 'tw-animate-css';
 @import 'tailwindcss/preflight.css' layer(base);
+@import 'tw-animate-css';
+
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
