@@ -40,9 +40,31 @@ Note that you need to install [Node.js](https://nodejs.org/en/) and [npm](https:
 
 ### Useful Commands
 
-- **`npm run eslint`**: Runs ESLint to check for code issues.
-- **`npm run format`**: Checks code formatting with Prettier.
-- **`npm run format:fix`**: Formats code according to Prettier rules.
+- **`npm run dev`**: Starts the development server
+- **`npm run build`**: Creates a production build
+- **`npm run eslint`**: Runs ESLint to check for code issues
+- **`npm run format`**: Checks code formatting with Prettier
+- **`npm run format:fix`**: Formats code according to Prettier rules
+
+### Pre-commit Hooks
+
+This project uses Husky to run automated checks before each commit:
+
+1. **Lint-staged**: Runs ESLint and Prettier on staged files
+2. **TypeScript**: Type checks the entire project
+3. **SonarQube** (optional): Runs code quality analysis if `SONAR_TOKEN` is set
+
+To enable SonarQube analysis locally:
+
+```bash
+# Get your token from: https://sonarqube.afetyonetimsistemi.org/account/security
+export SONAR_TOKEN=your_sonar_token
+
+# Or add it to your .env file
+echo "SONAR_TOKEN=your_sonar_token" >> .env
+```
+
+**Note**: SonarQube analysis is optional and won't block commits if the token is not set.
 
 ##  Contributing
 

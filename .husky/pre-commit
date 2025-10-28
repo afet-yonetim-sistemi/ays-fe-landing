@@ -1,1 +1,34 @@
-npm run eslint
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running lint-staged (ESLint + Prettier)..."
+npx lint-staged --config lint-staged.config.mjs
+
+if [ $? -ne 0 ]; then
+  echo "❌ ESLint or Prettier errors/warnings detected. Commit aborted."
+  exit 1
+fi
+
+echo "🔷 Running TypeScript type check..."
+npx tsc --noEmit
+
+if [ $? -ne 0 ]; then
+  echo "❌ TypeScript type errors detected. Commit aborted."
+  exit 1
+fi
+
+echo "🧠 Running SonarQube analysis..."
+# Only run if SONAR_TOKEN is set
+if [ -n "$SONAR_TOKEN" ]; then
+  npx sonar-scanner -Dsonar.token="$SONAR_TOKEN"
+  
+  if [ $? -ne 0 ]; then
+    echo "⚠️  SonarQube analysis failed, but allowing commit."
+    echo "Please review the issues in SonarQube dashboard."
+  fi
+else
+  echo "⏭️  Skipping SonarQube (SONAR_TOKEN not set)"
+  echo "To enable: export SONAR_TOKEN=your_token"
+fi
+
+echo "✅ All checks passed. Proceeding with commit..."

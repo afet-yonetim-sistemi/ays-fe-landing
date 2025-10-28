@@ -1,5 +1,9 @@
+'use client'
+
+import * as React from 'react'
+
 const Home: React.FC = () => {
-  return <div>deneme</div>
+  return <div>Home</div>
 }
 
 export default Home
