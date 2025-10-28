@@ -21,11 +21,6 @@ const nextConfig = {
   },
 
   productionBrowserSourceMaps: false,
-  modularizeImports: {
-    'lucide-react': {
-      transform: 'lucide-react/dist/esm/icons/{{member}}',
-    },
-  },
 
   experimental: {
     optimizePackageImports: [
