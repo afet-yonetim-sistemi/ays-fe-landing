@@ -1,12 +1,13 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 import i18n from '@/i18n'
 import { Providers } from '@/lib/providers'
-import { Toaster } from '@/components/ui/toast/toaster'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import { ThemeProvider } from '@/components/theme-provider'
-import { nato } from '@/styles/fonts'
+import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
+import './globals.css'
+
+const geist = Geist({
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: i18n.t('title'),
@@ -15,21 +16,23 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <html lang={i18n.language} suppressHydrationWarning>
-      <body className={nato.className}>
+    <html
+      lang={i18n.language}
+      suppressHydrationWarning
+      className={geist.className}
+    >
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Providers>
-            <Header />
-            {children}
-            <Footer />
-          </Providers>
+          <Providers>{children}</Providers>
         </ThemeProvider>
-        <Toaster />
       </body>
     </html>
   )

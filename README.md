@@ -40,10 +40,32 @@ Note that you need to install [Node.js](https://nodejs.org/en/) and [npm](https:
 
 ### Useful Commands
 
-- **`npm run eslint`**: Runs ESLint to check for code issues.
-- **`npm run format`**: Checks code formatting with Prettier.
-- **`npm run format:fix`**: Formats code according to Prettier rules.
+- **`npm run dev`**: Starts the development server
+- **`npm run build`**: Creates a production build
+- **`npm run eslint`**: Runs ESLint to check for code issues
+- **`npm run format`**: Checks code formatting with Prettier
+- **`npm run format:fix`**: Formats code according to Prettier rules
 
-##  Contributing
+### Pre-commit Hooks
+
+This project uses Husky to run automated checks before each commit:
+
+1. **Lint-staged**: Runs on **changed files only**
+   - **Prettier**: Code formatting
+   - **ESLint**: Code quality, style, and complexity checks
+2. **TypeScript**: Type checks the **entire project**
+
+### Code Quality Tools
+
+- **ESLint**: Enforces code style and catches common errors
+  - Complexity checks (max 15)
+  - Max function depth (4 levels)
+  - Max lines per function (150)
+  - Duplicate imports detection
+  - Unreachable code detection
+- **TypeScript**: Static type checking
+- **SonarQube** (CI/CD only): Full project analysis on the server
+
+##   Contributing
 
 Thank you for your interest in contributing to Afet Yönetim Sistemi project. We appreciate your help in making our project better and more useful to everyone. To contribute to the project, please read the [contributing guidelines](CONTRIBUTING.md) first.
