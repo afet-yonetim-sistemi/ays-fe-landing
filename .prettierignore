@@ -1,4 +1,23 @@
+# Dependencies
 node_modules
+package-lock.json
+yarn.lock
 
+# Build outputs
+.next
+out
 build
+dist
+
+# Config files
+components.json
+next-env.d.ts
+
+# IDE
+.vscode
+.idea
+
+# Misc
 coverage
+*.tsbuildinfo
+.husky
