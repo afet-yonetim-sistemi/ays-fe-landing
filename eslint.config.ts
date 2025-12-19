@@ -1,37 +1,31 @@
 import pluginQuery from '@tanstack/eslint-plugin-query'
-import tsPlugin from '@typescript-eslint/eslint-plugin'
-import tsParser from '@typescript-eslint/parser'
-import prettierPlugin from 'eslint-plugin-prettier'
-// @ts-expect-error: This is necessary due to a temporary workaround
 import nextConfig from 'eslint-config-next'
 import prettierConfig from 'eslint-config-prettier'
-import { globalIgnores } from 'eslint/config'
+import prettierPlugin from 'eslint-plugin-prettier'
 
 const config = [
+  {
+    ignores: [
+      '.next/**',
+      'out/**',
+      'build/**',
+      'dist/**',
+      'node_modules/**',
+      'next-env.d.ts',
+      'components.json',
+      'package-lock.json',
+      'yarn.lock',
+      '*.tsbuildinfo',
+      'coverage/**',
+      '.vscode/**',
+      '.idea/**',
+    ],
+  },
   ...nextConfig,
   ...pluginQuery.configs['flat/recommended'],
-  globalIgnores([
-    '.next/**',
-    'out/**',
-    'build/**',
-    'dist/**',
-    'node_modules/**',
-    'next-env.d.ts',
-    'components.json',
-    'package-lock.json',
-    'yarn.lock',
-    '*.tsbuildinfo',
-    'coverage/**',
-    '.vscode/**',
-    '.idea/**',
-  ]),
   {
     files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      parser: tsParser,
-    },
     plugins: {
-      '@typescript-eslint': tsPlugin,
       prettier: prettierPlugin,
     },
     rules: {
