@@ -1,0 +1,12 @@
+services:
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: application-landing
+    restart: on-failure
+    ports:
+      - '19790:19790'
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:9790
+      - NEXT_PUBLIC_ENVIRONMENT=test

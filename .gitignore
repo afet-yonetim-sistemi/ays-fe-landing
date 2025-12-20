@@ -39,7 +39,7 @@ yarn-error.log*
 next-env.d.ts
 
 .idea
-yarn.lock
+package-lock.json
 
 # sonarqube
 .scannerwork
