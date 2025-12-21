@@ -16,21 +16,21 @@ This project is built using the following technologies:
 - [Axios](https://axios-http.com/)
 - [OpenAPI Typescript](https://www.npmjs.com/package/openapi-typescript)
 
-##  Getting Started
+## Running As Local
 
-###  Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/afet-yonetim-sistemi/ays-fe-landing
 ```
 
-###  Install dependencies
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-###  Run the project locally
+### Run the project locally
 
 ```bash
 npm run dev
