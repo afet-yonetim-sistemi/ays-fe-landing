@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 
-import { ThemeProvider } from '@/components/theme-provider'
+import { AppShell } from '@/components/layouts/app-shell/app-shell'
 import i18n from '@/i18n'
-import { Providers } from '@/lib/providers'
 
 import './globals.css'
 
@@ -27,14 +26,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Providers>{children}</Providers>
-        </ThemeProvider>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   )
