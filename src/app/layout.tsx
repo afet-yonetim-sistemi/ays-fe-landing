@@ -1,8 +1,10 @@
+import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
+
 import { ThemeProvider } from '@/components/theme-provider'
 import i18n from '@/i18n'
 import { Providers } from '@/lib/providers'
-import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
+
 import './globals.css'
 
 const geist = Geist({

@@ -12,8 +12,23 @@
   "trailingComma": "es5",
   "plugins": [
     "prettier-plugin-organize-imports",
+    "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
-    "prettier-plugin-packagejson",
-    "eslint-plugin-unused-imports"
-  ]
+    "prettier-plugin-packagejson"
+  ],
+  "importOrder": [
+    "^react$",
+    "^next(/.*)?$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/components/ui(.*)$",
+    "^@modules/(.*)$",
+    "^@components/(.*)$",
+    "^@lib/(.*)$",
+    "^@configs/(.*)$",
+    "^@/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderSortSpecifiers": true
 }
