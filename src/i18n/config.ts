@@ -1,4 +1,5 @@
 import type { InitOptions } from 'i18next'
+
 import { resources } from './resources'
 
 export const i18nConfig: InitOptions = {
