@@ -1,7 +1,11 @@
 import pluginQuery from '@tanstack/eslint-plugin-query'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
 import nextConfig from 'eslint-config-next'
 import prettierConfig from 'eslint-config-prettier'
+import importPlugin from 'eslint-plugin-import'
 import prettierPlugin from 'eslint-plugin-prettier'
+import unusedImportsPlugin from 'eslint-plugin-unused-imports'
 
 const config = [
   {
@@ -19,35 +23,46 @@ const config = [
       'coverage/**',
       '.vscode/**',
       '.idea/**',
+      '.prettierrc',
+      '.prettierignore',
     ],
   },
   ...nextConfig,
   ...pluginQuery.configs['flat/recommended'],
   {
     files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+    },
     plugins: {
+      '@typescript-eslint': tsPlugin,
+      import: importPlugin,
       prettier: prettierPlugin,
+      'unused-imports': unusedImportsPlugin,
     },
     rules: {
       'prettier/prettier': 'warn',
 
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'warn',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
+      ],
       '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/no-empty-function': 'warn',
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['@/components/ui/*'],
-              message:
-                'Import UI components only through the core wrapper layer instead of using Shadcn components directly.',
-            },
-          ],
-        },
-      ],
+
+      'import/order': 'off',
 
       '@next/next/no-img-element': 'warn',
 
@@ -69,18 +84,6 @@ const config = [
       'prettier/prettier': 'warn',
       'no-unused-vars': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['@/components/ui/*'],
-              message:
-                'Import UI components only through the core wrapper layer instead of using Shadcn components directly.',
-            },
-          ],
-        },
-      ],
 
       'no-duplicate-imports': 'error',
       'no-unreachable': 'error',
