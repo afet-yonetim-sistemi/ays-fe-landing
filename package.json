@@ -8,8 +8,8 @@
     "dev": "next dev -p 19790",
     "format": "prettier --check . --config ./.prettierrc",
     "format:fix": "prettier --write . --config ./.prettierrc",
-    "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix --max-warnings 0",
+    "lint": "eslint . --max-warnings 0 --no-warn-ignored",
+    "lint:fix": "eslint . --fix --max-warnings 0 --no-warn-ignored",
     "prepare": "husky",
     "start": "next start"
   },
