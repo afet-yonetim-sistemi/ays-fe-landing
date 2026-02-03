@@ -6,9 +6,10 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev -p 19790",
-    "eslint": "npx eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0",
-    "format": "prettier --check './**/*.{js,jsx,ts,tsx,css,scss,sass,less,json,json5,yaml,yml,md,mdx,html,htm}' --config ./.prettierrc",
-    "format:fix": "prettier --write './**/*.{js,jsx,ts,tsx,css,scss,sass,less,json,json5,yaml,yml,md,mdx,html,htm}' --config ./.prettierrc",
+    "format": "prettier --check . --config ./.prettierrc",
+    "format:fix": "prettier --write . --config ./.prettierrc",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix --max-warnings 0",
     "prepare": "husky",
     "start": "next start"
   },
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@hookform/devtools": "^4.4.0",
     "@tanstack/eslint-plugin-query": "^5.91.2",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -44,6 +46,7 @@
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
