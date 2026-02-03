@@ -25,6 +25,7 @@ const config = [
       '.idea/**',
       '.prettierrc',
       '.prettierignore',
+      'tsconfig.json',
     ],
   },
   ...nextConfig,
