@@ -1,4 +1,4 @@
-import { PageLayout } from '@/components/layouts/page-layout/page-layout'
+import { PageLayout } from '@components/layouts/page-layout/page-layout'
 import { AppProviders } from '@providers/app-providers/app-providers'
 
 interface AppShellProps {

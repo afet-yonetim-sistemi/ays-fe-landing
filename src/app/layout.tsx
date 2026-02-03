@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 
-import { AppShell } from '@/components/layouts/app-shell/app-shell'
 import i18n from '@/i18n'
+import { AppShell } from '@providers/app-shell/app-shell'
 
 import './globals.css'
 
