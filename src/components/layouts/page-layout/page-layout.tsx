@@ -9,10 +9,10 @@ export const PageLayout = ({
   children,
 }: PageLayoutProps): React.ReactElement => {
   return (
-    <>
+    <div>
       <Header />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   )
 }
