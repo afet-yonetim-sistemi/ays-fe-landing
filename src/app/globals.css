@@ -28,17 +28,17 @@
 }
 
 @theme inline {
-  --color-blue-50: oklch(97% 0.02 255);
-  --color-blue-100: oklch(93% 0.04 255);
-  --color-blue-200: oklch(88% 0.07 254);
-  --color-blue-300: oklch(81% 0.12 252);
-  --color-blue-400: oklch(71% 0.17 255);
-  --color-blue-500: oklch(35% 0.09 255);
-  --color-blue-600: oklch(62% 0.21 260);
-  --color-blue-700: oklch(55% 0.24 263);
-  --color-blue-800: oklch(49% 0.22 264);
-  --color-blue-900: oklch(44% 0.18 265);
-  --color-blue-950: oklch(28% 0.1 268);
+  --color-blue-50: #cfdaea;
+  --color-blue-100: #a5b7d0;
+  --color-blue-200: #8599b6;
+  --color-blue-300: #647a9b;
+  --color-blue-400: #445c81;
+  --color-blue-500: #233e66;
+  --color-blue-600: #1c3252;
+  --color-blue-700: #15253d;
+  --color-blue-800: #0e1929;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #070c14;
 }
 
 /* semantic colors */
