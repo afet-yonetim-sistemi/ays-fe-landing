@@ -52,4 +52,9 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
           
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd /home/${{ secrets.SERVER_USER }} && cd /aysapps/ays-fe-landing && git fetch origin && git checkout feature/AYS-1034/deployment && git pull origin feature/AYS-1034/deployment && docker compose up -d --build"
+          ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            cd /home/${{ secrets.SERVER_USER }}/aysapps/ays-fe-landing && \
+            git fetch origin && \
+            git checkout feature/AYS-1034/deployment && \
+            git pull origin feature/AYS-1034/deployment &&\
+            docker compose up -d --build"
