@@ -53,6 +53,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
           
           ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            git config --global --add safe.directory /aysapps/ays-fe-landing && \
             cd /aysapps/ays-fe-landing && \
             git fetch origin && \
             git checkout feature/AYS-1034/deployment && \
