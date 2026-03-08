@@ -58,4 +58,4 @@ jobs:
             git fetch origin && \
             git checkout feature/AYS-1034/deployment && \
             git pull origin feature/AYS-1034/deployment &&\
-            docker compose up -d --build"
+            sudo docker compose up -d --build"
