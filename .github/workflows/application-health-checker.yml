@@ -6,7 +6,7 @@ name: Application Status
 on:
   push:
     branches:
-      - feature/AYS-1034/deployment # Trigger the workflow when a push event occurs on the main branch
+      - main # Trigger the workflow when a push event occurs on the main branch
 
 jobs:
   build: # Define the "build" job
