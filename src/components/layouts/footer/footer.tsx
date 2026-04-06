@@ -1,37 +1,22 @@
 import { Button } from '@/components/ui/button'
 import { Separator } from '@components/ui/separator'
-import { CircleFadingArrowUpIcon } from 'lucide-react'
 import Image from 'next/image'
 import { ReactElement } from 'react'
+import {
+  BOTTOM_LINKS,
+  DEV_LINKS,
+  HOME_LINKS,
+  SOCIAL_ICON_CLASS,
+  SOCIAL_ROW_1,
+  SOCIAL_ROW_2,
+} from './constants'
 import { FooterColumn } from './footer-column'
 import { FooterItem } from './footer-item'
 import { FooterItems } from './footer-items'
 
-const HOME_LINKS = [
-  'Afet Yönetim Sistemi (AYS) Nedir?',
-  'AYS’yi Kimler Kullanabilir?',
-  'Neden AYS?',
-  '2023 Deprem Raporu',
-  'Sıkça Sorulan Sorular',
-]
-
-const DEV_LINKS = [
-  'Hakkımızda',
-  'AYS’yi Birlikte Geliştiriyoruz',
-  'Neden Topluluğumuzun Bir Parçası Olmalısın?',
-  'Yeteneğinle Projeye Katkı Sağla',
-  'Sıkça Sorulan Sorular',
-]
-
-const BOTTOM_LINKS = [
-  'MIT Lisansı ile lisanslanmıştır.',
-  'Kullanım Şartları',
-  'Gizlilik Politikası',
-]
-
 export const Footer = (): ReactElement => {
   return (
-    <footer className="flex flex-col items-start justify-center gap-8 bg-blue-500 px-4 py-5 md:px-8 md:py-10 lg:px-40">
+    <footer className="flex flex-col items-start justify-center gap-8 bg-sky-100 px-4 py-5 md:px-8 md:py-10 lg:px-40 dark:bg-sky-800">
       <div className="mx-auto flex w-full flex-col gap-6 text-gray-300 md:flex-row">
         <FooterColumn title="Ana Sayfa">
           <FooterItems>
@@ -61,17 +46,45 @@ export const Footer = (): ReactElement => {
 
             <div className="mt-auto flex flex-col gap-4">
               <div className="flex gap-4">
-                {[1, 2, 3].map((i) => (
-                  <Button key={`social-1-${i}`} size="icon">
-                    <CircleFadingArrowUpIcon />
+                {SOCIAL_ROW_1.map(({ label, src, href }) => (
+                  <Button
+                    key={label}
+                    size="icon"
+                    aria-label={label}
+                    className="bg-sky-200 dark:bg-sky-900"
+                    asChild
+                  >
+                    <a href={href}>
+                      <Image
+                        src={src}
+                        alt={label}
+                        width={16}
+                        height={16}
+                        className={SOCIAL_ICON_CLASS}
+                      />
+                    </a>
                   </Button>
                 ))}
               </div>
 
               <div className="flex gap-4">
-                {[1, 2, 3].map((i) => (
-                  <Button key={`social-2-${i}`} size="icon">
-                    <CircleFadingArrowUpIcon />
+                {SOCIAL_ROW_2.map(({ label, src, href }) => (
+                  <Button
+                    key={label}
+                    size="icon"
+                    aria-label={label}
+                    className="bg-sky-200 dark:bg-sky-900"
+                    asChild
+                  >
+                    <a href={href}>
+                      <Image
+                        src={src}
+                        alt={label}
+                        width={16}
+                        height={16}
+                        className={SOCIAL_ICON_CLASS}
+                      />
+                    </a>
                   </Button>
                 ))}
               </div>
@@ -81,20 +94,20 @@ export const Footer = (): ReactElement => {
       </div>
 
       <div className="mx-auto flex h-fit w-full flex-col gap-8">
-        <Separator className="bg-gray-500" />
+        <Separator className="bg-gray-500 dark:bg-sky-400" />
         <div className="flex h-fit w-full flex-col items-center justify-center gap-4">
           <div className="flex h-fit w-fit items-center justify-center gap-0.5">
             <Image src="/logo.png" alt="ays-logo" width={24} height={24} />
             <FooterItem
               className="flex-none"
-              textClassName="block text-gray-300"
+              textClassName="block"
               hasHover={false}
             >
               © 2025 Afet Yönetim Sistemi
             </FooterItem>
           </div>
-          <div className="mx-auto flex h-fit w-fit items-center justify-center">
-            <div className="grid auto-cols-fr grid-flow-col items-center">
+          <div className="mx-auto flex h-fit w-fit items-center justify-center gap-6">
+            <div className="flex flex-wrap items-center justify-center">
               {BOTTOM_LINKS.map((link, index) => (
                 <div
                   key={link}
@@ -102,7 +115,6 @@ export const Footer = (): ReactElement => {
                 >
                   <FooterItem
                     className="w-full justify-center px-8 text-center"
-                    textClassName="text-gray-300"
                     hasHover={false}
                   >
                     {link}
@@ -110,7 +122,7 @@ export const Footer = (): ReactElement => {
                   {index < BOTTOM_LINKS.length - 1 && (
                     <Separator
                       orientation="vertical"
-                      className="absolute right-0 h-4 bg-gray-500"
+                      className="absolute right-0 h-6 bg-sky-400"
                     />
                   )}
                 </div>

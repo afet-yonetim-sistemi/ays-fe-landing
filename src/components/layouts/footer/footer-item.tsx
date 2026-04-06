@@ -19,13 +19,15 @@ export const FooterItem = ({
     <div
       className={cn(
         'p-2 transition-colors',
-        hasHover && 'cursor-pointer hover:bg-blue-600',
+        hasHover && 'cursor-pointer',
         className
       )}
     >
-      <Typography.Small className={cn('text-current', textClassName)}>
+      <Typography.Regular
+        className={cn('text-black dark:text-white', textClassName)}
+      >
         {children}
-      </Typography.Small>
+      </Typography.Regular>
     </div>
   )
 }

@@ -16,7 +16,9 @@ export const FooterColumn = ({
   return (
     <div className="w-full p-5">
       <div className={cn('flex flex-col gap-8', className)}>
-        <Typography.H4 className="text-white">{title}</Typography.H4>
+        <Typography.H4 className="text-sky-500 dark:text-sky-200">
+          {title}
+        </Typography.H4>
         {children}
       </div>
     </div>
