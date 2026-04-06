@@ -122,6 +122,16 @@ const Lead = ({
   </p>
 )
 
+const Regular = ({
+  children,
+  className,
+  ...props
+}: TypographyProps): ReactElement => (
+  <div className={cn('text-sm font-normal', className)} {...props}>
+    {children}
+  </div>
+)
+
 const Large = ({
   children,
   className,
@@ -154,4 +164,5 @@ export const Typography = {
   Lead,
   Large,
   Muted,
+  Regular,
 }
