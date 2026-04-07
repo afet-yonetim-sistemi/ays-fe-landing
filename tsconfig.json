@@ -23,7 +23,8 @@
       "@modules/*": ["./src/modules/*"],
       "@components/*": ["./src/components/*"],
       "@lib/*": ["./src/lib/*"],
-      "@configs/*": ["./src/configs/*"]
+      "@configs/*": ["./src/configs/*"],
+      "@providers/*": ["./src/providers/*"]
     },
     "target": "ES2017"
   },
