@@ -21,6 +21,7 @@
     "^next(/.*)?$",
     "<THIRD_PARTY_MODULES>",
     "^@/components/ui(.*)$",
+    "^@providers/(.*)$",
     "^@modules/(.*)$",
     "^@components/(.*)$",
     "^@lib/(.*)$",
