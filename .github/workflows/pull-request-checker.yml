@@ -1,57 +1,55 @@
-# Purpose: This file is used to build the project when a pull request is opened, reopened, synchronized, ready for review, or unlocked.
-
-# Name of the workflow
+# Purpose: This file is used to build the frontend project and run SonarQube analysis when a PR is updated.
 name: Pull Request Checker
 
-# Trigger the workflow when various types of pull request events occur
 on:
   pull_request:
     types:
-      - opened # triggers the workflow when a pull request is opened.
-      - reopened # triggers the workflow when a pull request is reopened after being closed.
-      - synchronize # triggers the workflow when a pull request is synchronized (changes are pushed to the branch associated with the pull request)
-      - ready_for_review # triggers the workflow when a pull request is marked as ready for review
-      - unlocked # triggers the workflow when a previously locked pull request is unlocked
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - unlocked
 
 jobs:
-  build: # Define the "build" job
-    runs-on: ubuntu-latest # Run the job on the latest version of Ubuntu
-    steps: # List of steps to execute within the job
-      - name: Update package cache # Step to update the package cache
-        run: sudo apt-get update
-
-      - name: Checkout code # Step to check out the code from the repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-
-      - uses: actions/setup-node@v4 # Step to set up Node.js
-        with:
-          node-version: 22.17.1
-
-      - name: Install npm # Install with npm
-        run: npm install
-
-      - name: Build Project # Build with npm
-        run: npm run build
-
-  sonarqube:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Initialize environment
+        uses: ./.github/actions/initialize-environment
         with:
-          fetch-depth: 0
+          GH_USERNAME: ${{ vars.GH_USERNAME }}
+          GH_USER_ACCESS_TOKEN: ${{ secrets.GH_USER_ACCESS_TOKEN }}
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+
+  sonarqube:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: Initialize environment
+        uses: ./.github/actions/initialize-environment
+        with:
+          GH_USERNAME: ${{ vars.GH_USERNAME }}
+          GH_USER_ACCESS_TOKEN: ${{ secrets.GH_USER_ACCESS_TOKEN }}
 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v3
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-
-      # When the Quality Gate control is red, the job is indicating an error.
-      - name: SonarQube Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+            -Dsonar.projectName='ays-fe-landing'
