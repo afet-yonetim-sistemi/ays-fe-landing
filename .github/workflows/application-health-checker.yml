@@ -48,4 +48,4 @@ jobs:
           projectBaseDir: .
           args: >
             -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
-            -Dsonar.projectName='ays-fe-landing'
+            -Dsonar.projectName=ays-fe-landing
