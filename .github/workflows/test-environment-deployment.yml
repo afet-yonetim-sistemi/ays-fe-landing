@@ -1,7 +1,7 @@
 # Purpose: Deploy the frontend landing to the test environment.
 
 # Name of the workflow
-name: Landing Deployment
+name: Deploy to Test Environment
 
 on:
   push:
