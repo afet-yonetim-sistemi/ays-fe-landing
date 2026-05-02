@@ -1,4 +1,3 @@
-import { Typography } from '@/components/common/typography/typography'
 import { cn } from '@/lib/utils'
 import React from 'react'
 
@@ -23,11 +22,14 @@ export const FooterItem = ({
         className
       )}
     >
-      <Typography.Regular
-        className={cn('text-black dark:text-white', textClassName)}
+      <p
+        className={cn(
+          'typography-p-small-regular text-black dark:text-white',
+          textClassName
+        )}
       >
         {children}
-      </Typography.Regular>
+      </p>
     </div>
   )
 }

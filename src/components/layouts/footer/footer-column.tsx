@@ -1,4 +1,3 @@
-import { Typography } from '@/components/common/typography/typography'
 import { cn } from '@/lib/utils'
 import React from 'react'
 
@@ -16,9 +15,9 @@ export const FooterColumn = ({
   return (
     <div className="w-full p-5">
       <div className={cn('flex flex-col gap-8', className)}>
-        <Typography.H4 className="text-sky-500 dark:text-sky-200">
+        <h4 className="typography-h4 text-sky-500 dark:text-sky-200">
           {title}
-        </Typography.H4>
+        </h4>
         {children}
       </div>
     </div>
