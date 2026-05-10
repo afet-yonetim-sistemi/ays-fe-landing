@@ -228,18 +228,142 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-inter), ui-monospace, monospace;
 
-  --text-4xl: 3rem;
-
-  --text-lg--line-height: 1.6875rem;
-  --text-xl--line-height: 1.5rem;
-  --text-2xl--line-height: 1.8rem;
-  --text-3xl--line-height: 1.875rem;
-  --text-4xl--line-height: 3rem;
-
   --tracking-caption: 0.09375rem;
   --tracking-h1: -0.09375rem;
   --tracking-h2: -0.0625rem;
   --tracking-h3: -0.0625rem;
+}
+
+/* typography | utilities */
+@utility typography-h1 {
+  font-family: var(--font-sans);
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-h1);
+}
+
+@utility typography-h2 {
+  font-family: var(--font-sans);
+  font-size: 1.875rem;
+  line-height: 1.875rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-h2);
+}
+
+@utility typography-h3 {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-h3);
+}
+
+@utility typography-h4 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+@utility typography-mono {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+@utility typography-caption {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 400;
+  letter-spacing: var(--tracking-caption);
+}
+
+@utility typography-p-large-regular {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-weight: 400;
+}
+
+@utility typography-p-large-medium {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-weight: 500;
+}
+
+@utility typography-p-large-bold {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-weight: 600;
+}
+
+@utility typography-p-regular {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+@utility typography-p-medium {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+@utility typography-p-bold {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+@utility typography-p-small-regular {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+@utility typography-p-small-medium {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+@utility typography-p-small-bold {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+@utility typography-p-mini-regular {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+
+@utility typography-p-mini-medium {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+@utility typography-p-mini-bold {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
 }
 
 /* tailwind | shadows */
