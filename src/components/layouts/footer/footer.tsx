@@ -39,7 +39,7 @@ export const Footer = (): ReactElement => {
         </FooterColumn>
 
         <FooterColumn title="İletişim" className="h-full">
-          <FooterItems className="h-full flex-1">
+          <FooterItems className="h-full flex-1 gap-4 md:gap-0">
             <FooterItem hasHover={false}>
               iletisim@afetyonetimsistemi.org
             </FooterItem>
@@ -111,7 +111,9 @@ export const Footer = (): ReactElement => {
               {BOTTOM_LINKS.map((link, index) => (
                 <div
                   key={link}
-                  className="relative flex h-fit items-center justify-center"
+                  className={`relative flex h-fit items-center justify-center ${
+                    index === 0 ? 'w-full md:w-auto' : ''
+                  }`}
                 >
                   <FooterItem
                     className="w-full justify-center px-8 text-center"
@@ -122,7 +124,9 @@ export const Footer = (): ReactElement => {
                   {index < BOTTOM_LINKS.length - 1 && (
                     <Separator
                       orientation="vertical"
-                      className="absolute right-0 h-6 bg-sky-400"
+                      className={`absolute right-0 h-6 bg-sky-400 ${
+                        index === 0 ? 'hidden md:block' : ''
+                      }`}
                     />
                   )}
                 </div>
