@@ -39,7 +39,7 @@ export const Footer = (): ReactElement => {
         </FooterColumn>
 
         <FooterColumn title="İletişim" className="h-full">
-          <FooterItems className="h-full flex-1">
+          <FooterItems className="h-full flex-1 gap-4 md:gap-0">
             <FooterItem hasHover={false}>
               iletisim@afetyonetimsistemi.org
             </FooterItem>
