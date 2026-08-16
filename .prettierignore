@@ -24,3 +24,18 @@ coverage
 *.tsbuildinfo
 .husky
 *.svg
+
+# Binary / static assets
+public
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.webp
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.mp4
+*.pdf

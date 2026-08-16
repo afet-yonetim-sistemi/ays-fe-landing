@@ -165,6 +165,7 @@
   --color-sky-800: oklch(0.333 0.088 259.3);
   --color-sky-900: oklch(0.279 0.069 258.9);
   --color-sky-950: oklch(0.241 0.057 259.3);
+  --color-brand-blue: oklch(0.5 0.11 236.5);
 }
 
 /* tailwind + shadcn | color mapping */
