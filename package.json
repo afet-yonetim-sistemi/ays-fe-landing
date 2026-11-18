@@ -33,7 +33,7 @@
     "react-i18next": "^16.5.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
-    "zod": "^4.2.1"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@hookform/devtools": "^4.4.0",
